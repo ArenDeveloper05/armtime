@@ -1,18 +1,23 @@
 import React from "react";
-import ReactDOM from "react-dom/client";
 import "./index.css";
-import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-import { BrowserRouter } from "react-router-dom";
+import { createRoot } from "react-dom/client";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { Provider } from "react-redux";
 import store from "./redux/store";
+import HomePage from "./pages/HomePage";
+import { ROUTER } from "./router/router";
 
-const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(
+const router = createBrowserRouter([
+  {
+    path: ROUTER.HOME_PAGE_ROUTE,
+    element: <HomePage />,
+  },
+]);
+
+createRoot(document.getElementById("root")).render(
   <Provider store={store}>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
+    <RouterProvider router={router} />
   </Provider>
 );
 
