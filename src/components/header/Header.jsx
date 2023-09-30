@@ -36,7 +36,8 @@ const Header = () => {
             </div>
             <div className="header-inner-buy-cartName">My cart</div>
             <div className="header-inner-buy-price">
-              0<TbCurrencyDram style={{ width: "18px", height: "18px" }} />
+              0
+              <TbCurrencyDram style={{ width: "18px", height: "18px" }} />
             </div>
           </div>
 
