@@ -26,7 +26,7 @@ export const navConfig = [
       en: "About us",
       ru: "О нас",
     },
-    link: ROUTER.WATCHES_PAGE_ROUTE,
+    link: ROUTER.ABOUTUS_PAGE_ROUTE,
   },
   {
     id: 4,
@@ -35,6 +35,6 @@ export const navConfig = [
       en: "Contact us",
       ru: "Связаться с нами",
     },
-    link: ROUTER.WATCHES_PAGE_ROUTE,
+    link: ROUTER.CONTACTUS_PAGE_ROUTE,
   },
 ];

@@ -7,11 +7,21 @@ import { Provider } from "react-redux";
 import store from "./redux/store";
 import HomePage from "./pages/HomePage";
 import { ROUTER } from "./router/router";
+import AboutUsPage from "./pages/AboutUsPage";
+import ContactUsPage from "./pages/ContactUsPage";
 
 const router = createBrowserRouter([
   {
     path: ROUTER.HOME_PAGE_ROUTE,
     element: <HomePage />,
+  },
+  {
+    path: ROUTER.ABOUTUS_PAGE_ROUTE,
+    element: <AboutUsPage />,
+  },
+  {
+    path: ROUTER.CONTACTUS_PAGE_ROUTE,
+    element: <ContactUsPage />,
   },
 ]);
 
