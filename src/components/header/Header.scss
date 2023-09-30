@@ -29,7 +29,7 @@
   }
 
   &-buy {
-    width: 30%;
+    width: 25%;
     height: 100px;
     display: flex;
     justify-content: center;
@@ -63,6 +63,21 @@
       display: flex;
       align-items: center;
       gap: 5px;
+    }
+  }
+
+  &-language {
+    cursor: pointer;
+    &-lang {
+      font-size: 16px;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      color: var(--white);
+      &-icon {
+        width: 18px;
+        height: 18px;
+      }
     }
   }
 }

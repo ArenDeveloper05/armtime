@@ -6,6 +6,7 @@ import { navConfig } from "../../config";
 import Container from "../container/Container";
 import { SlBasket } from "react-icons/sl";
 import { TbCurrencyDram } from "react-icons/tb";
+import { IoIosArrowDown } from "react-icons/io";
 
 const Header = () => {
   return (
@@ -36,6 +37,13 @@ const Header = () => {
             <div className="header-inner-buy-cartName">My cart</div>
             <div className="header-inner-buy-price">
               0<TbCurrencyDram style={{ width: "18px", height: "18px" }} />
+            </div>
+          </div>
+
+          <div className="header-inner-language">
+            <div className="header-inner-language-lang">
+              Eng
+              <IoIosArrowDown className="header-inner-language-lang-icon" />
             </div>
           </div>
         </div>
