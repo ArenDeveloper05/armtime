@@ -1,0 +1,102 @@
+.watches {
+  border: solid red;
+  &-filter {
+    &-select {
+      display: flex;
+      align-items: center;
+      width: max-content;
+      padding: 8px;
+      cursor: pointer;
+      border: 1px solid;
+      transition: 0.25s;
+      &:hover {
+        box-shadow: 6px 6px 10px black;
+      }
+      > svg {
+        width: 24px;
+        height: 24px;
+        margin-right: 8px;
+      }
+      > span {
+        font-size: 16px;
+        font-weight: bold;
+      }
+    }
+    &-options {
+      background-color: white;
+      padding: 24px 32px;
+      padding-bottom: 16px;
+      max-width: max-content;
+      border: solid;
+      margin-top: 16px;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      .traingle {
+        width: 24px;
+        height: 24px;
+        background-color: black;
+        transform: rotate(45deg);
+        position: absolute;
+        top: -13px;
+        left: 10%;
+        border: solid;
+        z-index: -1;
+      }
+      &-gender {
+        display: flex;
+        gap: 16px;
+        &-item {
+          cursor: pointer;
+          border: 2px solid;
+          padding: 4px 10px;
+          border-radius: 16px;
+          font-weight: 500;
+        }
+      }
+      &-types {
+        display: flex;
+        gap: 16px;
+        &-option {
+          cursor: pointer;
+          border: 2px solid;
+          padding: 4px 10px;
+          border-radius: 16px;
+          font-weight: 500;
+        }
+      }
+      > button {
+        background-color: black;
+        color: white;
+        border: none;
+        width: max-content;
+        padding: 6px 12px;
+        font-weight: 500;
+        font-size: 16px;
+        cursor: pointer;
+        align-self: flex-end;
+      }
+    }
+  }
+  &-list {
+    border: solid;
+    margin-top: 32px;
+    padding: 24px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    &-item {
+      width: 300px;
+      border: solid;
+      &-image {
+        height: 300px;
+        border: solid;
+        background-size: cover;
+      }
+      &-description {
+        padding: 16px;
+      }
+    }
+  }
+}

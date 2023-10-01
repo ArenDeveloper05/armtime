@@ -21,7 +21,7 @@ const Header = () => {
                   key={link.id}
                   to={link.link}
                 >
-                  {link.title.en}
+                  {link.title.hy}
                 </Link>
               );
             })}

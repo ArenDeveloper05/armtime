@@ -38,3 +38,35 @@ export const navConfig = [
     link: ROUTER.CONTACTUS_PAGE_ROUTE,
   },
 ];
+
+export const filterSelectConfig = {
+  hy: "ԸՆՏՐԵՔ ՁԵՐ ԺԱՄԱՑՈՒՅՑԸ",
+  en: "SELECT YOUR WATCH",
+  ru: "ВЫБЕРИТЕ СВОИ ЧАСЫ",
+};
+export const filterOptionsConfig = [
+  {
+    id: 1,
+    title: {
+      hy: "Բոլորը",
+      en: "All",
+      ru: "Все",
+    },
+  },
+  {
+    id: 2,
+    title: {
+      hy: "Քվարցային",
+      en: "Quartz",
+      ru: "Кварцеые",
+    },
+  },
+  {
+    id: 3,
+    title: {
+      hy: "Մեխանիկական",
+      en: "Mechanical",
+      ru: "Механические",
+    },
+  },
+];
