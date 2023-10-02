@@ -27,13 +27,13 @@ const HomeSlider = () => {
         <img src={slide1} alt="" className="slider-item-image" />
       </div>
       <div>
-        <img src={slide2} alt="" />
+        <img src={slide2} alt="" className="slider-item-image" />
       </div>
       <div>
-        <img src={slide3} alt="" />
+        <img src={slide3} alt="" className="slider-item-image" />
       </div>
       <div>
-        <img src={slide4} alt="" />
+        <img src={slide4} alt="" className="slider-item-image" />
       </div>
     </Slider>
   );

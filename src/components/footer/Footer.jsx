@@ -43,12 +43,14 @@ const Footer = () => {
                 <a
                   href="https://www.facebook.com/profile.php?id=100075839478957"
                   target="_blank"
+                  rel="noreferrer"
                 >
                   <FaFacebookSquare className="footer-inner-follow-links-link" />
                 </a>
                 <a
                   href="https://www.instagram.com/armeniantime_/"
                   target="_blank"
+                  rel="noreferrer"
                 >
                   <FaInstagram className="footer-inner-follow-links-link" />
                 </a>

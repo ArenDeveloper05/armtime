@@ -2,13 +2,13 @@
 import "./Header.scss";
 //Components
 import { Link } from "react-router-dom";
-import { navConfig } from "../../config";
 import Container from "../container/Container";
 import { SlBasket } from "react-icons/sl";
 import { TbCurrencyDram } from "react-icons/tb";
 import { IoIosArrowDown } from "react-icons/io";
 import { ROUTER } from "../../router/router";
 import NavBar from "./navbar/NavBar";
+import Logo from "../../images/logo .svg";
 
 const Header = () => {
   return (
@@ -18,7 +18,7 @@ const Header = () => {
           <NavBar />
 
           <Link className="header-inner-logo" to={ROUTER.HOME_PAGE_ROUTE}>
-            <img src="" alt="logo" className="header-inner-logo-img" />
+            <img src={Logo} alt="logo" className="header-inner-logo-img" />
           </Link>
           <div className="header-inner-buy">
             <div className="header-inner-buy-icon">
