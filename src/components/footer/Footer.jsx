@@ -40,10 +40,16 @@ const Footer = () => {
             <div className="footer-inner-follow">
               <div className="footer-inner-follow-title">Follow Us</div>
               <div className="footer-inner-follow-links">
-                <a href="https://www.facebook.com/profile.php?id=100075839478957">
+                <a
+                  href="https://www.facebook.com/profile.php?id=100075839478957"
+                  target="_blank"
+                >
                   <FaFacebookSquare className="footer-inner-follow-links-link" />
                 </a>
-                <a href="https://www.instagram.com/armeniantime_/">
+                <a
+                  href="https://www.instagram.com/armeniantime_/"
+                  target="_blank"
+                >
                   <FaInstagram className="footer-inner-follow-links-link" />
                 </a>
               </div>

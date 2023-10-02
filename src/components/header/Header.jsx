@@ -7,29 +7,19 @@ import Container from "../container/Container";
 import { SlBasket } from "react-icons/sl";
 import { TbCurrencyDram } from "react-icons/tb";
 import { IoIosArrowDown } from "react-icons/io";
+import { ROUTER } from "../../router/router";
+import NavBar from "./navbar/NavBar";
 
 const Header = () => {
   return (
     <header>
       <Container>
         <div className="header-inner">
-          <ul className="header-inner-nav">
-            {navConfig.map((link) => {
-              return (
-                <Link
-                  className="header-inner-nav-link"
-                  key={link.id}
-                  to={link.link}
-                >
-                  {link.title.hy}
-                </Link>
-              );
-            })}
-          </ul>
+          <NavBar />
 
-          <div className="header-inner-logo">
+          <Link className="header-inner-logo" to={ROUTER.HOME_PAGE_ROUTE}>
             <img src="" alt="logo" className="header-inner-logo-img" />
-          </div>
+          </Link>
           <div className="header-inner-buy">
             <div className="header-inner-buy-icon">
               <SlBasket className="header-inner-buy-icon-icn" />
