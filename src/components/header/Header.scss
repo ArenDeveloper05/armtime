@@ -12,10 +12,13 @@
     &-link {
       font-size: 16px;
       text-decoration: none;
-      color: var(--white);
-      transition: color 0.2s linear;
+      color: var(--black);
+      padding: 10px 15px;
+      border-radius: 10px;
+      transition: background 0.4s linear;
       &:hover {
-        color: var(--grey);
+        background-color: var(--grey);
+        color: black;
       }
     }
   }
@@ -24,45 +27,51 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 30%;
+    width: 150px;
     height: 100px;
+    &-img {
+      width: 100%;
+      height: 100%;
+      fill: #fff;
+    }
   }
 
   &-buy {
-    width: 25%;
+    width: 30%;
     height: 100px;
     display: flex;
     justify-content: center;
     align-items: center;
-    cursor: pointer;
-    &-icon {
-      margin-right: 7px;
-      &-icn {
-        width: 30px;
-        height: 30px;
-        fill: var(--white);
-      }
-    }
-    &-cartName {
-      font-size: 17px;
-      font-weight: 600;
-      color: var(--white);
-      padding-right: 10px;
-      margin-right: 10px;
-      border-right: 2px solid white;
-      transition: color 0.3s linear;
-      &:hover {
-        color: var(--grey);
-      }
-    }
-
-    &-price {
-      font-size: 16px;
-      font-weight: 700;
-      color: var(--white);
+    &-inner {
+      cursor: pointer;
       display: flex;
+      justify-content: center;
       align-items: center;
-      gap: 5px;
+      &-icon {
+        margin-right: 7px;
+        &-icn {
+          width: 30px;
+          height: 30px;
+          fill: var(--black);
+        }
+      }
+      &-cartName {
+        font-size: 17px;
+        font-weight: 600;
+        color: var(--black);
+        padding-right: 10px;
+        margin-right: 10px;
+        border-right: 2px solid var(--black);
+        transition: color 0.3s linear;
+      }
+      &-price {
+        font-size: 16px;
+        font-weight: 700;
+        color: var(--black);
+        display: flex;
+        align-items: center;
+        gap: 5px;
+      }
     }
   }
 
@@ -73,7 +82,7 @@
       display: flex;
       align-items: center;
       gap: 2px;
-      color: var(--white);
+      color: var(--black);
       &-icon {
         width: 18px;
         height: 18px;
