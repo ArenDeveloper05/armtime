@@ -7,7 +7,7 @@ const NavBar = () => {
       {navConfig.map((link) => {
         return (
           <Link className="header-inner-nav-link" key={link.id} to={link.link}>
-            {link.title.hy}
+            {link.title.en}
           </Link>
         );
       })}

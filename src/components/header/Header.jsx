@@ -21,13 +21,15 @@ const Header = () => {
             <img src={Logo} alt="logo" className="header-inner-logo-img" />
           </Link>
           <div className="header-inner-buy">
-            <div className="header-inner-buy-icon">
-              <SlBasket className="header-inner-buy-icon-icn" />
-            </div>
-            <div className="header-inner-buy-cartName">My cart</div>
-            <div className="header-inner-buy-price">
-              0
-              <TbCurrencyDram style={{ width: "18px", height: "18px" }} />
+            <div className="header-inner-buy-inner">
+              <div className="header-inner-buy-inner-icon">
+                <SlBasket className="header-inner-buy-inner-icon-icn" />
+              </div>
+              <div className="header-inner-buy-inner-cartName">My cart</div>
+              <div className="header-inner-buy-inner-price">
+                0
+                <TbCurrencyDram style={{ width: "18px", height: "18px" }} />
+              </div>
             </div>
           </div>
 
