@@ -1,12 +1,14 @@
+import { useSelector } from "react-redux";
+import WatchesListItem from "./watchesListItem/WatchesListItem";
+
 const WatchesList = () => {
+  const watchList = useSelector((state) => state.watches.watchList);
+
   return (
     <div className="watches-list">
-      <div className="watches-list-item">
-        <div className="watches-list-item-image"></div>
-        <div className="watches-list-item-description">
-          <h2>Title</h2>
-        </div>
-      </div>
+      {watchList.map((item) => {
+        return <WatchesListItem key={item.id} item={item} />;
+      })}
     </div>
   );
 };

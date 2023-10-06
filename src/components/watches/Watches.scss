@@ -1,6 +1,7 @@
 .watches {
   border: solid red;
   &-filter {
+    background-color: cyan;
     &-select {
       display: flex;
       align-items: center;
@@ -79,6 +80,7 @@
       }
     }
   }
+
   &-list {
     border: solid;
     margin-top: 32px;
@@ -86,16 +88,87 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+
     &-item {
-      width: 300px;
-      border: solid;
-      &-image {
-        height: 300px;
-        border: solid;
-        background-size: cover;
+      width: 380px;
+      min-height: 460px;
+      margin-top: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: 250ms;
+      border: 1px solid rgba(0, 0, 0, 0.2);
+
+      &:hover {
+        margin-top: 10px;
+        box-shadow: 1px 1px 10px 1px #c59d5f;
       }
+
+      &-image {
+        height: 350px;
+        position: relative;
+        color: white;
+        text-transform: capitalize;
+
+        > img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+
+        &-gender {
+          width: 100%;
+          padding-top: 10px;
+          position: absolute;
+          left: 0;
+          top: 0;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        &-isAvailable {
+          padding: 8px;
+          position: absolute;
+          left: 0;
+          bottom: 0;
+        }
+      }
+
       &-description {
+        // min-height: 200px;
         padding: 16px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        text-transform: capitalize;
+        color: black;
+
+        > p {
+          margin-bottom: 10px;
+        }
+
+        &-buy {
+          padding-top: 10px;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          border-top: solid 1px rgb(206, 206, 206);
+
+          &-btn {
+            border: none;
+            outline: none;
+            color: #fff;
+            padding: 8px 20px;
+            cursor: pointer;
+            background-color: #c59d5f;
+          }
+
+          &-price {
+            font-size: 18px;
+            color: #c59d5f;
+          }
+        }
       }
     }
   }
