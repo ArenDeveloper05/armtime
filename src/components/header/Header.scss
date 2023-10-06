@@ -75,6 +75,7 @@
   }
 
   &-language {
+    position: relative;
     cursor: pointer;
     &-lang {
       font-size: 16px;
@@ -86,6 +87,35 @@
         width: 18px;
         height: 18px;
         margin-top: 2px;
+        transition: transform 0.1s linear;
+      }
+    }
+
+    &-dialog {
+      width: 100px;
+      height: 70px;
+      position: absolute;
+      top: 30px;
+      right: -20px;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      justify-content: center;
+      align-items: center;
+      border-radius: 10px;
+      padding: 4px;
+      background-color: var(--white);
+      border: 3px solid var(--grey);
+      &-item {
+        width: 100%;
+        font-size: 15px;
+        text-transform: uppercase;
+        color: var(--black);
+        text-align: center;
+        transition: background 0.2s linear;
+        &:hover {
+          background-color: var(--grey);
+        }
       }
     }
   }
