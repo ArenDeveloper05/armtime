@@ -1,5 +1,4 @@
 import { useNavigate } from "react-router-dom";
-import { ROUTER } from "../../../../router/router";
 
 const WatchesListItem = ({ item }) => {
   const navigate = useNavigate();
@@ -19,7 +18,7 @@ const WatchesListItem = ({ item }) => {
           className="watches-list-item-image-isAvailable"
           style={{
             backgroundColor: item.isAvailable.includes("not available")
-              ? "#800020x" // #C41E3A
+              ? "#800020" // #C41E3A
               : "#01796F", // #8A9A5B
           }}
         >

@@ -1,0 +1,14 @@
+.counter {
+  width: 120px;
+  padding: 6px;
+  display: flex;
+  border-radius: 16px;
+  align-items: center;
+  justify-content: space-between;
+  border: solid 1px #d4d4d4;
+
+  &-btn {
+    cursor: pointer;
+    color: #929292;
+  }
+}
