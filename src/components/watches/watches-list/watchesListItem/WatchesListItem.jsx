@@ -1,6 +1,15 @@
+import { useNavigate } from "react-router-dom";
+import { ROUTER } from "../../../../router/router";
+
 const WatchesListItem = ({ item }) => {
+  const navigate = useNavigate();
   return (
-    <div className="watches-list-item">
+    <div
+      className="watches-list-item"
+      onClick={() => {
+        navigate(`/watches/${item.id}`);
+      }}
+    >
       <div className="watches-list-item-image">
         <div className="watches-list-item-image-gender">{item.gender}</div>
 

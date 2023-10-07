@@ -10,6 +10,7 @@ import { ROUTER } from "./router/router";
 import AboutUsPage from "./pages/AboutUsPage";
 import ContactUsPage from "./pages/ContactUsPage";
 import WatchesPage from "./pages/WatchesPage";
+import SingleWatchPage from "./pages/SingleWatchPage";
 
 const router = createBrowserRouter([
   {
@@ -27,6 +28,10 @@ const router = createBrowserRouter([
   {
     path: ROUTER.WATCHES_PAGE_ROUTE,
     element: <WatchesPage />,
+  },
+  {
+    path: ROUTER.SINGLE_WATCH_PAGE_ROUTE,
+    element: <SingleWatchPage />,
   },
 ]);
 
