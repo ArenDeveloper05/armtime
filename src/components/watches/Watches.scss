@@ -1,7 +1,6 @@
 .watches {
   border: solid red;
   &-filter {
-    background-color: cyan;
     &-select {
       display: flex;
       align-items: center;
@@ -90,6 +89,7 @@
     justify-content: space-between;
 
     &-item {
+      cursor: pointer;
       width: 380px;
       min-height: 460px;
       margin-top: 20px;
