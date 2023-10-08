@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router-dom";
+import { TbCurrencyDram } from "react-icons/tb";
 
 const WatchesListItem = ({ item }) => {
   const navigate = useNavigate();
@@ -18,8 +19,8 @@ const WatchesListItem = ({ item }) => {
           className="watches-list-item-image-isAvailable"
           style={{
             backgroundColor: item.isAvailable.includes("not available")
-              ? "#800020" // #C41E3A
-              : "#01796F", // #8A9A5B
+              ? "#C41E3A" // #C41E3A
+              : "#28B464", // #8A9A5B
           }}
         >
           {item.isAvailable}
@@ -38,11 +39,12 @@ const WatchesListItem = ({ item }) => {
         <p className="watches-list-item-description-type">Type: {item.type}</p>
 
         <div className="watches-list-item-description-buy">
-          <button className="watches-list-item-description-buy-btn">Buy</button>
-
           <p className="watches-list-item-description-buy-price">
             {item.price}
+            <TbCurrencyDram style={{ width: "17px", height: "17px" }} />
           </p>
+
+          <button className="watches-list-item-description-buy-btn">Buy</button>
         </div>
       </div>
     </div>

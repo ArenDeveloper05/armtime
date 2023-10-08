@@ -9,7 +9,7 @@ import { IoIosArrowDown } from "react-icons/io";
 import { ROUTER } from "../../router/router";
 import NavBar from "./navbar/NavBar";
 import Logo from "../../images/logo .svg";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 const Header = () => {
   const [activeLang, setActiveLang] = useState("Eng");

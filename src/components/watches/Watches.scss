@@ -83,29 +83,31 @@
   &-list {
     border: solid;
     margin-top: 32px;
-    padding: 24px;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    padding: 20px 10px;
 
     &-item {
       cursor: pointer;
-      width: 380px;
+      width: 300px;
       min-height: 460px;
-      margin-top: 20px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
       transition: 250ms;
       border: 1px solid rgba(0, 0, 0, 0.2);
+      border-radius: 5px;
 
       &:hover {
-        margin-top: 10px;
         box-shadow: 1px 1px 10px 1px #c59d5f;
       }
 
       &-image {
-        height: 350px;
+        height: 300px;
+        background-size: cover;
         position: relative;
         color: white;
         text-transform: capitalize;
@@ -156,17 +158,27 @@
           border-top: solid 1px rgb(206, 206, 206);
 
           &-btn {
-            border: none;
+            border: 1px solid var(--black);
             outline: none;
-            color: #fff;
+            color: var(--black);
             padding: 8px 20px;
             cursor: pointer;
-            background-color: #c59d5f;
+            background-color: var(--white);
+            border-radius: 10px;
+            transition: all 0.3s linear;
+            &:hover {
+              background-color: var(--grey);
+            }
           }
 
           &-price {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 2px;
             font-size: 18px;
-            color: #c59d5f;
+            font-weight: 500;
+            color: var(--black);
           }
         }
       }
