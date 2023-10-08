@@ -8,7 +8,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 25px;
+    gap: 12px;
     &:hover > :not(:hover) {
       opacity: 0.4;
     }
@@ -75,6 +75,8 @@
   }
 
   &-language {
+    width: 50px;
+    height: auto;
     position: relative;
     cursor: pointer;
     &-lang {

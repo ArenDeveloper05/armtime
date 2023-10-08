@@ -3,10 +3,10 @@ import "./HomeSlider.scss";
 //Components
 import Slider from "react-slick";
 //Images
-import slide1 from "../../images/slider/slide-1.webp";
-import slide2 from "../../images/slider/slide-2.jpg";
-import slide3 from "../../images/slider/slide-3.webp";
-import slide4 from "../../images/slider/slide-4.webp";
+import slide1 from "../../images/slider/slider-1.webp";
+import slide2 from "../../images/slider/slider-2.jpg";
+import slide3 from "../../images/slider/slider-3.webp";
+import slide4 from "../../images/slider/slider-4.jpg";
 
 const HomeSlider = () => {
   const settings = {
@@ -15,6 +15,7 @@ const HomeSlider = () => {
     speed: 1000,
     fade: true,
     cssEase: "linear",
+    autoplay: true,
     autoplay: true,
     autoplaySpeed: 3000,
     slidesToShow: 1,
