@@ -59,7 +59,6 @@ const Footer = () => {
           </div>
         </Container>
       </footer>
-      <div className="foot">"AWI Group" CJSC © 2023. All Rights Reserved.</div>
     </>
   );
 };

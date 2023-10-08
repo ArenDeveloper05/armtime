@@ -9,8 +9,13 @@ import { IoIosArrowDown } from "react-icons/io";
 import { ROUTER } from "../../router/router";
 import NavBar from "./navbar/NavBar";
 import Logo from "../../images/logo .svg";
+import { useState } from "react";
 
 const Header = () => {
+  const [activeLang, setActiveLang] = useState("Eng");
+  const [langs, setLangs] = useState(["Eng", "Rus", "Arm"]);
+  const [langDialogOpen, setLangDialogOpen] = useState(false);
+
   return (
     <header>
       <Container>
@@ -34,10 +39,37 @@ const Header = () => {
           </div>
 
           <div className="header-inner-language">
-            <div className="header-inner-language-lang">
-              Eng
-              <IoIosArrowDown className="header-inner-language-lang-icon" />
+            <div
+              className="header-inner-language-lang"
+              onClick={() => setLangDialogOpen(!langDialogOpen)}
+            >
+              {activeLang}
+              <IoIosArrowDown
+                className="header-inner-language-lang-icon"
+                style={{
+                  transform: langDialogOpen ? "rotate(180deg)" : "",
+                }}
+              />
             </div>
+            {langDialogOpen && (
+              <div className="header-inner-language-dialog">
+                {langs.map((lang) => {
+                  if (lang !== activeLang) {
+                    return (
+                      <div
+                        className="header-inner-language-dialog-item"
+                        onClick={() => {
+                          setActiveLang(lang);
+                          setLangDialogOpen(false);
+                        }}
+                      >
+                        {lang}
+                      </div>
+                    );
+                  }
+                })}
+              </div>
+            )}
           </div>
         </div>
       </Container>

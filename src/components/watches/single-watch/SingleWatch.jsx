@@ -7,7 +7,6 @@ const SingleWatch = () => {
 
   return (
     <div className="single-watch">
-      <h1>{id}</h1>
       <SingleWatchCard />
     </div>
   );
