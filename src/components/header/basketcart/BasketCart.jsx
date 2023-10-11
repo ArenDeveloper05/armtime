@@ -13,6 +13,18 @@ const BasketCart = () => {
   const basketWatches = useSelector(
     (state) => state.basketWatches.basketWatches
   );
+
+  const onCalcPrice = () => {
+    let price = 0;
+    if (basketWatches.length !== 0) {
+      basketWatches.map((watch) => {
+        price += +watch.price;
+        return "";
+      });
+    }
+
+    return +price;
+  };
   return (
     <div className="buy">
       <div
@@ -20,11 +32,12 @@ const BasketCart = () => {
         onClick={() => setBasketDialogOpen(!basketDialogOpen)}
       >
         <div className="buy-inner-icon">
+          <div className="buy-inner-icon-counter">{basketWatches.length}</div>
           <SlBasket className="buy-inner-icon-icn" />
         </div>
         <div className="buy-inner-cartName">My cart</div>
         <div className="buy-inner-price">
-          0
+          {onCalcPrice()}
           <TbCurrencyDram style={{ width: "18px", height: "18px" }} />
         </div>
       </div>
