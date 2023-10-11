@@ -1,8 +1,11 @@
 import { useNavigate } from "react-router-dom";
 import { TbCurrencyDram } from "react-icons/tb";
+import { useDispatch } from "react-redux";
+import { onAddWatch } from "../../../../redux/slices/basketWatchesSlice";
 
 const WatchesListItem = ({ item }) => {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
   return (
     <div
       className="watches-list-item"
@@ -44,7 +47,15 @@ const WatchesListItem = ({ item }) => {
             <TbCurrencyDram style={{ width: "17px", height: "17px" }} />
           </p>
 
-          <button className="watches-list-item-description-buy-btn">Buy</button>
+          <button
+            className="watches-list-item-description-buy-btn"
+            onClick={(e) => {
+              e.stopPropagation();
+              dispatch(onAddWatch(item));
+            }}
+          >
+            Buy
+          </button>
         </div>
       </div>
     </div>

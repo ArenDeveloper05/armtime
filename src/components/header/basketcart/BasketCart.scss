@@ -1,0 +1,127 @@
+.buy {
+  position: relative;
+  width: 30%;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &-inner {
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &-icon {
+      margin-right: 7px;
+      &-icn {
+        width: 30px;
+        height: 30px;
+        fill: var(--black);
+      }
+    }
+    &-cartName {
+      font-size: 17px;
+      font-weight: 600;
+      color: var(--black);
+      padding-right: 10px;
+      margin-right: 10px;
+      border-right: 2px solid var(--black);
+      transition: color 0.3s linear;
+    }
+    &-price {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--black);
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+  }
+
+  &-dialog {
+    width: 350px;
+    height: 200px;
+    background-color: var(--white);
+    border: 1px solid var(--black);
+    border-radius: 10px;
+
+    position: absolute;
+    top: 90px;
+    &-inner {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      overflow-y: scroll;
+      &-triIcon {
+        width: 30px;
+        height: 30px;
+        position: absolute;
+        bottom: 0px;
+        left: 45%;
+        z-index: 1000;
+        color: var(--black);
+      }
+
+      &-watchList {
+        width: 100%;
+        height: 90px;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 15px;
+        position: relative;
+        padding: 20px 10px;
+        margin-top: 10px;
+        &::after {
+          content: "";
+          width: 100%;
+          height: 1px;
+          background-color: var(--grey);
+          position: absolute;
+          bottom: -2px;
+          left: 0;
+        }
+        &-image {
+          width: 80px;
+          height: 80px;
+          border-radius: 10px;
+          overflow: hidden;
+          > img {
+            width: 100%;
+            height: 100%;
+          }
+        }
+
+        &-info {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          gap: 8px;
+          &-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--black);
+          }
+          &-price {
+            display: flex;
+            align-items: center;
+            gap: 2px;
+            font-size: 14px;
+          }
+          &-view {
+            color: var(--grey);
+          }
+        }
+
+        &-close {
+          position: absolute;
+          right: 15px;
+          &-icon {
+            cursor: pointer;
+            width: 25px;
+            height: 25px;
+          }
+        }
+      }
+    }
+  }
+}

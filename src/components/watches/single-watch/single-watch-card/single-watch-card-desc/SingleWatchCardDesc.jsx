@@ -1,6 +1,7 @@
 import SingleWatchCardBuy from "./single-watch-card-buy/SingleWatchCardBuy";
 import SingleWatchCardDeliveryInfo from "./single-watch-card-delivery-info/SingleWatchCardDeliveryInfo";
 import SingleWatchCardInfo from "./single-watch-card-info/SingleWatchCardInfo";
+import { TbCurrencyDram } from "react-icons/tb";
 
 const SingleWatchCardDesc = () => {
   return (
@@ -11,7 +12,10 @@ const SingleWatchCardDesc = () => {
 
       <p className="single-watch-card-description-code">A0001140-1</p>
 
-      <p className="single-watch-card-description-price">$3500</p>
+      <p className="single-watch-card-description-price">
+        3500
+        <TbCurrencyDram style={{ width: "20px", height: "20px" }} />
+      </p>
 
       <SingleWatchCardDeliveryInfo />
 
