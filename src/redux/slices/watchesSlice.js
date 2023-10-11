@@ -61,7 +61,7 @@ const initialState = {
       type: "quartz",
       color: "Gray",
       description: "",
-      gender: "Women's",
+      gender: "Ladies'",
     },
     {
       id: 6,
@@ -97,7 +97,7 @@ const initialState = {
       type: "automatic",
       color: "Black | Gold",
       description: "",
-      gender: "Women's",
+      gender: "Ladies'",
     },
     {
       id: 9,
@@ -121,7 +121,7 @@ const initialState = {
       type: "automatic",
       color: "Black | Gold",
       description: "",
-      gender: "Women's",
+      gender: "Ladies'",
     },
     {
       id: 11,

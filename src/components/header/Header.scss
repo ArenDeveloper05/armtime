@@ -35,45 +35,6 @@
     }
   }
 
-  &-buy {
-    width: 30%;
-    height: 100px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    &-inner {
-      cursor: pointer;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      &-icon {
-        margin-right: 7px;
-        &-icn {
-          width: 30px;
-          height: 30px;
-          fill: var(--black);
-        }
-      }
-      &-cartName {
-        font-size: 17px;
-        font-weight: 600;
-        color: var(--black);
-        padding-right: 10px;
-        margin-right: 10px;
-        border-right: 2px solid var(--black);
-        transition: color 0.3s linear;
-      }
-      &-price {
-        font-size: 16px;
-        font-weight: 700;
-        color: var(--black);
-        display: flex;
-        align-items: center;
-        gap: 5px;
-      }
-    }
-  }
-
   &-language {
     width: 50px;
     height: auto;

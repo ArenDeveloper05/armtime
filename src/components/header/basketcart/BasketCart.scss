@@ -1,0 +1,63 @@
+.buy {
+  position: relative;
+  width: 30%;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &-inner {
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &-icon {
+      margin-right: 7px;
+      &-icn {
+        width: 30px;
+        height: 30px;
+        fill: var(--black);
+      }
+    }
+    &-cartName {
+      font-size: 17px;
+      font-weight: 600;
+      color: var(--black);
+      padding-right: 10px;
+      margin-right: 10px;
+      border-right: 2px solid var(--black);
+      transition: color 0.3s linear;
+    }
+    &-price {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--black);
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+  }
+
+  &-dialog {
+    width: 350px;
+    height: 200px;
+    background-color: var(--white);
+    border: 1px solid var(--black);
+    border-radius: 10px;
+
+    position: absolute;
+    top: 90px;
+    &-inner {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      &-triIcon {
+        width: 30px;
+        height: 30px;
+        position: absolute;
+        top: -10%;
+        left: 45%;
+        color: var(--black);
+      }
+    }
+  }
+}
