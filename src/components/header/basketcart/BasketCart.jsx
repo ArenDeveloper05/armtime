@@ -6,6 +6,7 @@ import { SlBasket } from "react-icons/sl";
 import { TbCurrencyDram } from "react-icons/tb";
 import { VscTriangleUp } from "react-icons/vsc";
 import { useSelector } from "react-redux";
+import BasketWatchesList from "./basketwatcheslist/BasketWatchesList";
 
 const BasketCart = () => {
   const [basketDialogOpen, setBasketDialogOpen] = useState(false);
@@ -29,14 +30,16 @@ const BasketCart = () => {
       </div>
 
       {basketDialogOpen && (
-        <div className="buy-dialog">
-          <div className="buy-dialog-inner">
-            <VscTriangleUp className="buy-dialog-inner-triIcon" />
-            {basketWatches.map((watch) => {
-              return <div key={watch.id}>{watch.price}</div>;
-            })}
+        <>
+          <VscTriangleUp className="buy-dialog-inner-triIcon" />
+          <div className="buy-dialog">
+            <div className="buy-dialog-inner">
+              {basketWatches.map((watch) => {
+                return <BasketWatchesList watch={watch} key={watch.id} />;
+              })}
+            </div>
           </div>
-        </div>
+        </>
       )}
     </div>
   );

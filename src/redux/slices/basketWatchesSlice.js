@@ -9,11 +9,22 @@ const basketWatchesSlice = createSlice({
   initialState,
   reducers: {
     onAddWatch(state, action) {
-      state.basketWatches.push(action.payload);
+      let status = true;
+      // console.log(state.basketWatches.find((watch) => watch === action));
+      // state.basketWatches.push(action.payload);
+      state.basketWatches.forEach((watch) => {
+        if (watch.id === action.payload.id) status = false;
+      });
+      status && state.basketWatches.push(action.payload);
+    },
+    onRemoveWatch(state, action) {
+      state.basketWatches = state.basketWatches.filter(
+        (watch) => watch.id !== action.payload.id
+      );
     },
   },
 });
 
-export const { onAddWatch } = basketWatchesSlice.actions;
+export const { onAddWatch, onRemoveWatch } = basketWatchesSlice.actions;
 
 export default basketWatchesSlice.reducer;
