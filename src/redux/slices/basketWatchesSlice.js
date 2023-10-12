@@ -10,8 +10,6 @@ const basketWatchesSlice = createSlice({
   reducers: {
     onAddWatch(state, action) {
       let status = true;
-      // console.log(state.basketWatches.find((watch) => watch === action));
-      // state.basketWatches.push(action.payload);
       state.basketWatches.forEach((watch) => {
         if (watch.id === action.payload.id) status = false;
       });
