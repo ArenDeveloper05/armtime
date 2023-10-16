@@ -8,7 +8,7 @@ const PageBanner = ({ mainTitle }) => {
       <div className="page-banner-inner">
         <h1>{mainTitle}</h1>
         <p>
-          <Link>Home</Link>/<Link>Watches</Link>
+          <Link>Home</Link> / <Link>Watches</Link>
         </p>
       </div>
     </div>

@@ -13,6 +13,15 @@ export const navConfig = [
   {
     id: 2,
     title: {
+      hy: "Գոտիներ",
+      en: "Bands",
+      ru: "Ремены",
+    },
+    link: ROUTER.BANDS_PAGE_ROUTE,
+  },
+  {
+    id: 3,
+    title: {
       hy: "Երաշխիք",
       en: "Guarantee",
       ru: "Гарантия",
@@ -20,7 +29,7 @@ export const navConfig = [
     link: ROUTER.WATCHES_PAGE_ROUTE,
   },
   {
-    id: 3,
+    id: 4,
     title: {
       hy: "Մեր մասին",
       en: "About us",
@@ -29,7 +38,7 @@ export const navConfig = [
     link: ROUTER.ABOUTUS_PAGE_ROUTE,
   },
   {
-    id: 4,
+    id: 5,
     title: {
       hy: "Կապ մեզ հետ",
       en: "Contact us",

@@ -42,26 +42,27 @@ const BasketCart = () => {
         </div>
       </div>
 
-      {basketDialogOpen && (
-        <>
-          <VscTriangleUp className="buy-dialog-inner-triIcon" />
-          <div className="buy-dialog">
-            <div className="buy-dialog-inner">
-              {basketWatches.map((watch) => {
-                return <BasketWatchesList watch={watch} key={watch.id} />;
-              })}
-            </div>
-            <div className="buy-dialog-inner-foot">
-              <div className="buy-dialog-inner-foot-text">Total*</div>
-              <div className="buy-dialog-inner-foot-price">
-                {onCalcPrice()}
-                <TbCurrencyDram style={{ width: "15px", height: "15px" }} />
+      {basketDialogOpen ||
+        (basketWatches.length !== 0 && (
+          <>
+            <VscTriangleUp className="buy-dialog-inner-triIcon" />
+            <div className="buy-dialog">
+              <div className="buy-dialog-inner">
+                {basketWatches.map((watch) => {
+                  return <BasketWatchesList watch={watch} key={watch.id} />;
+                })}
               </div>
-              <div className="buy-dialog-inner-foot-button">Put Order</div>
+              <div className="buy-dialog-inner-foot">
+                <div className="buy-dialog-inner-foot-text">Total*</div>
+                <div className="buy-dialog-inner-foot-price">
+                  {onCalcPrice()}
+                  <TbCurrencyDram style={{ width: "15px", height: "15px" }} />
+                </div>
+                <div className="buy-dialog-inner-foot-button">Put Order</div>
+              </div>
             </div>
-          </div>
-        </>
-      )}
+          </>
+        ))}
     </div>
   );
 };
