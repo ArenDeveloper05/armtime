@@ -1,7 +1,6 @@
 //Scss
 import "./Footer.scss";
 //Components
-import Container from "../container/Container";
 import { FaPhone } from "react-icons/fa6";
 import { CgMail } from "react-icons/cg";
 import { FaFacebookSquare, FaInstagram } from "react-icons/fa";
