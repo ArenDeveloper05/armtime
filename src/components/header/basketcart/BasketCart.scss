@@ -67,6 +67,7 @@
       height: 100%;
       position: relative;
       overflow-y: scroll;
+      padding-bottom: 50px;
       &-triIcon {
         width: 30px;
         height: 30px;
@@ -143,6 +144,49 @@
             cursor: pointer;
             width: 25px;
             height: 25px;
+          }
+        }
+      }
+      &-foot {
+        width: 100%;
+        height: 50px;
+        background-color: red;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 15px;
+        background-color: var(--white);
+        border-top: 1px solid var(--grey);
+        border-end-start-radius: 10px;
+        border-end-end-radius: 10px;
+        &-text {
+          font-size: 15px;
+          line-height: 120%;
+          font-weight: 500;
+        }
+        &-price {
+          font-size: 15px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          gap: 2px;
+        }
+        &-button {
+          font-size: 14px;
+          font-weight: 500;
+          background-color: red;
+          padding: 10px;
+          border-radius: 12px;
+          border: 1px solid var(--grey);
+          background-color: var(--white);
+          cursor: pointer;
+          transition: all 0.3s linear;
+          &:hover {
+            background-color: var(--grey);
+            border: 1px solid var(--black);
           }
         }
       }

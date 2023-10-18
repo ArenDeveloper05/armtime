@@ -1,5 +1,11 @@
 import { ROUTER } from "./router/router";
 
+export const langs = [
+  { id: 1, title: "ARM" },
+  { id: 2, title: "ENG" },
+  { id: 3, title: " RUS" },
+];
+
 export const navConfig = [
   {
     id: 1,
@@ -13,6 +19,15 @@ export const navConfig = [
   {
     id: 2,
     title: {
+      hy: "Գոտիներ",
+      en: "Belts",
+      ru: "Ремены",
+    },
+    link: ROUTER.BELTS_PAGE_ROUTE,
+  },
+  {
+    id: 3,
+    title: {
       hy: "Երաշխիք",
       en: "Guarantee",
       ru: "Гарантия",
@@ -20,7 +35,7 @@ export const navConfig = [
     link: ROUTER.WATCHES_PAGE_ROUTE,
   },
   {
-    id: 3,
+    id: 4,
     title: {
       hy: "Մեր մասին",
       en: "About us",
@@ -29,7 +44,7 @@ export const navConfig = [
     link: ROUTER.ABOUTUS_PAGE_ROUTE,
   },
   {
-    id: 4,
+    id: 5,
     title: {
       hy: "Կապ մեզ հետ",
       en: "Contact us",
@@ -44,7 +59,35 @@ export const filterSelectConfig = {
   en: "SELECT YOUR WATCH",
   ru: "ВЫБЕРИТЕ СВОИ ЧАСЫ",
 };
-export const filterOptionsConfig = [
+
+export const filterGenderConfig = [
+  {
+    id: 1,
+    title: {
+      hy: "Բոլորը",
+      en: "All",
+      ru: "Все",
+    },
+  },
+  {
+    id: 2,
+    title: {
+      hy: "Տղամարդու",
+      en: "Men",
+      ru: "Мужские",
+    },
+  },
+  {
+    id: 3,
+    title: {
+      hy: "Կանացի",
+      en: "Women",
+      ru: "Женские",
+    },
+  },
+];
+
+export const filterKindsConfig = [
   {
     id: 1,
     title: {
