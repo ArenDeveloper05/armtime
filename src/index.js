@@ -6,6 +6,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { Provider } from "react-redux";
 import store, { persistor } from "./redux/store";
 import { PersistGate } from "redux-persist/integration/react";
+import storage from "redux-persist/lib/storage"; //
 import HomePage from "./pages/HomePage";
 import { ROUTER } from "./router/router";
 import AboutUsPage from "./pages/AboutUsPage";
