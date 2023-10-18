@@ -12,6 +12,7 @@ import AboutUsPage from "./pages/AboutUsPage";
 import ContactUsPage from "./pages/ContactUsPage";
 import WatchesPage from "./pages/WatchesPage";
 import SingleWatchPage from "./pages/SingleWatchPage";
+import BeltsPage from "./pages/BeltsPage";
 
 const router = createBrowserRouter([
   {
@@ -29,6 +30,10 @@ const router = createBrowserRouter([
   {
     path: ROUTER.WATCHES_PAGE_ROUTE,
     element: <WatchesPage />,
+  },
+  {
+    path: ROUTER.BELTS_PAGE_ROUTE,
+    element: <BeltsPage />,
   },
   {
     path: ROUTER.SINGLE_WATCH_PAGE_ROUTE,
