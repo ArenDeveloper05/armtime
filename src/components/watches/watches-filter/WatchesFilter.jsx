@@ -7,14 +7,16 @@ import {
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { filterWatches } from "../../../redux/slices/watchesSlice";
+import { VscTriangleUp } from "react-icons/vsc";
 
 const activeOptionStyles = {
-  backgroundColor: "black",
-  color: "white",
+  backgroundColor: "#e0e0e0",
+  color: "#090606",
+  border: "1px solid #f6f9fc",
 };
 
 const WatchesFilter = () => {
-  const lang = "hy";
+  const lang = "en";
   const [filterOpen, setFilterOpen] = useState(false);
   const [filterData, setFilterData] = useState({
     gender: filterGenderConfig[0].title[lang],
@@ -53,7 +55,7 @@ const WatchesFilter = () => {
         className="watches-filter-options"
         style={{ display: filterOpen ? "flex" : "none" }}
       >
-        <div className="traingle"></div>
+        <VscTriangleUp className="watches-filter-options-triangle" />
         <div className="watches-filter-options-gender">
           {filterGenderConfig.map(({ id, title }) => {
             return (
@@ -90,7 +92,7 @@ const WatchesFilter = () => {
             );
           })}
         </div>
-        <button onClick={implementFilter}>Kirarel filtry</button>
+        <button onClick={implementFilter}>filter</button>
       </div>
     </div>
   );
