@@ -20,10 +20,10 @@ export const navConfig = [
     id: 2,
     title: {
       hy: "Գոտիներ",
-      en: "Bands",
+      en: "Belts",
       ru: "Ремены",
     },
-    link: ROUTER.BANDS_PAGE_ROUTE,
+    link: ROUTER.BELTS_PAGE_ROUTE,
   },
   {
     id: 3,

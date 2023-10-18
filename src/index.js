@@ -12,7 +12,7 @@ import AboutUsPage from "./pages/AboutUsPage";
 import ContactUsPage from "./pages/ContactUsPage";
 import WatchesPage from "./pages/WatchesPage";
 import SingleWatchPage from "./pages/SingleWatchPage";
-import BandsPage from "./pages/BandsPage";
+import BeltsPage from "./pages/BeltsPage";
 
 const router = createBrowserRouter([
   {
@@ -32,8 +32,8 @@ const router = createBrowserRouter([
     element: <WatchesPage />,
   },
   {
-    path: ROUTER.BANDS_PAGE_ROUTE,
-    element: <BandsPage />,
+    path: ROUTER.BELTS_PAGE_ROUTE,
+    element: <BeltsPage />,
   },
   {
     path: ROUTER.SINGLE_WATCH_PAGE_ROUTE,
