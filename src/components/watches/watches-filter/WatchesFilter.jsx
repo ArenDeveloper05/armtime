@@ -1,9 +1,43 @@
 import { RiEqualizerLine } from "react-icons/ri";
-import { filterSelectConfig, filterOptionsConfig } from "../../../config";
+import {
+  filterSelectConfig,
+  filterKindsConfig,
+  filterGenderConfig,
+} from "../../../config";
 import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { filterWatches } from "../../../redux/slices/watchesSlice";
+
+const activeOptionStyles = {
+  backgroundColor: "black",
+  color: "white",
+};
 
 const WatchesFilter = () => {
+  const lang = "hy";
   const [filterOpen, setFilterOpen] = useState(false);
+  const [filterData, setFilterData] = useState({
+    gender: filterGenderConfig[0].title[lang],
+    type: filterGenderConfig[0].title[lang],
+  });
+
+  const dispatch = useDispatch();
+
+  const selectType = (kind, option) => {
+    if (filterData[kind] !== option) {
+      setFilterData((prev) => {
+        return {
+          ...prev,
+          [kind]: option,
+        };
+      });
+    }
+  };
+
+  const implementFilter = () => {
+    dispatch(filterWatches(filterData));
+  };
+
   return (
     <div className="watches-filter">
       <div
@@ -13,7 +47,7 @@ const WatchesFilter = () => {
         }}
       >
         <RiEqualizerLine />
-        <span>{filterSelectConfig["hy"]}</span>
+        <span>{filterSelectConfig[lang]}</span>
       </div>
       <div
         className="watches-filter-options"
@@ -21,20 +55,42 @@ const WatchesFilter = () => {
       >
         <div className="traingle"></div>
         <div className="watches-filter-options-gender">
-          <div className="watches-filter-options-gender-item">Bolory</div>
-          <div className="watches-filter-options-gender-item">Txamardu</div>
-          <div className="watches-filter-options-gender-item">Kanaci</div>
-        </div>
-        <div className="watches-filter-options-types">
-          {filterOptionsConfig.map(({ id, title }) => {
+          {filterGenderConfig.map(({ id, title }) => {
             return (
-              <div className="watches-filter-options-types-option" key={id}>
-                {title["hy"]}
+              <div
+                className="watches-filter-options-gender-item"
+                key={id}
+                onClick={() => {
+                  selectType("gender", title[lang]);
+                }}
+                style={
+                  filterData.gender === title[lang] ? activeOptionStyles : {}
+                }
+              >
+                {title[lang]}
               </div>
             );
           })}
         </div>
-        <button>Kirarel filtry</button>
+        <div className="watches-filter-options-types">
+          {filterKindsConfig.map(({ id, title }) => {
+            return (
+              <div
+                className="watches-filter-options-types-option"
+                key={id}
+                onClick={() => {
+                  selectType("type", title[lang]);
+                }}
+                style={
+                  filterData.type === title[lang] ? activeOptionStyles : {}
+                }
+              >
+                {title[lang]}
+              </div>
+            );
+          })}
+        </div>
+        <button onClick={implementFilter}>Kirarel filtry</button>
       </div>
     </div>
   );
