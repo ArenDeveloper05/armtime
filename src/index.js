@@ -15,6 +15,8 @@ import WatchesPage from "./pages/WatchesPage";
 import SingleWatchPage from "./pages/SingleWatchPage";
 import BeltsPage from "./pages/BeltsPage";
 
+//
+
 const router = createBrowserRouter([
   {
     path: ROUTER.HOME_PAGE_ROUTE,
