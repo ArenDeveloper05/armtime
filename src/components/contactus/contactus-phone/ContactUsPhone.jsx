@@ -22,7 +22,9 @@ const ContactUsPhone = () => {
 
       <div className="contact-us-with-phone-prnt">
         {showPhoneNumber && (
-          <p className="contact-us-with-phone-prnt-txt">+1 12121212</p>
+          <p className="contact-us-with-phone-prnt-txt">
+            +374 ( 93 ) 45 - 35 - 50
+          </p>
         )}
         <BsFillTelephoneFill
           onClick={handleShowPhoneNumber}

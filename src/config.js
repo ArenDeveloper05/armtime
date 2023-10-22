@@ -114,6 +114,39 @@ export const filterKindsConfig = [
   },
 ];
 
+export const filterSelectBeltConfig = {
+  hy: "ԸՆՏՐԵՔ ՁԵՐ ԳՈՏԻՆ",
+  en: "SELECT YOUR BELT",
+  ru: "ВЫБЕРИТЕ СВОИ РЕМЕНЬ",
+};
+
+export const filterBeltConfig = [
+  {
+    id: 1,
+    title: {
+      hy: "Բոլորը",
+      en: "All",
+      ru: "Все",
+    },
+  },
+  {
+    id: 2,
+    title: {
+      hy: "օձի կաշվով",
+      en: "with snake skin",
+      ru: "в змеиной коже",
+    },
+  },
+  {
+    id: 3,
+    title: {
+      hy: "կոկորդիլոսի կաշվով",
+      en: "with crocodile skin",
+      ru: "с крокодиловой кожей",
+    },
+  },
+];
+
 // export const watchListConfig = [
 //   {
 //     id: 1,

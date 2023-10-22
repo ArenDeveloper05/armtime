@@ -84,3 +84,33 @@
     }
   }
 }
+
+@media (max-width: 1231px) {
+  .header-inner {
+    &-nav {
+      &-link {
+        font-size: 13px;
+      }
+    }
+
+    &-logo {
+      width: 140px;
+      height: 90px;
+      &-img {
+      }
+    }
+
+    &-language {
+      &-lang {
+        font-size: 15px;
+        &-icon {
+        }
+      }
+
+      &-dialog {
+        &-item {
+        }
+      }
+    }
+  }
+}
