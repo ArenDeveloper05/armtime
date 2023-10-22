@@ -1,10 +1,5 @@
 import { RiEqualizerLine } from "react-icons/ri";
-import {
-  filterSelectBeltConfig,
-  filterKindsConfig,
-  filterGenderConfig,
-  filterBeltConfig,
-} from "../../../config";
+import { filterSelectBeltConfig, filterBeltConfig } from "../../../config";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { filterWatches } from "../../../redux/slices/watchesSlice";
@@ -16,9 +11,8 @@ const activeOptionStyles = {
   border: "1px solid #f6f9fc",
 };
 
-const BeltsFilter = () => {
+const BeltsFilter = ({ filterOpen, setFilterOpen }) => {
   const lang = "en";
-  const [filterOpen, setFilterOpen] = useState(false);
   const [filterData, setFilterData] = useState({
     belt: filterBeltConfig[0].title[lang],
   });
@@ -44,7 +38,10 @@ const BeltsFilter = () => {
       <div
         className="filter-inner-select"
         onClick={() => {
-          setFilterOpen((prev) => !prev);
+          setFilterOpen({
+            beltOpen: !filterOpen.beltOpen,
+            watchOpen: false,
+          });
         }}
       >
         <RiEqualizerLine />
@@ -53,7 +50,7 @@ const BeltsFilter = () => {
 
       <div
         className="filter-inner-beltOptions"
-        style={{ display: filterOpen ? "flex" : "none" }}
+        style={{ display: filterOpen.beltOpen ? "flex" : "none" }}
       >
         <VscTriangleUp className="filter-inner-beltOptions-beltTriangle" />
         <div className="filter-inner-beltOptions-belts">

@@ -15,9 +15,8 @@ const activeOptionStyles = {
   border: "1px solid #f6f9fc",
 };
 
-const WatchesFilter = () => {
+const WatchesFilter = ({ filterOpen, setFilterOpen }) => {
   const lang = "en";
-  const [filterOpen, setFilterOpen] = useState(false);
   const [filterData, setFilterData] = useState({
     gender: filterGenderConfig[0].title[lang],
     type: filterGenderConfig[0].title[lang],
@@ -45,7 +44,10 @@ const WatchesFilter = () => {
       <div
         className="filter-inner-select"
         onClick={() => {
-          setFilterOpen((prev) => !prev);
+          setFilterOpen({
+            beltOpen: false,
+            watchOpen: !filterOpen.watchOpen,
+          });
         }}
       >
         <RiEqualizerLine />
@@ -54,7 +56,7 @@ const WatchesFilter = () => {
 
       <div
         className="filter-inner-options"
-        style={{ display: filterOpen ? "flex" : "none" }}
+        style={{ display: filterOpen.watchOpen ? "flex" : "none" }}
       >
         <VscTriangleUp className="filter-inner-options-triangle" />
         <div className="filter-inner-options-gender">
