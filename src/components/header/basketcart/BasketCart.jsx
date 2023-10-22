@@ -1,5 +1,5 @@
 //Scss
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./BasketCart.scss";
 
 import { SlBasket } from "react-icons/sl";
@@ -29,7 +29,7 @@ const BasketCart = () => {
     <div className="buy">
       <div
         className="buy-inner"
-        onClick={() => setBasketDialogOpen(!basketDialogOpen)}
+        onClick={() => setBasketDialogOpen((prev) => !prev)}
       >
         <div className="buy-inner-icon">
           <div className="buy-inner-icon-counter">{basketWatches.length}</div>
@@ -42,8 +42,8 @@ const BasketCart = () => {
         </div>
       </div>
 
-      {basketDialogOpen ||
-        (basketWatches.length !== 0 && (
+      {basketDialogOpen &&
+        (basketWatches.length === 0 ? setBasketDialogOpen(false) : true) && (
           <>
             <VscTriangleUp className="buy-dialog-inner-triIcon" />
             <div className="buy-dialog">
@@ -62,7 +62,7 @@ const BasketCart = () => {
               </div>
             </div>
           </>
-        ))}
+        )}
     </div>
   );
 };

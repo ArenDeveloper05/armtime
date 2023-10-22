@@ -41,9 +41,9 @@ const WatchesFilter = () => {
   };
 
   return (
-    <div className="watches-filter">
+    <>
       <div
-        className="watches-filter-select"
+        className="filter-inner-select"
         onClick={() => {
           setFilterOpen((prev) => !prev);
         }}
@@ -51,16 +51,17 @@ const WatchesFilter = () => {
         <RiEqualizerLine />
         <span>{filterSelectConfig[lang]}</span>
       </div>
+
       <div
-        className="watches-filter-options"
+        className="filter-inner-options"
         style={{ display: filterOpen ? "flex" : "none" }}
       >
-        <VscTriangleUp className="watches-filter-options-triangle" />
-        <div className="watches-filter-options-gender">
+        <VscTriangleUp className="filter-inner-options-triangle" />
+        <div className="filter-inner-options-gender">
           {filterGenderConfig.map(({ id, title }) => {
             return (
               <div
-                className="watches-filter-options-gender-item"
+                className="filter-inner-options-gender-item"
                 key={id}
                 onClick={() => {
                   selectType("gender", title[lang]);
@@ -74,11 +75,11 @@ const WatchesFilter = () => {
             );
           })}
         </div>
-        <div className="watches-filter-options-types">
+        <div className="filter-inner-options-types">
           {filterKindsConfig.map(({ id, title }) => {
             return (
               <div
-                className="watches-filter-options-types-option"
+                className="filter-inner-options-types-option"
                 key={id}
                 onClick={() => {
                   selectType("type", title[lang]);
@@ -94,7 +95,7 @@ const WatchesFilter = () => {
         </div>
         <button onClick={implementFilter}>filter</button>
       </div>
-    </div>
+    </>
   );
 };
 

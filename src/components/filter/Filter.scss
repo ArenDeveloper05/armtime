@@ -1,0 +1,154 @@
+.filter {
+  width: 100%;
+  height: 100px;
+  &-inner {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 25px;
+    position: relative;
+    &-select {
+      display: flex;
+      align-items: center;
+      width: max-content;
+      color: var(--black);
+      padding: 8px;
+      cursor: pointer;
+      border: 1px solid var(--grey);
+      transition: 0.25s;
+      &:hover {
+        box-shadow: 6px 6px 10px black;
+      }
+      > svg {
+        width: 24px;
+        height: 24px;
+        margin-right: 8px;
+      }
+      > span {
+        font-size: 16px;
+        font-weight: bold;
+      }
+    }
+    &-options {
+      background-color: var(--white);
+      padding: 22px 28px;
+      padding-bottom: 16px;
+      max-width: max-content;
+      border: 3px solid var(--grey);
+      border-radius: 5px;
+      margin-top: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      position: absolute;
+      top: 70px;
+      left: 0;
+      z-index: 999;
+      &-triangle {
+        width: 36px;
+        height: 36px;
+        position: absolute;
+        top: -16%;
+      }
+      &-gender {
+        display: flex;
+        gap: 16px;
+        &-item {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          cursor: pointer;
+          border: 1px solid var(--black);
+          padding: 6px 12px;
+          border-radius: 16px;
+          font-weight: 500;
+        }
+      }
+      &-types {
+        display: flex;
+        gap: 16px;
+        &-option {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          cursor: pointer;
+          border: 1px solid var(--black);
+          padding: 6px 12px;
+          border-radius: 16px;
+          font-weight: 500;
+        }
+      }
+      > button {
+        background-color: var(--white);
+        color: var(--black);
+        border: 2px solid var(--grey);
+        border-radius: 7px;
+        width: 40%;
+        padding: 6px 12px;
+        font-weight: 500;
+        font-size: 16px;
+        cursor: pointer;
+        align-self: flex-end;
+        transition: background 0.3s linear;
+        &:hover {
+          background-color: var(--grey);
+        }
+      }
+    }
+    &-beltOptions {
+      background-color: var(--white);
+      padding: 22px 28px;
+      padding-bottom: 16px;
+      max-width: max-content;
+      border: 3px solid var(--grey);
+      border-radius: 5px;
+      margin-top: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      position: absolute;
+      top: 70px;
+      left: 20%;
+      z-index: 999;
+      &-belts {
+        display: flex;
+        gap: 16px;
+        &-item {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          cursor: pointer;
+          border: 1px solid var(--black);
+          padding: 6px 12px;
+          border-radius: 16px;
+          font-weight: 500;
+        }
+      }
+      > button {
+        background-color: var(--white);
+        color: var(--black);
+        border: 2px solid var(--grey);
+        border-radius: 7px;
+        width: 40%;
+        padding: 6px 12px;
+        font-weight: 500;
+        font-size: 16px;
+        cursor: pointer;
+        align-self: flex-end;
+        transition: background 0.3s linear;
+        &:hover {
+          background-color: var(--grey);
+        }
+      }
+      &-beltTriangle {
+        width: 36px;
+        height: 36px;
+        position: absolute;
+        top: -22%;
+        z-index: 998;
+      }
+    }
+  }
+}
