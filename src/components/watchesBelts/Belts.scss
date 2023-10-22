@@ -1,0 +1,73 @@
+.belts {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 20px 10px;
+  //   background-color: green;
+
+  &-item {
+    width: 300px;
+    // min-height: 460px;
+    margin: 10px auto;
+    cursor: pointer;
+    transition: 250ms;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    // background-color: cyan;
+
+    &:hover {
+      box-shadow: 1px 1px 10px 1px #c59d5f;
+    }
+
+    &-images {
+      width: 100%;
+      //   background-color: yellow;
+
+      > img {
+        width: 100%;
+        height: 260px;
+        object-fit: cover;
+      }
+    }
+
+    &-description {
+      padding: 16px;
+      //   background-color: blue;
+
+      &-buy {
+        display: flex;
+        margin-top: 10px;
+        padding: 16px 0px;
+        align-items: center;
+        justify-content: space-between;
+        border-top: 1px solid rgb(206, 206, 206);
+        // background-color: pink;
+
+        &-btn {
+          border: 1px solid var(--black);
+          outline: none;
+          color: var(--black);
+          padding: 8px 20px;
+          cursor: pointer;
+          background-color: var(--white);
+          border-radius: 10px;
+          transition: all 0.3s linear;
+
+          &:hover {
+            background-color: var(--grey);
+          }
+        }
+
+        &-price {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          gap: 2px;
+          font-size: 18px;
+          font-weight: 500;
+          color: var(--black);
+        }
+      }
+    }
+  }
+}
