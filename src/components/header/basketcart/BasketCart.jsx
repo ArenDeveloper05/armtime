@@ -1,5 +1,5 @@
 //Scss
-import { useEffect, useState } from "react";
+import { useRef, useState } from "react";
 import "./BasketCart.scss";
 
 import { SlBasket } from "react-icons/sl";
@@ -7,9 +7,11 @@ import { TbCurrencyDram } from "react-icons/tb";
 import { VscTriangleUp } from "react-icons/vsc";
 import { useSelector } from "react-redux";
 import BasketWatchesList from "./basketwatcheslist/BasketWatchesList";
+import useOutsideClick from "../../../utils/hooks/useOutsideClick";
 
 const BasketCart = () => {
   const [basketDialogOpen, setBasketDialogOpen] = useState(false);
+  const cartRef = useRef();
   const basketWatches = useSelector(
     (state) => state.basketWatches.basketWatches
   );
@@ -25,8 +27,15 @@ const BasketCart = () => {
 
     return +price;
   };
+
+  useOutsideClick(cartRef, () => {
+    if (basketDialogOpen) {
+      setBasketDialogOpen(false);
+      // alert("asd");
+    }
+  });
   return (
-    <div className="buy">
+    <div className="buy" ref={cartRef}>
       <div
         className="buy-inner"
         onClick={() => setBasketDialogOpen((prev) => !prev)}
@@ -46,7 +55,7 @@ const BasketCart = () => {
         (basketWatches.length === 0 ? setBasketDialogOpen(false) : true) && (
           <>
             <VscTriangleUp className="buy-dialog-inner-triIcon" />
-            <div className="buy-dialog">
+            <div className="buy-dialog ">
               <div className="buy-dialog-inner">
                 {basketWatches.map((watch) => {
                   return <BasketWatchesList watch={watch} key={watch.id} />;
