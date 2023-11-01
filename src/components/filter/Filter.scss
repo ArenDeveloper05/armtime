@@ -50,7 +50,7 @@
         width: 36px;
         height: 36px;
         position: absolute;
-        top: -16%;
+        top: -22%;
       }
       &-gender {
         display: flex;
@@ -108,22 +108,6 @@
           padding: 6px 12px;
           border-radius: 16px;
           font-weight: 500;
-        }
-      }
-      > button {
-        background-color: var(--white);
-        color: var(--black);
-        border: 2px solid var(--grey);
-        border-radius: 7px;
-        width: 40%;
-        padding: 6px 12px;
-        font-weight: 500;
-        font-size: 16px;
-        cursor: pointer;
-        align-self: flex-end;
-        transition: background 0.3s linear;
-        &:hover {
-          background-color: var(--grey);
         }
       }
       &-beltTriangle {
