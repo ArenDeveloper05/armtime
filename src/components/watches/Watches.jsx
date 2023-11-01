@@ -1,4 +1,5 @@
 import Container from "../container/Container";
+import Filter from "../filter/Filter";
 import "./Watches.scss";
 import WatchesList from "./watches-list/WatchesList";
 
@@ -7,6 +8,7 @@ const Watches = () => {
     <section className="watches">
       <Container>
         {/* <WatchesFilter /> */}
+        <Filter filterName="watches" />
         <WatchesList />
       </Container>
     </section>

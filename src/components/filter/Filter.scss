@@ -5,7 +5,7 @@
     width: 100%;
     height: 100px;
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-between;
     align-items: center;
     gap: 25px;
     position: relative;
@@ -80,22 +80,6 @@
           font-weight: 500;
         }
       }
-      > button {
-        background-color: var(--white);
-        color: var(--black);
-        border: 2px solid var(--grey);
-        border-radius: 7px;
-        width: 40%;
-        padding: 6px 12px;
-        font-weight: 500;
-        font-size: 16px;
-        cursor: pointer;
-        align-self: flex-end;
-        transition: background 0.3s linear;
-        &:hover {
-          background-color: var(--grey);
-        }
-      }
     }
     &-beltOptions {
       background-color: var(--white);
@@ -110,7 +94,7 @@
       gap: 16px;
       position: absolute;
       top: 70px;
-      left: 20%;
+      left: 0;
       z-index: 999;
       &-belts {
         display: flex;
@@ -146,9 +130,41 @@
         width: 36px;
         height: 36px;
         position: absolute;
-        top: -22%;
+        top: -35%;
         // left: 15%;
         z-index: 998;
+      }
+    }
+    &-rangeSlider {
+      width: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      &-value {
+        font-size: 16px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 2px;
+        width: 100px;
+        height: 100%;
+        // background-color: red;
+      }
+    }
+    > button {
+      background-color: var(--white);
+      color: var(--black);
+      border: 2px solid var(--grey);
+      border-radius: 7px;
+      width: 10%;
+      padding: 6px 12px;
+      font-weight: 500;
+      font-size: 16px;
+      cursor: pointer;
+      // align-self: flex-end;
+      transition: background 0.3s linear;
+      &:hover {
+        background-color: var(--grey);
       }
     }
   }
