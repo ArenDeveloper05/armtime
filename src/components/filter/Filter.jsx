@@ -41,7 +41,7 @@ const Filter = ({ filterName }) => {
     belt: filterBeltConfig[0].title[lang],
     price: value,
   });
-
+  //useEffect
   useEffect(() => {
     if (filterName === "watches") {
       setFilterWatchData((prev) => {
