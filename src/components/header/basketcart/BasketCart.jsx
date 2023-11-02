@@ -1,5 +1,5 @@
 //Scss
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import "./BasketCart.scss";
 
 import { SlBasket } from "react-icons/sl";
@@ -15,6 +15,12 @@ const BasketCart = () => {
   const basketWatches = useSelector(
     (state) => state.basketWatches.basketWatches
   );
+
+  useEffect(() => {
+    if (basketWatches.length === 0) {
+      setBasketDialogOpen(false);
+    }
+  }, [basketWatches.length]);
 
   const onCalcPrice = () => {
     let price = 0;
@@ -51,27 +57,26 @@ const BasketCart = () => {
         </div>
       </div>
 
-      {basketDialogOpen &&
-        (basketWatches.length === 0 ? setBasketDialogOpen(false) : true) && (
-          <>
-            <VscTriangleUp className="buy-dialog-inner-triIcon" />
-            <div className="buy-dialog ">
-              <div className="buy-dialog-inner">
-                {basketWatches.map((watch) => {
-                  return <BasketWatchesList watch={watch} key={watch.id} />;
-                })}
-              </div>
-              <div className="buy-dialog-inner-foot">
-                <div className="buy-dialog-inner-foot-text">Total*</div>
-                <div className="buy-dialog-inner-foot-price">
-                  {onCalcPrice()}
-                  <TbCurrencyDram style={{ width: "15px", height: "15px" }} />
-                </div>
-                <div className="buy-dialog-inner-foot-button">Put Order</div>
-              </div>
+      {basketDialogOpen && (
+        <>
+          <VscTriangleUp className="buy-dialog-inner-triIcon" />
+          <div className="buy-dialog ">
+            <div className="buy-dialog-inner">
+              {basketWatches.map((watch) => {
+                return <BasketWatchesList watch={watch} key={watch.id} />;
+              })}
             </div>
-          </>
-        )}
+            <div className="buy-dialog-inner-foot">
+              <div className="buy-dialog-inner-foot-text">Total*</div>
+              <div className="buy-dialog-inner-foot-price">
+                {onCalcPrice()}
+                <TbCurrencyDram style={{ width: "15px", height: "15px" }} />
+              </div>
+              <div className="buy-dialog-inner-foot-button">Put Order</div>
+            </div>
+          </div>
+        </>
+      )}
     </div>
   );
 };

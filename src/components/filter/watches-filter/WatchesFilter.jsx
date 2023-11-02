@@ -4,9 +4,6 @@ import {
   filterKindsConfig,
   filterGenderConfig,
 } from "../../../config";
-import { useState } from "react";
-import { useDispatch } from "react-redux";
-import { filterWatches } from "../../../redux/slices/watchesSlice";
 import { VscTriangleUp } from "react-icons/vsc";
 
 const activeOptionStyles = {
@@ -15,15 +12,13 @@ const activeOptionStyles = {
   border: "1px solid #f6f9fc",
 };
 
-const WatchesFilter = ({ filterOpen, setFilterOpen }) => {
-  const lang = "en";
-  const [filterData, setFilterData] = useState({
-    gender: filterGenderConfig[0].title[lang],
-    type: filterGenderConfig[0].title[lang],
-  });
-
-  const dispatch = useDispatch();
-
+const WatchesFilter = ({
+  filterOpen,
+  setFilterOpen,
+  filterData,
+  setFilterData,
+  lang,
+}) => {
   const selectType = (kind, option) => {
     if (filterData[kind] !== option) {
       setFilterData((prev) => {
@@ -33,10 +28,6 @@ const WatchesFilter = ({ filterOpen, setFilterOpen }) => {
         };
       });
     }
-  };
-
-  const implementFilter = () => {
-    dispatch(filterWatches(filterData));
   };
 
   return (
@@ -95,7 +86,6 @@ const WatchesFilter = ({ filterOpen, setFilterOpen }) => {
             );
           })}
         </div>
-        <button onClick={implementFilter}>filter</button>
       </div>
     </>
   );

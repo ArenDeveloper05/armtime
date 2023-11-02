@@ -29,7 +29,12 @@ const BasketWatchesList = ({ watch }) => {
           View
         </Link>
       </div>
-      <div className="buy-dialog-inner-watchList-close">
+      <div
+        className="buy-dialog-inner-watchList-close"
+        onClick={(e) => {
+          e.stopPropagation();
+        }}
+      >
         <GrFormClose
           className="buy-dialog-inner-watchList-close-icon"
           onClick={() => {
