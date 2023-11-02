@@ -18,6 +18,7 @@ const WatchesFilter = ({
   filterData,
   setFilterData,
   lang,
+  implementWatchFilter,
 }) => {
   const selectType = (kind, option) => {
     if (filterData[kind] !== option) {
@@ -86,6 +87,13 @@ const WatchesFilter = ({
             );
           })}
         </div>
+        <button
+          onClick={() => {
+            implementWatchFilter();
+          }}
+        >
+          filter
+        </button>
       </div>
     </>
   );
