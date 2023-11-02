@@ -200,5 +200,57 @@
         }
       }
     }
+
+    @media only screen and (max-width: 690px) {
+      gap: 0;
+      padding: 4px;
+      justify-content: space-between;
+
+      &-item {
+        width: 49%;
+        margin-top: 10px;
+
+        &-image {
+          width: 100%;
+
+          > img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+        }
+      }
+    }
+
+    @media only screen and (max-width: 385px) {
+      &-item {
+        min-height: 200px;
+
+        &-image {
+          width: 100%;
+          height: 200px;
+
+          > img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+        }
+
+        &-description {
+          &-buy {
+            flex-direction: column;
+
+            > p {
+              margin-left: 10px;
+            }
+
+            &-btn {
+              margin-top: 10px;
+            }
+          }
+        }
+      }
+    }
   }
 }

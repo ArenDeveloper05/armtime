@@ -11,6 +11,7 @@ const BeltsPage = () => {
         links={["Home", "Belts"]}
         BannerImage={BeltsBg}
       />
+
       <Belts />
     </Layout>
   );
