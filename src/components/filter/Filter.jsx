@@ -11,6 +11,7 @@ import { filterWatches } from "../../redux/slices/watchesSlice";
 import { filterBelts } from "../../redux/slices/beltsSlice";
 //Icons
 import { TbCurrencyDram } from "react-icons/tb";
+import { IoIosArrowDown } from "react-icons/io";
 //Components
 import WatchesFilter from "./watches-filter/WatchesFilter";
 import BeltsFilter from "./belts-filter/BeltsFilter";
@@ -28,6 +29,10 @@ const Filter = ({ filterName }) => {
     beltOpen: false,
     watchOpen: false,
   });
+  //select open
+  const [selectOpen, setSelectOpen] = useState(false);
+  //select data
+  const [priceArrangement, setPriceArrangement] = useState("Prices descending");
   //price
   const [value, setValue] = useState({ min: 10000, max: 500000 });
   //watch data
@@ -35,12 +40,15 @@ const Filter = ({ filterName }) => {
     gender: filterGenderConfig[0].title[lang],
     type: filterGenderConfig[0].title[lang],
     price: value,
+    arrangement: priceArrangement,
   });
   //belt data
   const [filterBeltData, setFilterBeltData] = useState({
     belt: filterBeltConfig[0].title[lang],
     price: value,
+    arrangement: priceArrangement,
   });
+
   //useEffect
   useEffect(() => {
     if (filterName === "watches") {
@@ -48,6 +56,7 @@ const Filter = ({ filterName }) => {
         return {
           ...prev,
           price: value,
+          arrangement: priceArrangement,
         };
       });
     } else {
@@ -55,14 +64,17 @@ const Filter = ({ filterName }) => {
         return {
           ...prev,
           price: value,
+          arrangement: priceArrangement,
         };
       });
     }
-  }, [value, filterName]);
+  }, [value, filterName, priceArrangement]);
 
   //ref
   const refWatch = useRef(null);
   const refBelt = useRef(null);
+  const refPrice = useRef(null);
+
   useOutsideClick(refWatch, () => {
     if (filterOpen.watchOpen) {
       setFilterOpen((prev) => {
@@ -82,6 +94,12 @@ const Filter = ({ filterName }) => {
           beltOpen: false,
         };
       });
+    }
+  });
+
+  useOutsideClick(refPrice, () => {
+    if (selectOpen) {
+      setSelectOpen(false);
     }
   });
 
@@ -141,6 +159,40 @@ const Filter = ({ filterName }) => {
               {value.max}
               <TbCurrencyDram />
             </div>
+          </div>
+          <div
+            className="filter-inner-selection"
+            onClick={() => setSelectOpen((prev) => !prev)}
+            ref={refPrice}
+          >
+            <div className="filter-inner-selection-select">
+              <div>{priceArrangement}</div>
+              <IoIosArrowDown
+                style={{
+                  transform: selectOpen ? "rotate(-180deg)" : "",
+                  transition: "transform .2s linear",
+                }}
+              />
+            </div>
+
+            {selectOpen && (
+              <div className="filter-inner-selection-options">
+                <div
+                  className="filter-inner-selection-options-option"
+                  onClick={() => setPriceArrangement("Prices descending")}
+                >
+                  Prices descending
+                </div>
+                <div
+                  className="filter-inner-selection-options-option"
+                  onClick={() => {
+                    setPriceArrangement("Prices ascending");
+                  }}
+                >
+                  Prices ascending
+                </div>
+              </div>
+            )}
           </div>
           <button
             onClick={() => {
