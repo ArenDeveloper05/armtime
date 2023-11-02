@@ -1,8 +1,5 @@
 import { RiEqualizerLine } from "react-icons/ri";
 import { filterSelectBeltConfig, filterBeltConfig } from "../../../config";
-import { useState } from "react";
-import { useDispatch } from "react-redux";
-import { filterWatches } from "../../../redux/slices/watchesSlice";
 import { VscTriangleUp } from "react-icons/vsc";
 
 const activeOptionStyles = {
@@ -11,14 +8,13 @@ const activeOptionStyles = {
   border: "1px solid #f6f9fc",
 };
 
-const BeltsFilter = ({ filterOpen, setFilterOpen }) => {
-  const lang = "en";
-  const [filterData, setFilterData] = useState({
-    belt: filterBeltConfig[0].title[lang],
-  });
-
-  const dispatch = useDispatch();
-
+const BeltsFilter = ({
+  filterOpen,
+  setFilterOpen,
+  filterData,
+  setFilterData,
+  lang,
+}) => {
   const selectType = (kind, option) => {
     if (filterData[kind] !== option) {
       setFilterData((prev) => {
@@ -30,9 +26,6 @@ const BeltsFilter = ({ filterOpen, setFilterOpen }) => {
     }
   };
 
-  const implementFilter = () => {
-    dispatch(filterWatches(filterData));
-  };
   return (
     <>
       <div
@@ -71,7 +64,6 @@ const BeltsFilter = ({ filterOpen, setFilterOpen }) => {
             );
           })}
         </div>
-        <button onClick={implementFilter}>filter</button>
       </div>
     </>
   );

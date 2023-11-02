@@ -3,7 +3,6 @@ import Belts from "../components/watchesBelts/Belts";
 import Layout from "../layout/Layout";
 import BeltsBg from "../images/banner/belt-background.jpg";
 import Container from "../components/container/Container";
-import BeltsFilter from "../components/filter/belts-filter/BeltsFilter";
 
 const BeltsPage = () => {
   return (
