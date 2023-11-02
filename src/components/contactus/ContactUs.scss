@@ -12,6 +12,7 @@
     padding: 14px;
     box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.16),
       0px 2px 10px 0px rgba(0, 0, 0, 0.12);
+    cursor: pointer;
 
     &-desc {
       display: flex;
@@ -81,7 +82,7 @@
     flex-direction: column;
     box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.16),
       0px 2px 10px 0px rgba(0, 0, 0, 0.12);
-
+    cursor: pointer;
     &-desc {
       display: flex;
       align-items: center;

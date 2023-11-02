@@ -2,3 +2,33 @@
   max-width: var(--global-max--width);
   margin: 0 auto;
 }
+
+@media (max-width: 1500px) {
+  .container {
+    max-width: 1352px;
+  }
+}
+
+@media (max-width: 1400px) {
+  .container {
+    max-width: 1260px;
+  }
+}
+
+@media (max-width: 1300px) {
+  .container {
+    max-width: 1205px;
+  }
+}
+
+@media (max-width: 1231px) {
+  .container {
+    max-width: 1120px;
+  }
+}
+
+@media (max-width: 1150px) {
+  .container {
+    max-width: 1080px;
+  }
+}

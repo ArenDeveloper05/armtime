@@ -15,9 +15,8 @@ const activeOptionStyles = {
   border: "1px solid #f6f9fc",
 };
 
-const WatchesFilter = () => {
+const WatchesFilter = ({ filterOpen, setFilterOpen }) => {
   const lang = "en";
-  const [filterOpen, setFilterOpen] = useState(false);
   const [filterData, setFilterData] = useState({
     gender: filterGenderConfig[0].title[lang],
     type: filterGenderConfig[0].title[lang],
@@ -41,26 +40,30 @@ const WatchesFilter = () => {
   };
 
   return (
-    <div className="watches-filter">
+    <>
       <div
-        className="watches-filter-select"
+        className="filter-inner-select"
         onClick={() => {
-          setFilterOpen((prev) => !prev);
+          setFilterOpen({
+            beltOpen: false,
+            watchOpen: !filterOpen.watchOpen,
+          });
         }}
       >
         <RiEqualizerLine />
         <span>{filterSelectConfig[lang]}</span>
       </div>
+
       <div
-        className="watches-filter-options"
-        style={{ display: filterOpen ? "flex" : "none" }}
+        className="filter-inner-options"
+        style={{ display: filterOpen.watchOpen ? "flex" : "none" }}
       >
-        <VscTriangleUp className="watches-filter-options-triangle" />
-        <div className="watches-filter-options-gender">
+        <VscTriangleUp className="filter-inner-options-triangle" />
+        <div className="filter-inner-options-gender">
           {filterGenderConfig.map(({ id, title }) => {
             return (
               <div
-                className="watches-filter-options-gender-item"
+                className="filter-inner-options-gender-item"
                 key={id}
                 onClick={() => {
                   selectType("gender", title[lang]);
@@ -74,11 +77,11 @@ const WatchesFilter = () => {
             );
           })}
         </div>
-        <div className="watches-filter-options-types">
+        <div className="filter-inner-options-types">
           {filterKindsConfig.map(({ id, title }) => {
             return (
               <div
-                className="watches-filter-options-types-option"
+                className="filter-inner-options-types-option"
                 key={id}
                 onClick={() => {
                   selectType("type", title[lang]);
@@ -94,7 +97,7 @@ const WatchesFilter = () => {
         </div>
         <button onClick={implementFilter}>filter</button>
       </div>
-    </div>
+    </>
   );
 };
 

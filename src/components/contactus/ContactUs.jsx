@@ -6,7 +6,6 @@ const ContactUs = () => {
   return (
     <div className="contact-us">
       <ContactUsEmail />
-
       <ContactUsPhone />
     </div>
   );
