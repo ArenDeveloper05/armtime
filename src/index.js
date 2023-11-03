@@ -13,6 +13,7 @@ import ContactUsPage from "./pages/ContactUsPage";
 import WatchesPage from "./pages/WatchesPage";
 import SingleWatchPage from "./pages/SingleWatchPage";
 import BeltsPage from "./pages/BeltsPage";
+import CheckoutPage from "./pages/CheckoutPage";
 
 //
 
@@ -40,6 +41,10 @@ const router = createBrowserRouter([
   {
     path: ROUTER.SINGLE_WATCH_PAGE_ROUTE,
     element: <SingleWatchPage />,
+  },
+  {
+    path: ROUTER.CHECKOUT_PAGE_ROUTE,
+    element: <CheckoutPage />,
   },
 ]);
 

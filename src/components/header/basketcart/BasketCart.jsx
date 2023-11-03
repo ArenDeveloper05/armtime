@@ -8,6 +8,8 @@ import { VscTriangleUp } from "react-icons/vsc";
 import { useSelector } from "react-redux";
 import BasketWatchesList from "./basketwatcheslist/BasketWatchesList";
 import useOutsideClick from "../../../utils/hooks/useOutsideClick";
+import { Link } from "react-router-dom";
+import { ROUTER } from "../../../router/router";
 
 const BasketCart = () => {
   const [basketDialogOpen, setBasketDialogOpen] = useState(false);
@@ -72,7 +74,12 @@ const BasketCart = () => {
                 {onCalcPrice()}
                 <TbCurrencyDram style={{ width: "15px", height: "15px" }} />
               </div>
-              <div className="buy-dialog-inner-foot-button">Put Order</div>
+              <Link
+                className="buy-dialog-inner-foot-button"
+                to={ROUTER.CHECKOUT_PAGE_ROUTE}
+              >
+                Put Order
+              </Link>
             </div>
           </div>
         </>
