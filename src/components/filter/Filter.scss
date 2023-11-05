@@ -214,3 +214,72 @@
     }
   }
 }
+
+@media (max-width: 380px) {
+  .filter {
+    height: 180px;
+    &-inner {
+      height: 170px;
+      flex-direction: column;
+      gap: 15px;
+      padding: 20px 5px;
+      &-select {
+        > svg {
+        }
+        > span {
+        }
+      }
+      &-options {
+        top: 30%;
+        left: 9%;
+        &-triangle {
+          left: 40%;
+        }
+        &-gender {
+          &-item {
+          }
+        }
+        &-types {
+          &-option {
+          }
+        }
+        > button {
+        }
+      }
+      &-beltOptions {
+        &-belts {
+          &-item {
+          }
+        }
+        &-beltTriangle {
+        }
+        > button {
+        }
+      }
+      &-rangeSlider {
+        width: 90%;
+        &-value {
+        }
+      }
+
+      &-selection {
+        width: 100%;
+        &-select {
+          gap: 3px;
+          &-icn {
+            width: 18px;
+            height: 18px;
+          }
+          > div {
+          }
+        }
+        &-options {
+          width: 200px;
+          left: 75px;
+          &-option {
+          }
+        }
+      }
+    }
+  }
+}

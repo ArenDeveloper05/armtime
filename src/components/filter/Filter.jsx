@@ -169,12 +169,14 @@ const Filter = ({ filterName }) => {
           >
             <div className="filter-inner-selection-select">
               <div>{priceArrangement}</div>
-              <IoIosArrowDown
-                style={{
-                  transform: selectOpen ? "rotate(-180deg)" : "",
-                  transition: "transform .2s linear",
-                }}
-              />
+              <div className="filter-inner-selection-select-icn">
+                <IoIosArrowDown
+                  style={{
+                    transform: selectOpen ? "rotate(-180deg)" : "",
+                    transition: "transform .2s linear",
+                  }}
+                />
+              </div>
             </div>
 
             {selectOpen && (
