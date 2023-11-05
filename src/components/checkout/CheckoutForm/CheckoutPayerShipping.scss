@@ -1,0 +1,209 @@
+.information {
+  width: 100%;
+  height: auto;
+  //   background-color: red;
+  padding: 30px 20px;
+  border: 2px solid var(--grey);
+  &-title {
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  &-payer {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 0 10px;
+    &-name {
+      font-size: 17px;
+    }
+
+    &-form {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+      &-item {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        > label {
+          font-size: 15px;
+          font-weight: 500;
+          color: var(--black);
+        }
+
+        > input {
+          width: 200px;
+          height: 25px;
+          background-color: var(--white);
+          border: 1px solid var(--grey);
+          &:focus {
+            outline: none;
+          }
+        }
+      }
+    }
+  }
+
+  &-shipping {
+    margin-top: 15px;
+    &-title {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      &-name {
+        font-size: 17px;
+        border-right: 1px solid var(--black);
+        padding: 0 10px;
+      }
+
+      &-cityName {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        &-check {
+          display: flex;
+          align-items: center;
+          gap: 15px;
+          position: relative;
+          margin: 20px auto;
+          > label {
+            width: 17px;
+            height: 17px;
+            cursor: pointer;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background: #fcfff4;
+            background: linear-gradient(
+              to top,
+              #fcfff4 0%,
+              #dfe5d7 40%,
+              var(--grey) 100%
+            );
+            border-radius: 4px;
+            box-shadow: inset 0px 1px 1px white, 0px 1px 3px rgba(0, 0, 0, 0.5);
+            &:after {
+              content: "";
+              width: 9px;
+              height: 5px;
+              position: absolute;
+              top: 6px;
+              left: 4px;
+              border: 3px solid #333;
+              border-top: none;
+              border-right: none;
+              background: transparent;
+              opacity: 0;
+              transform: rotate(-45deg);
+            }
+            &:hover::after {
+              opacity: 0.5;
+            }
+          }
+
+          > input[type="checkbox"] {
+            visibility: hidden;
+            &:checked + label:after {
+              opacity: 1;
+            }
+          }
+
+          > div {
+            font-size: 15px;
+          }
+        }
+      }
+    }
+  }
+  &-formForErevan {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 0 10px;
+    &-address {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      > label {
+        font-size: 15px;
+        font-weight: 500;
+        color: var(--black);
+      }
+
+      > input {
+        width: 200px;
+        height: 25px;
+        background-color: var(--white);
+        border: 1px solid var(--grey);
+        &:focus {
+          outline: none;
+        }
+      }
+    }
+    &-time {
+      display: flex;
+      align-items: center;
+      > div {
+        font-size: 15px;
+        font-weight: 500;
+        color: var(--black);
+        border-right: 1px solid var(--grey);
+        padding: 0 10px;
+        margin-right: 10px;
+      }
+      &-hours {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 5px;
+        position: relative;
+        > label {
+          width: 15px;
+          height: 15px;
+          cursor: pointer;
+          position: absolute;
+          top: 0;
+          left: 0;
+          background: #fcfff4;
+          background: linear-gradient(
+            to top,
+            #fcfff4 0%,
+            #dfe5d7 40%,
+            var(--grey) 100%
+          );
+          border-radius: 4px;
+          box-shadow: inset 0px 1px 1px white, 0px 1px 3px rgba(0, 0, 0, 0.5);
+          &:after {
+            content: "";
+            width: 9px;
+            height: 5px;
+            position: absolute;
+            top: 5px;
+            left: 4px;
+            border: 3px solid #333;
+            border-top: none;
+            border-right: none;
+            background: transparent;
+            opacity: 0;
+            transform: rotate(-45deg);
+          }
+          &:hover::after {
+            opacity: 0.5;
+          }
+        }
+
+        > input[type="checkbox"] {
+          visibility: hidden;
+          &:checked + label:after {
+            opacity: 1;
+          }
+        }
+
+        > div {
+          font-size: 15px;
+        }
+      }
+    }
+  }
+}
