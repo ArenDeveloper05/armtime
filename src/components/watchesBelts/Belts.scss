@@ -3,7 +3,6 @@
   flex-wrap: wrap;
   justify-content: space-between;
   padding: 20px 10px;
-  background-color: green;
 
   &-item {
     width: 300px;
@@ -66,9 +65,23 @@
     }
   }
 
-  @media only screen and (max-width: 635px) {
+  @media only screen and (max-width: 650px) {
     &-item {
-      width: 100%;
+      width: 48%;
+
+      &-description {
+        &-buy {
+          flex-direction: column;
+
+          &-price {
+            margin-left: 10px;
+          }
+
+          &-btn {
+            margin-top: 10px;
+          }
+        }
+      }
     }
   }
 }
