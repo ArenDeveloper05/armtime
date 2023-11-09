@@ -108,3 +108,9 @@ $thumb-size: 16px;
   transform: translate3d(0, -50%, 0);
   z-index: 2;
 }
+
+@media (max-width: 380px) {
+  .wrapper {
+    width: 250px;
+  }
+}

@@ -1,11 +1,22 @@
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { TbCurrencyDram } from "react-icons/tb";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { onAddWatch } from "../../../../redux/slices/basketWatchesSlice";
+import { useEffect, useState } from "react";
+import { ROUTER } from "../../../../router/router";
 
 const WatchesListItem = ({ item }) => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  const basketWatches = useSelector(
+    (state) => state.basketWatches.basketWatches
+  );
+  const [status, setStatus] = useState([]);
+
+  useEffect(() => {
+    setStatus(basketWatches.filter((watch) => watch.id === item.id));
+  }, [basketWatches, item.id]);
+
   return (
     <div
       className="watches-list-item"
@@ -22,8 +33,8 @@ const WatchesListItem = ({ item }) => {
           className="watches-list-item-image-isAvailable"
           style={{
             backgroundColor: item.isAvailable.includes("not available")
-              ? "#C41E3A" // #C41E3A
-              : "#28B464", // #8A9A5B
+              ? "#C41E3A"
+              : "#28B464",
           }}
         >
           {item.isAvailable}
@@ -47,15 +58,25 @@ const WatchesListItem = ({ item }) => {
             <TbCurrencyDram style={{ width: "17px", height: "17px" }} />
           </p>
 
-          <button
-            className="watches-list-item-description-buy-btn"
-            onClick={(e) => {
-              e.stopPropagation();
-              dispatch(onAddWatch(item));
-            }}
-          >
-            Buy
-          </button>
+          {status.length === 0 ? (
+            <button
+              className="watches-list-item-description-buy-btn"
+              onClick={(e) => {
+                e.stopPropagation();
+                dispatch(onAddWatch(item));
+              }}
+            >
+              Buy
+            </button>
+          ) : (
+            <Link
+              className="watches-list-item-description-buy-btn"
+              to={ROUTER.CHECKOUT_PAGE_ROUTE}
+              onClick={(e) => e.stopPropagation()}
+            >
+              Put order
+            </Link>
+          )}
         </div>
       </div>
     </div>

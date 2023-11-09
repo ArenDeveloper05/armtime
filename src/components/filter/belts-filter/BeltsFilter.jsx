@@ -14,6 +14,7 @@ const BeltsFilter = ({
   filterData,
   setFilterData,
   lang,
+  implementBeltFilter,
 }) => {
   const selectType = (kind, option) => {
     if (filterData[kind] !== option) {
@@ -64,6 +65,13 @@ const BeltsFilter = ({
             );
           })}
         </div>
+        <button
+          onClick={() => {
+            implementBeltFilter();
+          }}
+        >
+          filter
+        </button>
       </div>
     </>
   );

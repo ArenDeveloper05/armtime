@@ -32,7 +32,7 @@ const Filter = ({ filterName }) => {
   //select open
   const [selectOpen, setSelectOpen] = useState(false);
   //select data
-  const [priceArrangement, setPriceArrangement] = useState("Prices descending");
+  const [priceArrangement, setPriceArrangement] = useState("Newest");
   //price
   const [value, setValue] = useState({ min: 10000, max: 500000 });
   //watch data
@@ -124,6 +124,7 @@ const Filter = ({ filterName }) => {
                 filterData={filterWatchData}
                 setFilterData={setFilterWatchData}
                 lang={lang}
+                implementWatchFilter={implementWatchFilter}
               />
             </div>
           ) : (
@@ -137,6 +138,7 @@ const Filter = ({ filterName }) => {
                 filterData={filterBeltData}
                 setFilterData={setFilterBeltData}
                 lang={lang}
+                implementBeltFilter={implementBeltFilter}
               />
             </div>
           ) : (
@@ -167,16 +169,26 @@ const Filter = ({ filterName }) => {
           >
             <div className="filter-inner-selection-select">
               <div>{priceArrangement}</div>
-              <IoIosArrowDown
-                style={{
-                  transform: selectOpen ? "rotate(-180deg)" : "",
-                  transition: "transform .2s linear",
-                }}
-              />
+              <div className="filter-inner-selection-select-icn">
+                <IoIosArrowDown
+                  style={{
+                    transform: selectOpen ? "rotate(-180deg)" : "",
+                    transition: "transform .2s linear",
+                  }}
+                />
+              </div>
             </div>
 
             {selectOpen && (
               <div className="filter-inner-selection-options">
+                <div
+                  className="filter-inner-selection-options-option"
+                  onClick={() => {
+                    setPriceArrangement("Newest");
+                  }}
+                >
+                  Newest
+                </div>
                 <div
                   className="filter-inner-selection-options-option"
                   onClick={() => setPriceArrangement("Prices descending")}
@@ -194,7 +206,7 @@ const Filter = ({ filterName }) => {
               </div>
             )}
           </div>
-          <button
+          {/* <button
             onClick={() => {
               filterName === "watches"
                 ? implementWatchFilter()
@@ -202,7 +214,7 @@ const Filter = ({ filterName }) => {
             }}
           >
             filter
-          </button>
+          </button> */}
         </div>
       </Container>
     </div>

@@ -3,9 +3,9 @@ import "./HomeSlider.scss";
 //Components
 import Slider from "react-slick";
 //Images
-import slide1 from "../../images/slider/slider-1.webp";
+import slide1 from "../../images/slider/slider-1.png";
 import slide2 from "../../images/slider/slider-2.jpg";
-import slide3 from "../../images/slider/slider-3.webp";
+import slide3 from "../../images/slider/slider-3.jpg";
 import slide4 from "../../images/slider/slider-4.jpg";
 
 const HomeSlider = () => {
@@ -26,13 +26,13 @@ const HomeSlider = () => {
       <div className="slider-item">
         <img src={slide1} alt="" className="slider-item-image" />
       </div>
-      <div>
+      <div className="slider-item">
         <img src={slide2} alt="" className="slider-item-image" />
       </div>
-      <div>
+      <div className="slider-item">
         <img src={slide3} alt="" className="slider-item-image" />
       </div>
-      <div>
+      <div className="slider-item">
         <img src={slide4} alt="" className="slider-item-image" />
       </div>
     </Slider>

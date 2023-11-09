@@ -6,4 +6,6 @@ export const ROUTER = {
   ABOUTUS_PAGE_ROUTE: "/aboutus",
   CONTACTUS_PAGE_ROUTE: "/contactus",
   SINGLE_WATCH_PAGE_ROUTE: "/watches/:id",
+  CHECKOUT_PAGE_ROUTE: "/checkout",
+  DELIVERY_PAGE_ROUTE: "/delivery_terms",
 };

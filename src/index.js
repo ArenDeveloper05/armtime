@@ -13,7 +13,9 @@ import ContactUsPage from "./pages/ContactUsPage";
 import WatchesPage from "./pages/WatchesPage";
 import SingleWatchPage from "./pages/SingleWatchPage";
 import BeltsPage from "./pages/BeltsPage";
+import CheckoutPage from "./pages/CheckoutPage";
 import BeltsSinglePage from "./pages/BeltsSinglePage";
+import DeliveryPage from "./pages/DeliveryPage";
 
 //
 
@@ -43,8 +45,14 @@ const router = createBrowserRouter([
     element: <SingleWatchPage />,
   },
   {
-    path: ROUTER.BELTS_SINGLE_PAGE_ROUTE,
-    element: <BeltsSinglePage />,
+    path: ROUTER.CHECKOUT_PAGE_ROUTE,
+    element: <CheckoutPage />,
+  },
+  ,
+  { path: ROUTER.BELTS_SINGLE_PAGE_ROUTE, element: <BeltsSinglePage /> },
+  {
+    path: ROUTER.DELIVERY_PAGE_ROUTE,
+    element: <DeliveryPage />,
   },
 ]);
 

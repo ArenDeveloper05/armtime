@@ -37,6 +37,15 @@ export const navConfig = [
   {
     id: 4,
     title: {
+      hy: "Առաքման պայմաններ",
+      en: "Delivery terms",
+      ru: "условия доставки",
+    },
+    link: ROUTER.DELIVERY_PAGE_ROUTE,
+  },
+  {
+    id: 5,
+    title: {
       hy: "Մեր մասին",
       en: "About us",
       ru: "О нас",
@@ -44,7 +53,7 @@ export const navConfig = [
     link: ROUTER.ABOUTUS_PAGE_ROUTE,
   },
   {
-    id: 5,
+    id: 6,
     title: {
       hy: "Կապ մեզ հետ",
       en: "Contact us",
