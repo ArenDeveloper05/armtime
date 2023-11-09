@@ -13,7 +13,7 @@ import { ROUTER } from "../../../router/router";
 
 const BasketCart = () => {
   const [basketDialogOpen, setBasketDialogOpen] = useState(false);
-  const cartRef = useRef();
+  const cartRef = useRef(null);
   const basketWatches = useSelector(
     (state) => state.basketWatches.basketWatches
   );
