@@ -13,17 +13,19 @@ import storage from "redux-persist/lib/storage";
 import watchesReducer from "../redux/slices/watchesSlice";
 import basketWatchesReducer from "../redux/slices/basketWatchesSlice";
 import beltsReducer from "../redux/slices/beltsSlice";
+import aboutUsReducer from "./slices/aboutUsSlice";
 
 const rootReducer = combineReducers({
   watches: watchesReducer,
   basketWatches: basketWatchesReducer,
   belts: beltsReducer,
+  aboutUs: aboutUsReducer,
 });
 
 const persistConfig = {
   key: "root",
   storage,
-  blacklist: ["watches", "belts"],
+  blacklist: ["watches", "belts", "aboutUsDelivery"],
 };
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);

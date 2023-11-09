@@ -14,6 +14,7 @@ import WatchesPage from "./pages/WatchesPage";
 import SingleWatchPage from "./pages/SingleWatchPage";
 import BeltsPage from "./pages/BeltsPage";
 import CheckoutPage from "./pages/CheckoutPage";
+import BeltsSinglePage from "./pages/BeltsSinglePage";
 
 //
 
@@ -46,6 +47,8 @@ const router = createBrowserRouter([
     path: ROUTER.CHECKOUT_PAGE_ROUTE,
     element: <CheckoutPage />,
   },
+  ,
+  { path: ROUTER.BELTS_SINGLE_PAGE_ROUTE, element: <BeltsSinglePage /> },
 ]);
 
 createRoot(document.getElementById("root")).render(
