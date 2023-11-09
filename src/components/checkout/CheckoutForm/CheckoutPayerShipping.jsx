@@ -1,6 +1,7 @@
 import { useState } from "react";
 import FormForErevan from "./FormForErevan";
 import "./CheckoutPayerShipping.scss";
+import FormForRegions from "./FormForRegions";
 
 const CheckoutPayerShipping = () => {
   const [checked, setChecked] = useState({
@@ -40,15 +41,11 @@ const CheckoutPayerShipping = () => {
                 id="erevan"
                 checked={checked.erevan}
                 onClick={() => {
-                  checked.erevan
-                    ? setChecked({
-                        erevan: true,
-                        regions: false,
-                      })
-                    : setChecked({
-                        erevan: true,
-                        regions: false,
-                      });
+                  if (checked.erevan) return;
+                  setChecked({
+                    erevan: !checked.erevan,
+                    regions: false,
+                  });
                 }}
               />
               <label htmlFor="erevan"></label>
@@ -60,15 +57,11 @@ const CheckoutPayerShipping = () => {
                 id="regions"
                 checked={checked.regions}
                 onClick={() => {
-                  checked.regions
-                    ? setChecked({
-                        erevan: false,
-                        regions: true,
-                      })
-                    : setChecked({
-                        erevan: false,
-                        regions: true,
-                      });
+                  if (checked.regions) return;
+                  setChecked({
+                    erevan: false,
+                    regions: !checked.regions,
+                  });
                 }}
               />
               <label htmlFor="regions"></label>
@@ -76,7 +69,12 @@ const CheckoutPayerShipping = () => {
             </div>
           </div>
         </div>
-        <FormForErevan />
+        {checked.erevan ? <FormForErevan /> : <FormForRegions />}
+
+        <div className="information-shipping-notes">
+          <label htmlFor="notes">Notes Field</label>
+          <input type="text" name="notes" id="notes" />
+        </div>
       </div>
     </div>
   );
