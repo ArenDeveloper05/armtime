@@ -40,7 +40,7 @@ const CheckoutPayerShipping = () => {
                 type="checkbox"
                 id="erevan"
                 checked={checked.erevan}
-                onClick={() => {
+                onChange={() => {
                   if (checked.erevan) return;
                   setChecked({
                     erevan: !checked.erevan,
@@ -56,7 +56,7 @@ const CheckoutPayerShipping = () => {
                 type="checkbox"
                 id="regions"
                 checked={checked.regions}
-                onClick={() => {
+                onChange={() => {
                   if (checked.regions) return;
                   setChecked({
                     erevan: false,
