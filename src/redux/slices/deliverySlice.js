@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  aboutUsDelivery: [
+  delivery: [
     {
       id: 1,
       title: "Առաքումը Մարզերում",
@@ -15,11 +15,11 @@ const initialState = {
   ],
 };
 
-const aboutUsSlice = createSlice({
-  name: "aboutUsDelivery",
+const deliverySlice = createSlice({
+  name: "delivery",
   initialState,
   reducers: {},
 });
 
-export const {} = aboutUsSlice.actions;
-export default aboutUsSlice.reducer;
+export const {} = deliverySlice.actions;
+export default deliverySlice.reducer;
