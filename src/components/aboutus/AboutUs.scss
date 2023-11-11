@@ -1,5 +1,11 @@
 .about-us {
   &-desc {
+    width: 100%;
+    min-height: 443px; //
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
     color: white;
     padding: 24px 0;
     background-image: url("https://www.silvana.com/app/uploads/movement-gears-background.jpg");
@@ -11,91 +17,15 @@
 
     &-txt {
       max-width: 900px;
-      margin: auto;
       margin-top: 20px;
       transition: 0.5s;
       text-align: center;
     }
   }
 
-  &-delivery {
-    margin-top: 50px;
-    padding: 24px 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    &-item {
-      padding: 14px;
-      width: 350px;
-      margin: 0 -32px;
-      transition: 0.5s;
-      filter: blur(1.5px);
-      border-radius: 10px;
-      backdrop-filter: blur(10px);
-      transform: rotate(calc(2 * 1deg));
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      box-shadow: 0 25px 25px rgba(0, 0, 0, 0.25);
-
-      &-title {
-        font-size: 20px;
-        text-align: center;
-      }
-
-      &-txt {
-        margin-top: 20px;
-        text-align: justify;
-      }
-    }
-
-    &:hover > &-item {
-      margin: 0 30px;
-      filter: blur(0.5px);
-      transform: rotate(0deg);
-    }
-  }
-
   @media only screen and (max-width: 1110px) {
     &-desc {
       padding: 24px 14px;
-    }
-
-    &-delivery {
-      padding: 24px 14px;
-
-      &-item {
-        width: 50%;
-
-        &-txt {
-          text-align: center;
-          font-size: 12px;
-        }
-      }
-
-      &:hover > &-item {
-        margin: 0;
-      }
-
-      &:hover {
-        :not(:first-child) {
-          margin-left: 10px;
-        }
-      }
-    }
-  }
-
-  @media only screen and (max-width: 500px) {
-    &-delivery {
-      flex-direction: column;
-
-      &-item {
-        width: 100%;
-        margin-top: 20px;
-      }
-
-      &:hover > &-item {
-        margin-top: 20px;
-      }
     }
   }
 }
