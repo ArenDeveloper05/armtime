@@ -1,8 +1,8 @@
-//Scss
 import { Container } from "@mui/material";
-import "./Checkout.scss";
-import CheckoutPayerShipping from "./checkoutForm/CheckoutPayerShipping";
+import CheckoutPayerShipping from "./CheckoutForm/CheckoutPayerShipping";
 import CheckoutItems from "./checkoutItems/CheckoutItems";
+
+import "./Checkout.scss";
 
 const Checkout = () => {
   return (
