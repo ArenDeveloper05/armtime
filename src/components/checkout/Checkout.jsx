@@ -1,7 +1,8 @@
 //Scss
 import { Container } from "@mui/material";
 import "./Checkout.scss";
-import CheckoutPayerShipping from "./CheckoutForm/CheckoutPayerShipping";
+import CheckoutPayerShipping from "./checkoutForm/CheckoutPayerShipping";
+import CheckoutItems from "./checkoutItems/CheckoutItems";
 
 const Checkout = () => {
   return (
@@ -10,7 +11,7 @@ const Checkout = () => {
         <div className="checkout-inner">
           <h1 className="checkout-inner-title">ORDER FORM</h1>
           <CheckoutPayerShipping />
-          <div className="checkout-inner-items"></div>
+          <CheckoutItems />
         </div>
       </Container>
     </div>

@@ -19,7 +19,7 @@ const FormForErevan = () => {
             id="12:00"
             name="12:00"
             checked={checkedTime[12]}
-            onClick={() => {
+            onChange={() => {
               if (checkedTime[12]) return;
               setCheckedTime({
                 12: !checkedTime[12],
@@ -36,7 +36,7 @@ const FormForErevan = () => {
             id="18:00"
             name="18:00"
             checked={checkedTime[18]}
-            onClick={() => {
+            onChange={() => {
               if (checkedTime[18]) return;
               setCheckedTime({
                 12: false,
