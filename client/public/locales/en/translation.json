@@ -1,1 +1,38 @@
-{}
+{
+  "header": {
+    "header_basket": {
+      "my cart": "My Cart",
+      "total": "Total",
+      "put order": "Put Order",
+      "view product": "View Product"
+    },
+    "header_selectLang": {
+      "arm": "ARM",
+      "rus": "RUS",
+      "eng": "ENG"
+    }
+  },
+  "main": {
+    "main_priceFilter": {
+      "newest": "Newest",
+      "prices descending": "Prices Descending",
+      "prices ascending": "Prices Ascending"
+    },
+    "main_deliveryTerms": {
+      "title": "Delivery Terms"
+    },
+    "main_aboutUs": {
+      "title": "About Us",
+      "desc": "Armenian Time Armenian watch brand was founded in 2020 and is still operating today. The brand is engaged in the modeling of watches, the production and assembly of parts, branding and pricing, as a result of which it presents customers with stylish and distinctive Armenian brandy watches that have no similar in the market. The brand has passed its registration in RA Intellectual Property Agency. By buying Armenian Time brand watches, customers can be sure that they are buying unique and unique models, as the brand cannot be duplicated. The beautiful and unique packaging of the models gives the consumer the opportunity to purchase it not only for personal use, but also the models can become the best option for your gift. Models are displayed and sold online on the official website of Armenian Time."
+    },
+    "main_contactUs": {
+      "contact us": "Contact Us",
+      "card title": "Do you want to contact with us with telephone?",
+      "card text": "Spin Me"
+    }
+  },
+  "footer": {
+    "contact": "Contact",
+    "follow us": "Follow Us"
+  }
+}

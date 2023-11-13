@@ -2,10 +2,11 @@
   width: 100%;
   height: 100%;
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
   color: var(--white);
   padding: 10px 50px;
+
   &-info {
     width: 33.333%;
     display: flex;
@@ -13,13 +14,17 @@
     justify-content: center;
     width: 33.333%;
     height: 150px;
+    background-color: cyan;
+
     &-logo {
       font-family: "Kaushan Script", cursive;
       font-weight: 500;
       font-size: 32px;
       width: 70%;
+      background-color: blue;
     }
   }
+
   &-contact {
     width: 33.333%;
     display: flex;
@@ -29,21 +34,25 @@
     gap: 15px;
     width: 33.333%;
     height: 150px;
+
     &-title {
       // font-family: "Kaushan Script", cursive;
       font-weight: 500;
       font-size: 24px;
       width: 50%;
     }
+
     &-info {
       width: 50%;
       display: flex;
       flex-direction: column;
       gap: 10px;
+
       &-item {
         display: flex;
         align-items: center;
         gap: 5px;
+
         &-icon {
           width: 22px;
           height: 22px;
@@ -51,6 +60,7 @@
       }
     }
   }
+
   &-follow {
     width: 33.333%;
     display: flex;
@@ -60,25 +70,30 @@
     gap: 10px;
     width: 33.333%;
     height: 150px;
+
     &-title {
       // font-family: "Kaushan Script", cursive;
       font-weight: 500;
       font-size: 24px;
       width: 30%;
     }
+
     &-links {
       display: flex;
       align-items: center;
       gap: 10px;
       width: 30%;
+
       > a {
         color: var(--white);
       }
+
       &-link {
         cursor: pointer;
         width: 22px;
         height: 22px;
         transition: fill 0.3s linear;
+
         &:hover {
           fill: grey;
         }

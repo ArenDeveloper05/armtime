@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script&family=PT+Sans+Narrow&family=Raleway:wght@100;400&family=Roboto:ital,wght@0,100;1,100&family=Source+Code+Pro:wght@200&display=swap");
+
 .about-us {
   &-desc {
     width: 100%;
@@ -13,13 +15,17 @@
     &-title {
       font-size: 28px;
       text-align: center;
+      font-family: "Source Code Pro", monospace;
     }
 
     &-txt {
       max-width: 900px;
       margin-top: 20px;
       transition: 0.5s;
+      font-size: 16px;
+      line-height: 24px;
       text-align: center;
+      font-family: "Source Code Pro", monospace;
     }
   }
 

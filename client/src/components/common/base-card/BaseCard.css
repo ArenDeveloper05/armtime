@@ -1,0 +1,103 @@
+.myCard {
+  width: 530px;
+  height: 254px;
+  margin-top: 20px;
+  perspective: 1000px;
+  background-color: transparent;
+}
+
+.title {
+  font-size: 1.5em;
+  font-weight: 900;
+  text-align: center;
+  margin: 0;
+}
+
+.title > span {
+  margin-top: 20px;
+  display: block;
+}
+
+.innerCard {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+  cursor: pointer;
+}
+
+.myCard:hover .innerCard {
+  transform: rotateY(180deg);
+}
+
+.frontSide,
+.backSide {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  border-radius: 1rem;
+  color: white;
+  box-shadow: 3px 3px 10px 3px black;
+  font-weight: 700;
+  padding: 24px;
+  background-image: url("https://www.silvana.com/app/uploads/movement-gears-background.jpg");
+}
+
+.backSide {
+  transform: rotateY(180deg);
+}
+
+.frontSide::before,
+.backSide::before {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  content: "";
+  width: 110%;
+  height: 110%;
+  position: absolute;
+  z-index: -1;
+  border-radius: 1em;
+  filter: blur(20px);
+  animation: animate 5s linear infinite;
+}
+
+@keyframes animate {
+  0% {
+    opacity: 0.3;
+  }
+
+  80% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0.3;
+  }
+}
+
+@media only screen and (max-width: 620px) {
+  .myCard {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 410px) {
+  .title {
+    font-size: 16px;
+  }
+
+  .frontSide,
+  .backSide {
+    background-size: cover;
+  }
+}
