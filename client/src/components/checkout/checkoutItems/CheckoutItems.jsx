@@ -10,6 +10,7 @@ import { generateImage } from "../../../utils/helpers/generateImage";
 import noImage from "../../../images/no-image.jpg";
 
 import "./CheckoutItems.scss";
+import { useTranslation } from "react-i18next";
 
 const CheckoutItems = () => {
   const basketWatches = useSelector(
@@ -17,6 +18,9 @@ const CheckoutItems = () => {
   );
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const {
+    i18n: { language },
+  } = useTranslation();
 
   const onCalcPrice = () => {
     let price = 0;
@@ -52,7 +56,7 @@ const CheckoutItems = () => {
 
                   <div className="checkoutItems-items-item-info">
                     <div className="checkoutItems-items-item-info-name">
-                      {item.title}
+                      {item[`name_${language}`]}
                     </div>
                     <div className="checkoutItems-items-item-info-price">
                       <span>{item.discounted_price}</span>
