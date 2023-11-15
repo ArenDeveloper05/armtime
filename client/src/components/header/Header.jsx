@@ -39,6 +39,13 @@ const Header = () => {
 
           <BasketCart />
 
+          <Link
+            className="header-inner-logo header-inner-mobile-logo"
+            to={ROUTER.HOME_PAGE_ROUTE}
+          >
+            <img src={Logo} alt="logo" className="header-inner-logo-img" />
+          </Link>
+
           <Langs />
         </div>
       </Container>

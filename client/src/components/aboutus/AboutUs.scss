@@ -9,8 +9,10 @@
     flex-direction: column;
     justify-content: center;
     color: white;
+    font-weight: bold;
     padding: 24px 0;
-    background-image: url("https://www.silvana.com/app/uploads/movement-gears-background.jpg");
+    background-size: cover;
+    background-image: url(../../images/about-bcg.jpg);
 
     &-title {
       font-size: 28px;
