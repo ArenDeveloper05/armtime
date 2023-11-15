@@ -1,20 +1,24 @@
 .header-inner {
   width: 100%;
   height: 100px;
+  padding: 0 20px;
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
   border-bottom: 1px solid var(--grey);
+
   &-dots {
     width: 24px;
     height: 24px;
     margin-left: 10px;
     cursor: pointer;
     position: relative;
+
     &-icon {
       width: 24px;
       height: 24px;
     }
+
     &-dialog {
       width: 120px;
       height: auto;
@@ -26,28 +30,42 @@
       background-color: var(--white);
       border: 1px solid var(--grey);
       transition: all 0.5s linear;
+
       &-item {
-        color: var(--black);
-        text-align: center;
         padding: 8px;
+        text-align: center;
+        color: var(--black);
         text-decoration: none;
+
         &:hover {
           background-color: var(--grey);
         }
+
         &:first-child {
           border-bottom: 1px solid var(--grey);
         }
       }
     }
   }
+
+  //
+  &-menu-icon {
+    display: none;
+    cursor: pointer;
+  }
+
+  //
+
   &-nav {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 2px;
+
     &:hover > :not(:hover) {
       opacity: 0.4;
     }
+
     &-link {
       font-size: 14px;
       font-weight: 500;
@@ -65,6 +83,7 @@
     align-items: center;
     width: 150px;
     height: 100px;
+
     &-img {
       width: 100%;
       height: 100%;
@@ -77,12 +96,14 @@
     height: auto;
     position: relative;
     cursor: pointer;
+
     &-lang {
       font-size: 16px;
       display: flex;
       align-items: center;
       gap: 2px;
       color: var(--black);
+
       &-icon {
         width: 18px;
         height: 18px;
@@ -106,6 +127,7 @@
       padding: 4px;
       background-color: var(--white);
       border: 3px solid var(--grey);
+
       &-item {
         width: 100%;
         font-size: 15px;
@@ -113,11 +135,29 @@
         color: var(--black);
         text-align: center;
         transition: background 0.2s linear;
+
         &:hover {
           background-color: var(--grey);
         }
       }
     }
+  }
+
+  @media only screen and (max-width: 1000px) {
+    // padding: 0 10px;
+
+    &-menu-icon {
+      border: solid;
+      display: block;
+      font-size: 40px;
+    }
+
+    &-nav {
+      display: none;
+    }
+  }
+
+  @media only screen and (max-width: 540px) {
   }
 }
 
