@@ -265,3 +265,183 @@
 input {
   padding-left: 10px;
 }
+
+@media (max-width: 1067px) {
+  .information {
+    &-payer {
+      &-form {
+        &-item {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 930px) {
+  .information {
+    padding: 10px;
+    &-formForErevan {
+      flex-direction: column;
+      align-items: flex-start;
+      padding-left: 0;
+      gap: 30px;
+      &-address {
+        padding: 0 10px;
+      }
+    }
+  }
+}
+
+@media (max-width: 727px) {
+  .information {
+    padding: 10px;
+    &-payer {
+      &-form {
+        flex-direction: column;
+        align-items: flex-start;
+        &-item {
+          flex-direction: row;
+        }
+      }
+    }
+    &-formForErevan {
+      &-address {
+      }
+    }
+  }
+}
+
+@media (max-width: 810px) {
+  .information {
+    &-formForRegions {
+      flex-direction: column;
+      align-items: flex-start;
+      &-address {
+        &-adr {
+          margin-right: 85px;
+        }
+        &-zip {
+          margin-right: 19px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 609px) {
+  .information {
+    &-formForErevan {
+      &-time {
+        > div {
+          padding: 0;
+          border-right: 0;
+        }
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 0 10px;
+        gap: 15px;
+        &-hours {
+          gap: 10px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 471px) {
+  .information {
+    &-title {
+      font-size: 18px;
+    }
+    &-payer {
+      &-name {
+        font-size: 15px;
+      }
+      &-form {
+        &-item {
+          flex-direction: column;
+          > label {
+            font-size: 13px;
+          }
+        }
+      }
+    }
+    &-shipping {
+      &-notes {
+        > label {
+          font-size: 13px;
+        }
+      }
+      &-title {
+        &-name {
+          font-size: 15px;
+        }
+        &-cityName {
+          &-check {
+            > div {
+              font-size: 13px;
+            }
+          }
+        }
+      }
+    }
+    &-formForErevan {
+      &-address {
+        flex-direction: column;
+        align-items: flex-start;
+        > label {
+          font-size: 13px;
+        }
+      }
+    }
+    &-formForRegions {
+      &-address {
+        flex-direction: column;
+        align-items: flex-start;
+        > label {
+          font-size: 13px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 417px) {
+  .information {
+    &-formForErevan {
+      &-time {
+        &-hours {
+          > div {
+            font-size: 13px;
+          }
+        }
+      }
+    }
+    &-title {
+      font-size: 17px;
+    }
+    &-payer {
+      &-name {
+        font-size: 14px;
+      }
+    }
+    &-shipping {
+      &-title {
+        flex-direction: column;
+        align-items: flex-start;
+        &-name {
+          border-right: 0;
+        }
+        &-cityName {
+          padding: 0 10px;
+          height: 25px;
+        }
+        &-name {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+}
