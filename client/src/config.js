@@ -1,4 +1,14 @@
 import { ROUTER } from "./router/router";
+import { LuWatch } from "react-icons/lu";
+import { GiBeltBuckles } from "react-icons/gi";
+import { SiAdguard } from "react-icons/si";
+import { TbTruckDelivery } from "react-icons/tb";
+import { FaInfoCircle } from "react-icons/fa";
+import { MdConnectWithoutContact } from "react-icons/md";
+import { FaPhone } from "react-icons/fa6";
+import { IoTime } from "react-icons/io5";
+import { CiFacebook } from "react-icons/ci";
+import { PiInstagramLogoLight } from "react-icons/pi";
 
 export const langs = [
   { id: 1, title: "ARM", type: "am" },
@@ -14,6 +24,7 @@ export const navConfig = [
       en: "Watches",
       ru: "Часы",
     },
+    icon: LuWatch,
     link: ROUTER.WATCHES_PAGE_ROUTE,
   },
   {
@@ -23,6 +34,7 @@ export const navConfig = [
       en: "Belts",
       ru: "Ремены",
     },
+    icon: GiBeltBuckles,
     link: ROUTER.BELTS_PAGE_ROUTE,
   },
   {
@@ -32,6 +44,7 @@ export const navConfig = [
       en: "Guarantee",
       ru: "Гарантия",
     },
+    icon: SiAdguard,
     link: ROUTER.WATCHES_PAGE_ROUTE,
   },
   {
@@ -41,6 +54,7 @@ export const navConfig = [
       en: "Delivery terms",
       ru: "условия доставки",
     },
+    icon: TbTruckDelivery,
     link: ROUTER.DELIVERY_PAGE_ROUTE,
   },
   {
@@ -50,6 +64,7 @@ export const navConfig = [
       en: "About us",
       ru: "О нас",
     },
+    icon: FaInfoCircle,
     link: ROUTER.ABOUTUS_PAGE_ROUTE,
   },
   {
@@ -59,6 +74,7 @@ export const navConfig = [
       en: "Contact us",
       ru: "Связаться с нами",
     },
+    icon: MdConnectWithoutContact,
     link: ROUTER.CONTACTUS_PAGE_ROUTE,
   },
 ];
@@ -161,6 +177,31 @@ export const filterBeltConfig = [
     },
   },
 ];
+
+export const contactConfig = {
+  contactOfficeConfig: [
+    {
+      id: 1,
+      title: "09:00 - 18:00",
+      icon: IoTime,
+    },
+    {
+      id: 2,
+      title: "+374 11 12 12 12",
+      icon: FaPhone,
+    },
+    {
+      id: 3,
+      title: "+374 12 13 13 13",
+      icon: FaPhone,
+    },
+  ],
+
+  contactNetworksConfig: [
+    { id: 1, icon: CiFacebook, link: "" },
+    { id: 2, icon: PiInstagramLogoLight, link: "" },
+  ],
+};
 
 // export const watchListConfig = [
 //   {
