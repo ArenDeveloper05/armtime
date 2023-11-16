@@ -20,10 +20,10 @@
     }
 
     &-dialog {
-      width: 120px;
+      width: 150px;
       height: auto;
       position: absolute;
-      right: -200%;
+      right: -250%;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -96,7 +96,7 @@
   }
 
   &-language {
-    width: 50px;
+    width: 80px;
     height: auto;
     position: relative;
     cursor: pointer;
@@ -121,7 +121,7 @@
       height: 70px;
       position: absolute;
       top: 30px;
-      right: -20px;
+      right: -12px;
       display: flex;
       flex-direction: column;
       gap: 5px;
@@ -135,9 +135,10 @@
       &-item {
         width: 100%;
         font-size: 15px;
-        text-transform: uppercase;
+        font-weight: 500;
         color: var(--black);
         text-align: center;
+        padding: 2px;
         transition: background 0.2s linear;
 
         &:hover {

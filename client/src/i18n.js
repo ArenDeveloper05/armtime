@@ -5,8 +5,8 @@ import Backend from "i18next-http-backend";
 
 i18n.use(Backend).use(LanguageDetector).use(initReactI18next).init({
   debug: true,
-  fallbackLng: "am",
-  lng: "am",
+  fallbackLng: "հայ",
+  lng: "հայ",
 });
 
 export default i18n;

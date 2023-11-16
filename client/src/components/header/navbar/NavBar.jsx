@@ -23,7 +23,7 @@ const NavBar = () => {
     <>
       <ul className="header-inner-nav">
         {navConfig.map((link) => {
-          if (link.id === 5 || link.id === 6) return;
+          if (link.id === 5 || link.id === 6) return "";
           return (
             <Link
               className="header-inner-nav-link"
