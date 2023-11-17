@@ -1,4 +1,5 @@
 .delivery {
+  min-height: 443px;
   padding: 26.5px;
   display: flex;
   flex-wrap: wrap;
@@ -50,34 +51,41 @@
   @media only screen and (max-width: 1110px) {
     padding: 24px 14px;
 
-    &-item {
-      width: 49%;
+    &-list {
+      &-item {
+        width: 49%;
 
-      &-txt {
-        text-align: center;
-        font-size: 12px;
+        &-txt {
+          font-size: 12px;
+          text-align: center;
+        }
       }
-    }
 
-    &:hover > &-item {
-      margin: 0;
-    }
+      &:hover > &-item {
+        margin: 0;
+      }
 
-    &:hover {
-      justify-content: space-between;
+      &:hover {
+        & :not(:first-child) {
+          margin-left: 20px;
+        }
+      }
     }
   }
 
   @media only screen and (max-width: 500px) {
-    flex-direction: column;
+    &-list {
+      flex-direction: column;
 
-    &-item {
-      width: 100%;
-      margin-top: 20px;
-    }
+      &-item {
+        width: 100%;
+        margin-top: 20px;
+      }
 
-    &:hover > &-item {
-      margin-top: 20px;
+      &:hover > &-item {
+        margin-top: 20px;
+        margin-left: 0;
+      }
     }
   }
 }

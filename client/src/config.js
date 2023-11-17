@@ -1,99 +1,115 @@
 import { ROUTER } from "./router/router";
+import { LuWatch } from "react-icons/lu";
+import { GiBeltBuckles } from "react-icons/gi";
+import { SiAdguard } from "react-icons/si";
+import { TbTruckDelivery } from "react-icons/tb";
+import { FaInfoCircle } from "react-icons/fa";
+import { MdConnectWithoutContact } from "react-icons/md";
+import { FaPhone } from "react-icons/fa6";
+import { IoTime } from "react-icons/io5";
+import { CiFacebook } from "react-icons/ci";
+import { PiInstagramLogoLight } from "react-icons/pi";
 
 export const langs = [
-  { id: 1, title: "ARM", type: "am" },
-  { id: 2, title: "ENG", type: "en" },
-  { id: 3, title: " RUS", type: "ru" },
+  { id: 1, title: "Հայերեն", type: "հայ" },
+  { id: 2, title: "English", type: "en" },
+  { id: 3, title: "Русский", type: "ру" },
 ];
 
 export const navConfig = [
   {
     id: 1,
     title: {
-      am: "Ժամացույցներ",
+      հայ: "Ժամացույցներ",
       en: "Watches",
-      ru: "Часы",
+      ру: "Часы",
     },
+    icon: LuWatch,
     link: ROUTER.WATCHES_PAGE_ROUTE,
   },
   {
     id: 2,
     title: {
-      am: "Գոտիներ",
+      հայ: "Գոտիներ",
       en: "Belts",
-      ru: "Ремены",
+      ру: "Ремены",
     },
+    icon: GiBeltBuckles,
     link: ROUTER.BELTS_PAGE_ROUTE,
   },
   {
     id: 3,
     title: {
-      am: "Երաշխիք",
+      հայ: "Երաշխիք",
       en: "Guarantee",
-      ru: "Гарантия",
+      ру: "Гарантия",
     },
+    icon: SiAdguard,
     link: ROUTER.WATCHES_PAGE_ROUTE,
   },
   {
     id: 4,
     title: {
-      am: "Առաքման պայմաններ",
+      հայ: "Առաքման պայմաններ",
       en: "Delivery terms",
-      ru: "условия доставки",
+      ру: "условия доставки",
     },
+    icon: TbTruckDelivery,
     link: ROUTER.DELIVERY_PAGE_ROUTE,
   },
   {
     id: 5,
     title: {
-      am: "Մեր մասին",
+      հայ: "Մեր մասին",
       en: "About us",
-      ru: "О нас",
+      ру: "О нас",
     },
+    icon: FaInfoCircle,
     link: ROUTER.ABOUTUS_PAGE_ROUTE,
   },
   {
     id: 6,
     title: {
-      am: "Կապ մեզ հետ",
+      հայ: "Կապ մեզ հետ",
       en: "Contact us",
-      ru: "Связаться с нами",
+      ру: "Связаться с нами",
     },
+    icon: MdConnectWithoutContact,
     link: ROUTER.CONTACTUS_PAGE_ROUTE,
   },
 ];
 
 export const filterSelectConfig = {
-  am: "ԸՆՏՐԵՔ ՁԵՐ ԺԱՄԱՑՈՒՅՑԸ",
+  հայ: "ԸՆՏՐԵՔ ՁԵՐ ԺԱՄԱՑՈՒՅՑԸ",
   en: "SELECT YOUR WATCH",
-  ru: "ВЫБЕРИТЕ СВОИ ЧАСЫ",
+  ру: "ВЫБЕРИТЕ СВОИ ЧАСЫ",
 };
 
 export const filterGenderConfig = [
   {
     id: 1,
     title: {
-      am: "Բոլորը",
+      հայ: "Բոլորը",
       en: "All",
-      ru: "Все",
+      ру: "Все",
     },
     type: "all",
   },
   {
     id: 2,
     title: {
-      am: "Տղամարդու",
+      հայ: "Տղամարդու",
       en: "Men",
-      ru: "Мужские",
+      ру: "Мужские",
     },
     type: "male",
   },
   {
     id: 3,
     title: {
-      am: "Կանացի",
+      հայ: "Կանացի",
       en: "Women",
-      ru: "Женские",
+      ру: "Женские",
     },
     type: "female",
   },
@@ -103,64 +119,89 @@ export const filterKindsConfig = [
   {
     id: 1,
     title: {
-      am: "Բոլորը",
+      հայ: "Բոլորը",
       en: "All",
-      ru: "Все",
+      ру: "Все",
     },
     type: "all",
   },
   {
     id: 2,
     title: {
-      am: "Քվարցային",
+      հայ: "Քվարցային",
       en: "Quartz",
-      ru: "Кварцеые",
+      ру: "Кварцеые",
     },
     type: "quartz",
   },
   {
     id: 3,
     title: {
-      am: "Մեխանիկական",
+      հայ: "Մեխանիկական",
       en: "Mechanical",
-      ru: "Механические",
+      ру: "Механические",
     },
     type: "automatic",
   },
 ];
 
 export const filterSelectBeltConfig = {
-  am: "ԸՆՏՐԵՔ ՁԵՐ ԳՈՏԻՆ",
+  հայ: "ԸՆՏՐԵՔ ՁԵՐ ԳՈՏԻՆ",
   en: "SELECT YOUR BELT",
-  ru: "ВЫБЕРИТЕ СВОИ РЕМЕНЬ",
+  ру: "ВЫБЕРИТЕ СВОИ РЕМЕНЬ",
 };
 
 export const filterBeltConfig = [
   {
     id: 1,
     title: {
-      am: "Բոլորը",
+      հայ: "Բոլորը",
       en: "All",
-      ru: "Все",
+      ру: "Все",
     },
   },
   {
     id: 2,
     title: {
-      am: "օձի կաշվով",
+      հայ: "օձի կաշվով",
       en: "with snake skin",
-      ru: "в змеиной коже",
+      ру: "в змеиной коже",
     },
   },
   {
     id: 3,
     title: {
-      am: "կոկորդիլոսի կաշվով",
+      հայ: "կոկորդիլոսի կաշվով",
       en: "with crocodile skin",
-      ru: "с крокодиловой кожей",
+      ру: "с крокодиловой кожей",
     },
   },
 ];
+
+export const contactConfig = {
+  contactOfficeConfig: [
+    {
+      id: 1,
+      title: "09:00 - 18:00",
+      icon: IoTime,
+    },
+    {
+      id: 2,
+      title: "+374 11 12 12 12",
+      icon: FaPhone,
+    },
+    {
+      id: 3,
+      title: "+374 12 13 13 13",
+      icon: FaPhone,
+    },
+  ],
+
+  contactNetworksConfig: [
+    { id: 1, icon: CiFacebook, link: "" },
+    { id: 2, icon: PiInstagramLogoLight, link: "" },
+  ],
+};
 
 // export const watchListConfig = [
 //   {

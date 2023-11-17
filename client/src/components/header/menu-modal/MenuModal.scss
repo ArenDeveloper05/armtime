@@ -1,0 +1,75 @@
+.menu-modal {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  background-color: rgba(0, 0, 0, 0.7);
+
+  &-links {
+    width: 250px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    animation-duration: 250ms;
+    animation-name: open_modal_anim;
+    animation-iteration-count: 1;
+    animation-timing-function: linear;
+    background-color: rgb(203, 203, 203);
+
+    &-link {
+      width: 100%;
+      padding: 24px;
+      font-size: 15px;
+      transition: 1s;
+      display: flex;
+      align-items: center;
+      color: black;
+      text-decoration: none;
+      border-bottom: 1px solid rgb(80, 80, 80);
+
+      > svg {
+        margin-right: 10px;
+      }
+
+      &:hover {
+        background-color: hsla(0, 0%, 100%, 0.2);
+      }
+    }
+  }
+
+  @keyframes open_modal_anim {
+    0% {
+      transform: translate(-200px);
+    }
+
+    100% {
+      transform: translate(0);
+    }
+  }
+
+  @keyframes close_modal_anim {
+    0% {
+      transform: translate(0px);
+    }
+
+    100% {
+      transform: translate(-200);
+    }
+  }
+
+  @media only screen and (min-width: 1000px) {
+    display: none;
+  }
+
+  @media only screen and (max-width: 300px) {
+    &-links {
+      width: 200px;
+
+      &-link {
+        padding: 20px 14px;
+      }
+    }
+  }
+}
