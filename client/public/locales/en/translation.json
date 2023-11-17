@@ -7,9 +7,9 @@
       "view product": "View Product"
     },
     "header_selectLang": {
-      "arm": "ARM",
-      "rus": "RUS",
-      "eng": "ENG"
+      "arm": "Armenian",
+      "rus": "Russian",
+      "eng": "English"
     }
   },
   "main": {
@@ -29,6 +29,25 @@
       "contact us": "Contact Us",
       "card title": "Do you want to contact with us with telephone?",
       "card text": "Spin Me"
+    },
+    "main_putOrder": {
+      "Put_Order": "Put Order",
+      "Order_Form": "Order Form",
+      "Payer&shipping_information": "Payer & shipping information",
+      "Payer_Information": "Payer Information",
+      "First_Name": "Fitst Name",
+      "Last_Name": "Last Name",
+      "Phone_Number": "Phone Number",
+      "Shipping_information": "Shipping information",
+      "Erevan": "Erevan",
+      "Regions": "Regions",
+      "Address": "address",
+      "TimeConvenientForYou": "Time convenient for you",
+      "Region/City/Village": "Region / City / Village",
+      "Zip/Postal_Code": "Zip / Postal Code",
+      "Notes_Field": "Notes Field",
+      "Items": "Items",
+      "ChooseOtherItemsToAddToThisOrder": "Choose other items to add to this order"
     }
   },
   "footer": {

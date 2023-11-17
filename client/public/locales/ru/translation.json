@@ -1,18 +1,16 @@
 {
   "header": {
     "headser_basket": {
-      "ru": {
-        "my cart": "Моя Тележка",
-        "total": "Общий",
-        "put order": "Поставить Заказ",
-        "view product": "Просмотреть Продукт"
-      }
+      "my cart": "Моя Корзина",
+      "total": "Итого",
+      "put order": "Заказать",
+      "view": "Просмотреть"
     },
     "header_selectLang": {
       "ru": {
-        "arm": "АРМ",
-        "rus": "РУС",
-        "eng": "АНГ"
+        "arm": "армянский",
+        "rus": "Русский",
+        "eng": "Англиский"
       }
     }
   },
@@ -20,8 +18,8 @@
     "main_priceFilter": {
       "ru": {
         "newest": "Новейший",
-        "prices descending": "Цены Падают",
-        "prices ascending": "Цены Растут"
+        "prices descending": "Цены по убыванию",
+        "prices ascending": "Цены по возрастанию"
       }
     },
     "main_deliveryTerms": {
@@ -39,6 +37,25 @@
       "contact us": "Связаться С Нами",
       "card title": "Хотите связаться с нами по телефону?",
       "card text": "Вращаий"
+    },
+    "main_putOrder": {
+      "Put_Order": "Заказать",
+      "Order_Form": "ФОРМА ЗАКАЗА",
+      "Payer&shipping_information": "Данные плательщика и доставки",
+      "Payer_Information": "Данные плательщика",
+      "First_Name": "Имя",
+      "Last_Name": "Фамилия",
+      "Phone_Number": "Номер телефона",
+      "Shipping_information": "Данные о доставке",
+      "Erevan": "Ереван",
+      "Regions": "Регионы",
+      "Address": "Адрес",
+      "TimeConvenientForYou": "Время удобное для вас",
+      "Region/City/Village": "Регион / Город / Село",
+      "Zip/Postal_Code": "Почта / Почтовый индекс",
+      "Notes_Field": "Поле примечаний",
+      "Items": "Список",
+      "ChooseOtherItemsToAddToThisOrder": "Выбрать другие часы для добавления в этот заказ"
     }
   },
   "footer": {

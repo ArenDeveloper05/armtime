@@ -11,18 +11,18 @@ import { CiFacebook } from "react-icons/ci";
 import { PiInstagramLogoLight } from "react-icons/pi";
 
 export const langs = [
-  { id: 1, title: "Հայերեն", type: "հայ" },
+  { id: 1, title: "Հայերեն", type: "am" },
   { id: 2, title: "English", type: "en" },
-  { id: 3, title: "Русский", type: "ру" },
+  { id: 3, title: "Русский", type: "ru" },
 ];
 
 export const navConfig = [
   {
     id: 1,
     title: {
-      հայ: "Ժամացույցներ",
+      am: "Ժամացույցներ",
       en: "Watches",
-      ру: "Часы",
+      ru: "Часы",
     },
     icon: LuWatch,
     link: ROUTER.WATCHES_PAGE_ROUTE,
@@ -30,9 +30,9 @@ export const navConfig = [
   {
     id: 2,
     title: {
-      հայ: "Գոտիներ",
+      am: "Գոտիներ",
       en: "Belts",
-      ру: "Ремены",
+      ru: "Ремены",
     },
     icon: GiBeltBuckles,
     link: ROUTER.BELTS_PAGE_ROUTE,
@@ -40,9 +40,9 @@ export const navConfig = [
   {
     id: 3,
     title: {
-      հայ: "Երաշխիք",
+      am: "Երաշխիք",
       en: "Guarantee",
-      ру: "Гарантия",
+      ru: "Гарантия",
     },
     icon: SiAdguard,
     link: ROUTER.WATCHES_PAGE_ROUTE,
@@ -50,9 +50,9 @@ export const navConfig = [
   {
     id: 4,
     title: {
-      հայ: "Առաքման պայմաններ",
+      am: "Առաքման պայմաններ",
       en: "Delivery terms",
-      ру: "условия доставки",
+      ru: "условия доставки",
     },
     icon: TbTruckDelivery,
     link: ROUTER.DELIVERY_PAGE_ROUTE,
@@ -60,9 +60,9 @@ export const navConfig = [
   {
     id: 5,
     title: {
-      հայ: "Մեր մասին",
+      am: "Մեր մասին",
       en: "About us",
-      ру: "О нас",
+      ru: "О нас",
     },
     icon: FaInfoCircle,
     link: ROUTER.ABOUTUS_PAGE_ROUTE,
@@ -70,9 +70,9 @@ export const navConfig = [
   {
     id: 6,
     title: {
-      հայ: "Կապ մեզ հետ",
+      am: "Կապ մեզ հետ",
       en: "Contact us",
-      ру: "Связаться с нами",
+      ru: "Связаться с нами",
     },
     icon: MdConnectWithoutContact,
     link: ROUTER.CONTACTUS_PAGE_ROUTE,
@@ -80,36 +80,36 @@ export const navConfig = [
 ];
 
 export const filterSelectConfig = {
-  հայ: "ԸՆՏՐԵՔ ՁԵՐ ԺԱՄԱՑՈՒՅՑԸ",
+  am: "ԸՆՏՐԵՔ ՁԵՐ ԺԱՄԱՑՈՒՅՑԸ",
   en: "SELECT YOUR WATCH",
-  ру: "ВЫБЕРИТЕ СВОИ ЧАСЫ",
+  ru: "ВЫБЕРИТЕ СВОИ ЧАСЫ",
 };
 
 export const filterGenderConfig = [
   {
     id: 1,
     title: {
-      հայ: "Բոլորը",
+      am: "Բոլորը",
       en: "All",
-      ру: "Все",
+      ru: "Все",
     },
     type: "all",
   },
   {
     id: 2,
     title: {
-      հայ: "Տղամարդու",
+      am: "Տղամարդու",
       en: "Men",
-      ру: "Мужские",
+      ru: "Мужские",
     },
     type: "male",
   },
   {
     id: 3,
     title: {
-      հայ: "Կանացի",
+      am: "Կանացի",
       en: "Women",
-      ру: "Женские",
+      ru: "Женские",
     },
     type: "female",
   },
@@ -119,61 +119,61 @@ export const filterKindsConfig = [
   {
     id: 1,
     title: {
-      հայ: "Բոլորը",
+      am: "Բոլորը",
       en: "All",
-      ру: "Все",
+      ru: "Все",
     },
     type: "all",
   },
   {
     id: 2,
     title: {
-      հայ: "Քվարցային",
+      am: "Քվարցային",
       en: "Quartz",
-      ру: "Кварцеые",
+      ru: "Кварцеые",
     },
     type: "quartz",
   },
   {
     id: 3,
     title: {
-      հայ: "Մեխանիկական",
+      am: "Մեխանիկական",
       en: "Mechanical",
-      ру: "Механические",
+      ru: "Механические",
     },
     type: "automatic",
   },
 ];
 
 export const filterSelectBeltConfig = {
-  հայ: "ԸՆՏՐԵՔ ՁԵՐ ԳՈՏԻՆ",
+  am: "ԸՆՏՐԵՔ ՁԵՐ ԳՈՏԻՆ",
   en: "SELECT YOUR BELT",
-  ру: "ВЫБЕРИТЕ СВОИ РЕМЕНЬ",
+  ru: "ВЫБЕРИТЕ СВОИ РЕМЕНЬ",
 };
 
 export const filterBeltConfig = [
   {
     id: 1,
     title: {
-      հայ: "Բոլորը",
+      am: "Բոլորը",
       en: "All",
-      ру: "Все",
+      ru: "Все",
     },
   },
   {
     id: 2,
     title: {
-      հայ: "օձի կաշվով",
+      am: "օձի կաշվով",
       en: "with snake skin",
-      ру: "в змеиной коже",
+      ru: "в змеиной коже",
     },
   },
   {
     id: 3,
     title: {
-      հայ: "կոկորդիլոսի կաշվով",
+      am: "կոկորդիլոսի կաշվով",
       en: "with crocodile skin",
-      ру: "с крокодиловой кожей",
+      ru: "с крокодиловой кожей",
     },
   },
 ];

@@ -1,22 +1,22 @@
 {
   "header": {
     "header_basket": {
-      "my cart": "Իմ Սայլը",
+      "my cart": "Իմ Զամբյուղը",
       "total": "Ընդհանուր",
       "put order": "Պատվիրել",
       "view product": "Տեսնել Ավելին"
     },
     "header_selectLang": {
-      "arm": "Հայ",
-      "rus": "ՌՈՒՍ",
-      "eng": "ԱՆԳ"
+      "arm": "Հայերեն",
+      "rus": "Ռուսերեն",
+      "eng": "Անգլերեն"
     }
   },
   "main": {
     "main_priceFilter": {
-      "newest": "Newest",
-      "prices descending": "Prices Descending",
-      "prices ascending": "Prices Ascending"
+      "newest": "Նորերը",
+      "prices descending": "Գները՝ ըստ նվազման",
+      "prices ascending": "Գները՝ ըստ աճման"
     },
     "main_deliveryTerms": {
       "title": "Առաքման Պայմաններ"
@@ -29,6 +29,25 @@
       "contact us": "Կապ Մեզ Հետ",
       "card title": "Ցանկանու՞մ եք կապ հաստատել մեզ հետ հեռախոսով",
       "card text": "Շրջիր"
+    },
+    "main_putOrder": {
+      "Put_Order": "Պատվիրել",
+      "Order_Form": "Պատվերի հայտ",
+      "Payer&shipping_information": "Վճարողի և առաքման տվյալներ",
+      "Payer_Information": "Վճարողի տվյալներ",
+      "First_Name": "Անուն",
+      "Last_Name": "Ազգանուն",
+      "Phone_Number": "Հեռախոսահամար",
+      "Shipping_information": "Առաքման տվյալներ",
+      "Erevan": "Երևան",
+      "Regions": "Մարզեր",
+      "Address": "Հասցե",
+      "TimeConvenientForYou": "Ձեզ հարմար ժամանակ",
+      "Region/City/Village": "Մարզ / Քաղաք / գյուղ",
+      "Zip/Postal_Code": "Փոստ / Փոստային ինդեքս",
+      "Notes_Field": "Նշումների դաշտ",
+      "Items": "Ցանկ",
+      "ChooseOtherItemsToAddToThisOrder": "Ընտրել այլ ժամացույցներ՝ այս պատվերին ավելացնելու համար"
     }
   },
   "footer": {
