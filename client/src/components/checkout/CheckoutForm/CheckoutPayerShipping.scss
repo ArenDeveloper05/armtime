@@ -332,7 +332,32 @@ input {
 
 @media (max-width: 609px) {
   .information {
+    &-shipping {
+      &-notes {
+        > label {
+          font-size: 14px;
+        }
+      }
+    }
+    &-payer {
+      &-form {
+        &-item {
+          flex-direction: column;
+          align-items: flex-start;
+          > label {
+            font-size: 14px;
+          }
+        }
+      }
+    }
     &-formForErevan {
+      &-address {
+        flex-direction: column;
+        align-items: flex-start;
+        > label {
+          font-size: 14px;
+        }
+      }
       &-time {
         > div {
           padding: 0;
@@ -347,6 +372,16 @@ input {
         }
       }
     }
+
+    &-formForRegions {
+      &-address {
+        flex-direction: column;
+        align-items: flex-start;
+        > label {
+          font-size: 14px;
+        }
+      }
+    }
   }
 }
 
@@ -356,6 +391,12 @@ input {
       font-size: 18px;
     }
     &-payer {
+      &-form {
+        &-item {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+      }
       &-name {
         font-size: 15px;
       }
