@@ -5,32 +5,51 @@ import useFetch from "../../../hooks/useFetch";
 import BaseSingle from "../../common/base-single/BaseSingle";
 
 import "./SingleWatch.scss";
+import { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 
 const SingleWatch = () => {
   const { id } = useParams();
+  const [beltData, setBeltData] = useState({});
+  const [error, setError] = useState(false);
+  const [loading, setLoading] = useState(true);
+  const {
+    i18n: { language },
+  } = useTranslation();
+
   console.log(id);
-  // useFetch(() => getSingleWatch(id));
+
+  useEffect(() => {
+    async function getData() {
+      try {
+        const { data } = await getSingleWatch(id);
+        setBeltData(data.message);
+        console.log(data);
+      } catch (error) {
+        setError(true);
+      } finally {
+        setLoading(false);
+      }
+    }
+    getData();
+  }, []);
+
+  useEffect(() => {
+    console.log(beltData);
+  }, [beltData]);
 
   return (
     <div className="single-watch">
-      <BaseSingle
-        img1={
-          "https://images.unsplash.com/photo-1619134778706-7015533a6150?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8bHV4dXJ5JTIwd2F0Y2hlc3xlbnwwfHwwfHx8MA%3D%3D&w=1000&q=80"
-        }
-        img2={
-          "https://img.freepik.com/premium-photo/watch-vintage-pocket-with-smoke-black-background_309761-600.jpg"
-        }
-        img3={
-          "https://media.istockphoto.com/id/1065329058/photo/premium-mens-watch-on-hand-close-up.jpg?s=612x612&w=0&k=20&c=VdpUac8ObrDZZ0I8OCD_vOxPqyOUCa3cM8zoqXsPkuE="
-        }
-        title={"AWI GOLD V0101.1 Men's Automatic Mechanical 14K Gold Watch"}
-        code={"A0001140-1"}
-        price={3500}
-        deliveryInfo={
-          "Free international express shipping 0% interest loan — 100000 ֏ × 18 months"
-        }
-        type={"Automatic"}
-      />
+      {Object.keys(beltData).length !== 0 && (
+        <BaseSingle
+          images={beltData.image}
+          title={beltData[`name_${language}`]}
+          code={"A0001140-1"}
+          price={beltData.discounted_price}
+          deliveryInfo={beltData[`desc_${language}`]}
+          type={beltData.type}
+        />
+      )}
     </div>
   );
 };

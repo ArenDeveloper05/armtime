@@ -1,7 +1,8 @@
 import { useState } from "react";
+import { generateImage } from "../../../../utils/helpers/generateImage";
 
-const BaseSingleImage = ({ img1, img2, img3 }) => {
-  const [mainImg, setMainImg] = useState(img1);
+const BaseSingleImage = ({ images }) => {
+  const [mainImg, setMainImg] = useState(generateImage(images[0].url));
 
   const chooseMainImg = (evt) => {
     setMainImg(evt.target.src);
@@ -14,11 +15,18 @@ const BaseSingleImage = ({ img1, img2, img3 }) => {
       </div>
 
       <div className="base-single-image-imgs">
-        <img src={img1} alt="img" onClick={chooseMainImg} />
-
-        <img src={img2} alt="img" onClick={chooseMainImg} />
-
-        <img src={img3} alt="img" onClick={chooseMainImg} />
+        {images &&
+          images.length !== 0 &&
+          images.map(({ id, url }) => {
+            return (
+              <img
+                src={generateImage(url)}
+                alt="img"
+                onClick={chooseMainImg}
+                key={id}
+              />
+            );
+          })}
       </div>
     </div>
   );
