@@ -10,7 +10,7 @@ import { useTranslation } from "react-i18next";
 
 const SingleWatch = () => {
   const { id } = useParams();
-  const [beltData, setBeltData] = useState({});
+  const [watchData, setWatchData] = useState({});
   const [error, setError] = useState(false);
   const [loading, setLoading] = useState(true);
   const {
@@ -23,7 +23,7 @@ const SingleWatch = () => {
     async function getData() {
       try {
         const { data } = await getSingleWatch(id);
-        setBeltData(data.message);
+        setWatchData(data.message);
         console.log(data);
       } catch (error) {
         setError(true);
@@ -35,21 +35,22 @@ const SingleWatch = () => {
   }, []);
 
   useEffect(() => {
-    console.log(beltData);
-  }, [beltData]);
+    console.log(watchData);
+  }, [watchData]);
 
   return (
     <div className="single-watch">
-      {Object.keys(beltData).length !== 0 && (
+      {Object.keys(watchData).length !== 0 && (
         <BaseSingle
-          images={beltData.image}
-          title={beltData[`name_${language}`]}
-          code={"A0001140-1"}
-          price={beltData.discounted_price}
-          deliveryInfo={beltData[`desc_${language}`]}
-          type={beltData.type}
+          images={watchData.image}
+          title={watchData[`name_${language}`]}
+          price={watchData.discounted_price}
+          deliveryInfo={watchData[`desc_${language}`]}
+          type={watchData.type}
         />
       )}
+      {loading && <h1>Loading...</h1>}
+      {error && error}
     </div>
   );
 };

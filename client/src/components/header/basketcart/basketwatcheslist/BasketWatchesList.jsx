@@ -13,8 +13,10 @@ const BasketWatchesList = ({ watch }) => {
   const dispatch = useDispatch();
 
   const {
+    t,
     i18n: { language },
   } = useTranslation();
+
   return (
     <div className="buy-dialog-inner-watchList">
       <div className="buy-dialog-inner-watchList-image">
@@ -38,10 +40,12 @@ const BasketWatchesList = ({ watch }) => {
         <Link
           className="buy-dialog-inner-watchList-info-view"
           onClick={() => {
-            navigate(`/watches/${watch.id}`);
+            navigate(
+              `/${watch.case_material ? "watches" : "belts"}/${watch.id}`
+            );
           }}
         >
-          View
+          {t("header.header_basket.view_product")}
         </Link>
       </div>
       <div

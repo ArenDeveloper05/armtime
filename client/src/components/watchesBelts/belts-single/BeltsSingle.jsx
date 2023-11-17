@@ -1,27 +1,53 @@
+import { useEffect, useState } from "react";
 import BaseSingle from "../../common/base-single/BaseSingle";
 import "./BeltsSingle.scss";
+import { getSingleBelt } from "../../../api/api";
+import { useTranslation } from "react-i18next";
+import { useParams } from "react-router-dom";
 
 const BeltsSingle = () => {
+  const { id } = useParams();
+  const [beltData, setBeltData] = useState({});
+  const [error, setError] = useState(false);
+  const [loading, setLoading] = useState(true);
+  const {
+    i18n: { language },
+  } = useTranslation();
+
+  console.log(id);
+
+  useEffect(() => {
+    async function getData() {
+      try {
+        const { data } = await getSingleBelt(id);
+        setBeltData(data.message);
+        console.log(data);
+      } catch (error) {
+        setError(true);
+      } finally {
+        setLoading(false);
+      }
+    }
+    getData();
+  }, []);
+
+  useEffect(() => {
+    console.log(beltData);
+  }, [beltData]);
+
   return (
-    <div className="belts-single">
-      <BaseSingle
-        img1={
-          "https://7friendsandwatches.com/wp-content/uploads/2022/07/DSCF8444.jpg"
-        }
-        img2={
-          "https://shop.fratello.com/cdn/shop/collections/Seiko-Prospex-Alpinist-SPB201J1-PR.009.jpg?v=1663937716"
-        }
-        img3={
-          "https://stridewise.com/wp-content/uploads/2020/04/calfskin-leather-watch-straps.jpeg"
-        }
-        title={"AWI GOLD V0101.1 Men's Automatic Mechanical 14K Gold Watch"}
-        code={"A0001140-1"}
-        price={3500}
-        deliveryInfo={
-          "Free international express shipping 0% interest loan — 100000 ֏ × 18 months"
-        }
-        type={"Automatic"}
-      />
+    <div className="single-watch">
+      {Object.keys(beltData).length !== 0 && (
+        <BaseSingle
+          images={beltData.image}
+          title={beltData[`name_${language}`]}
+          price={beltData.discounted_price}
+          deliveryInfo={beltData[`desc_${language}`]}
+          type={beltData.type}
+        />
+      )}
+      {loading && <h1>Loading...</h1>}
+      {error && error}
     </div>
   );
 };

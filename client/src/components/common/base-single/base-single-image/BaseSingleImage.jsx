@@ -1,8 +1,12 @@
 import { useState } from "react";
 import { generateImage } from "../../../../utils/helpers/generateImage";
 
+import noImage from "../../../../images/no-image.jpg";
+
 const BaseSingleImage = ({ images }) => {
-  const [mainImg, setMainImg] = useState(generateImage(images[0].url));
+  const [mainImg, setMainImg] = useState(
+    images && images.length !== 0 ? generateImage(images[0].url) : noImage
+  );
 
   const chooseMainImg = (evt) => {
     setMainImg(evt.target.src);

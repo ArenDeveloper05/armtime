@@ -75,7 +75,9 @@ const BasketCart = () => {
               })}
             </div>
             <div className="buy-dialog-inner-foot">
-              <div className="buy-dialog-inner-foot-text">Total*</div>
+              <div className="buy-dialog-inner-foot-text">
+                {t("header.header_basket.total")}*
+              </div>
               <div className="buy-dialog-inner-foot-price">
                 {onCalcPrice()}
                 <TbCurrencyDram style={{ width: "15px", height: "15px" }} />
@@ -84,7 +86,7 @@ const BasketCart = () => {
                 className="buy-dialog-inner-foot-button"
                 to={ROUTER.CHECKOUT_PAGE_ROUTE}
               >
-                Put Order
+                {t("header.header_basket.put_order")}
               </Link>
             </div>
           </div>

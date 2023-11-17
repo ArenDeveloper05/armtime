@@ -4,19 +4,19 @@
       "my_cart": "My Cart",
       "total": "Total",
       "put_order": "Put Order",
-      "view product": "View Product"
+      "view_product": "View Product"
     },
     "header_selectLang": {
-      "arm": "ARM",
-      "rus": "RUS",
-      "eng": "ENG"
+      "arm": "Armenian",
+      "rus": "Russian",
+      "eng": "English"
     }
   },
   "main": {
     "main_priceFilter": {
       "newest": "Newest",
-      "prices descending": "Prices Descending",
-      "prices ascending": "Prices Ascending"
+      "prices_descending": "Prices Descending",
+      "prices_ascending": "Prices Ascending"
     },
     "main_deliveryTerms": {
       "title": "Delivery Terms"
@@ -26,9 +26,28 @@
       "desc": "Armenian Time Armenian watch brand was founded in 2020 and is still operating today. The brand is engaged in the modeling of watches, the production and assembly of parts, branding and pricing, as a result of which it presents customers with stylish and distinctive Armenian brandy watches that have no similar in the market. The brand has passed its registration in RA Intellectual Property Agency. By buying Armenian Time brand watches, customers can be sure that they are buying unique and unique models, as the brand cannot be duplicated. The beautiful and unique packaging of the models gives the consumer the opportunity to purchase it not only for personal use, but also the models can become the best option for your gift. Models are displayed and sold online on the official website of Armenian Time."
     },
     "main_contactUs": {
-      "contact us": "Contact Us",
-      "card title": "Do you want to contact with us with telephone?",
-      "card text": "Spin Me"
+      "contact_us": "Contact Us",
+      "card_title": "Do you want to contact with us with telephone?",
+      "card_text": "Spin Me"
+    },
+    "main_putOrder": {
+      "Put_Order": "Put Order",
+      "Order_Form": "Order Form",
+      "Payer&shipping_information": "Payer & shipping information",
+      "Payer_Information": "Payer Information",
+      "First_Name": "Fitst Name",
+      "Last_Name": "Last Name",
+      "Phone_Number": "Phone Number",
+      "Shipping_information": "Shipping information",
+      "Erevan": "Erevan",
+      "Regions": "Regions",
+      "Address": "address",
+      "TimeConvenientForYou": "Time convenient for you",
+      "Region/City/Village": "Region / City / Village",
+      "Zip/Postal_Code": "Zip / Postal Code",
+      "Notes_Field": "Notes Field",
+      "Items": "Items",
+      "ChooseOtherItemsToAddToThisOrder": "Choose other items to add to this order"
     }
   },
   "footer": {
