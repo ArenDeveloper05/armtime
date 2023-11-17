@@ -22,6 +22,7 @@ const CheckoutItems = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const {
+    t,
     i18n: { language },
   } = useTranslation();
 
@@ -81,7 +82,7 @@ const CheckoutItems = () => {
   }
   return (
     <div className="checkoutItems">
-      <div className="checkoutItems-title">Items</div>
+      <div className="checkoutItems-title">{t("main.main_putOrder.Items")}</div>
       {basketWatches.length !== 0 ? (
         <>
           <div className="checkoutItems-items">
@@ -132,7 +133,7 @@ const CheckoutItems = () => {
           </div>
           <div className="checkoutItems-footer">
             <div className="checkoutItems-footer-total">
-              Total*
+              {t("header.header_basket.total")}*
               <span>
                 {onCalcPrice()} <TbCurrencyDram />
               </span>

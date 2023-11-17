@@ -1,9 +1,11 @@
 import { useContext, useEffect } from "react";
 import { CheckoutContext } from "../Checkout";
+import { useTranslation } from "react-i18next";
 
 const FormForRegions = () => {
   const { checkoutData, inputOnChangeWithNesteds, clearShippingInfo } =
     useContext(CheckoutContext);
+  const { t } = useTranslation();
 
   useEffect(() => {
     clearShippingInfo("yerevan");
@@ -16,7 +18,7 @@ const FormForRegions = () => {
           htmlFor="state"
           className="information-formForRegions-address-state"
         >
-          State / City / Village
+          {t("main.main_putOrder.Region/City/Village")}
         </label>
         <input
           type="text"
@@ -33,7 +35,7 @@ const FormForRegions = () => {
       </div>
       <div className="information-formForRegions-address">
         <label htmlFor="zip" className="information-formForRegions-address-zip">
-          Zip / Postal Code
+          {t("main.main_putOrder.Zip/Postal_Code")}
         </label>
         <input
           type="text"
@@ -49,7 +51,7 @@ const FormForRegions = () => {
           htmlFor="address"
           className="information-formForRegions-address-adr"
         >
-          Address
+          {t("main.main_putOrder.Address")}
         </label>
         <input
           type="text"

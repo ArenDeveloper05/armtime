@@ -5,19 +5,28 @@ import FormForErevan from "./FormForErevan";
 import FormForRegions from "./FormForRegions";
 
 import "./CheckoutPayerShipping.scss";
+import { useTranslation } from "react-i18next";
 
 const CheckoutPayerShipping = () => {
   const { checkoutData, inputOnChange, changeShippingState } =
     useContext(CheckoutContext);
 
+  const { t } = useTranslation();
+
   return (
     <div className="information">
-      <div className="information-title">Payer & shipping information</div>
+      <div className="information-title">
+        {t("main.main_putOrder.Put_Order")}
+      </div>
       <div className="information-payer">
-        <div className="information-payer-name">Payer Information</div>
-        <form action="" className="information-payer-form" autoComplete="off">
+        <div className="information-payer-name">
+          {t("main.main_putOrder.Payer_Information")}
+        </div>
+        <form className="information-payer-form" autoComplete="off">
           <div className="information-payer-form-item">
-            <label htmlFor="first_name">First name</label>
+            <label htmlFor="first_name">
+              {t("main.main_putOrder.First_Name")}
+            </label>
             <input
               type="text"
               name="first_name"
@@ -27,7 +36,9 @@ const CheckoutPayerShipping = () => {
             />
           </div>
           <div className="information-payer-form-item">
-            <label htmlFor="last_name">Last name</label>
+            <label htmlFor="last_name">
+              {t("main.main_putOrder.Last_Name")}
+            </label>
             <input
               type="text"
               name="last_name"
@@ -37,7 +48,9 @@ const CheckoutPayerShipping = () => {
             />
           </div>
           <div className="information-payer-form-item">
-            <label htmlFor="phone_number">Phone number</label>
+            <label htmlFor="phone_number">
+              {t("main.main_putOrder.Phone_Number")}
+            </label>
             <input
               type="number"
               name="phone"
@@ -53,7 +66,7 @@ const CheckoutPayerShipping = () => {
       <div className="information-shipping">
         <div className="information-shipping-title">
           <div className="information-shipping-title-name">
-            Shipping information
+            {t("main.main_putOrder.Shipping_information")}
           </div>
           <div className="information-shipping-title-cityName">
             <div className="information-shipping-title-cityName-check">
@@ -67,7 +80,7 @@ const CheckoutPayerShipping = () => {
                 }}
               />
               <label htmlFor="erevan"></label>
-              <div>Yerevan</div>
+              <div> {t("main.main_putOrder.Erevan")}</div>
             </div>
             <div className="information-shipping-title-cityName-check">
               <input
@@ -80,7 +93,7 @@ const CheckoutPayerShipping = () => {
                 }}
               />
               <label htmlFor="regions"></label>
-              <div>Regions</div>
+              <div> {t("main.main_putOrder.Regions")}</div>
             </div>
           </div>
         </div>
@@ -91,7 +104,7 @@ const CheckoutPayerShipping = () => {
         )}
 
         <div className="information-shipping-notes">
-          <label htmlFor="notes">Notes Field</label>
+          <label htmlFor="notes">{t("main.main_putOrder.Notes_Field")}</label>
           <input
             type="text"
             name="notes"

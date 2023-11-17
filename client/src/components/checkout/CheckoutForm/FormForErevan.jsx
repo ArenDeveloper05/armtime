@@ -1,11 +1,13 @@
 import { useContext, useEffect, useState } from "react";
 import { CheckoutContext } from "../Checkout";
+import { useTranslation } from "react-i18next";
 
 const FormForErevan = () => {
   const [checkedTime, setCheckedTime] = useState({
     12: true,
     18: false,
   });
+  const { t } = useTranslation();
 
   const { checkoutData, inputOnChangeWithNesteds, clearShippingInfo } =
     useContext(CheckoutContext);
@@ -17,7 +19,7 @@ const FormForErevan = () => {
   return (
     <form className="information-formForErevan">
       <div className="information-formForErevan-address">
-        <label>Address</label>
+        <label>{t("main.main_putOrder.Address")}</label>
         <input
           type="text"
           name="address"
@@ -29,7 +31,7 @@ const FormForErevan = () => {
         />
       </div>
       <div className="information-formForErevan-time">
-        <div>Time convenient for you</div>
+        <div>{t("main.main_putOrder.TimeConvenientForYou")}</div>
         <div className="information-formForErevan-time-hours">
           <input
             type="checkbox"
