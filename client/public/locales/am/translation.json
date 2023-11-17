@@ -1,9 +1,9 @@
 {
   "header": {
     "header_basket": {
-      "my cart": "Իմ Սայլը",
+      "my_cart": "Իմ Սայլը",
       "total": "Ընդհանուր",
-      "put order": "Պատվիրել",
+      "put_order": "Պատվիրել",
       "view product": "Տեսնել Ավելին"
     },
     "header_selectLang": {

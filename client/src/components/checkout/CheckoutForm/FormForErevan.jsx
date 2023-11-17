@@ -1,15 +1,32 @@
-import { useState } from "react";
+import { useContext, useEffect, useState } from "react";
+import { CheckoutContext } from "../Checkout";
 
 const FormForErevan = () => {
   const [checkedTime, setCheckedTime] = useState({
     12: true,
     18: false,
   });
+
+  const { checkoutData, inputOnChangeWithNesteds, clearShippingInfo } =
+    useContext(CheckoutContext);
+
+  useEffect(() => {
+    clearShippingInfo("regions");
+  }, []);
+
   return (
     <form className="information-formForErevan">
       <div className="information-formForErevan-address">
         <label>Address</label>
-        <input type="text" name="address" id="address" />
+        <input
+          type="text"
+          name="address"
+          id="address"
+          value={checkoutData.yerevan.address}
+          onChange={(e) => {
+            inputOnChangeWithNesteds("yerevan", "address", e.target.value);
+          }}
+        />
       </div>
       <div className="information-formForErevan-time">
         <div>Time convenient for you</div>
@@ -22,9 +39,10 @@ const FormForErevan = () => {
             onChange={() => {
               if (checkedTime[12]) return;
               setCheckedTime({
-                12: !checkedTime[12],
+                12: true,
                 18: false,
               });
+              inputOnChangeWithNesteds("yerevan", "time", "12:00 - 18:00");
             }}
           />
           <label htmlFor="12:00"></label>
@@ -40,8 +58,9 @@ const FormForErevan = () => {
               if (checkedTime[18]) return;
               setCheckedTime({
                 12: false,
-                18: !checkedTime[18],
+                18: true,
               });
+              inputOnChangeWithNesteds("yerevan", "time", "18:00 - 23:00");
             }}
           />
           <label htmlFor="18:00"></label>

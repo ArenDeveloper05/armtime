@@ -27,3 +27,13 @@ export const getBelts = async () => {
 export const getSingleBelt = async (id) => {
   return await api.get(`/api/belts/${id}`);
 };
+
+export const getSlider = async () => {
+  return await api.get(`/api/slider`);
+};
+
+//POST
+
+export const sendTelegramData = async (data) => {
+  return await api.post(`/api/send-telegram-message`, data);
+};

@@ -35,6 +35,7 @@ const Langs = () => {
         {langDialogOpen && (
           <div className="header-inner-language-dialog">
             {langs.map(({ id, title, type }) => {
+              console.log(type);
               return (
                 <div
                   className="header-inner-language-dialog-item"

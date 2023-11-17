@@ -1,11 +1,11 @@
 import BeltsItemDescription from "./belts-item-description/BeltsItemDescription";
-import BeltsItemImages from "./belts-item-images/BeltsItemImages";
+import BeltsItemImage from "./belts-item-image/BeltsItemImage";
 import { generateImage } from "../../../utils/helpers/generateImage";
 
 const BeltsItem = ({ item }) => {
   return (
     <div className="belts-list-item">
-      <BeltsItemImages img={generateImage(item.image[0].url)} />
+      <BeltsItemImage img={generateImage(item.image[0].url)} />
       <BeltsItemDescription item={item} />
     </div>
   );

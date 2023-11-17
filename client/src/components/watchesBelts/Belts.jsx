@@ -8,8 +8,6 @@ import Filter from "../filter/Filter";
 import "./Belts.scss";
 
 const Belts = () => {
-  console.log("rerender");
-
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getBeltsThunk());

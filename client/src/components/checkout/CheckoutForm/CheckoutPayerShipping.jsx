@@ -1,13 +1,15 @@
-import { useState } from "react";
+import { useContext } from "react";
+import { CheckoutContext } from "../Checkout";
+
 import FormForErevan from "./FormForErevan";
-import "./CheckoutPayerShipping.scss";
 import FormForRegions from "./FormForRegions";
 
+import "./CheckoutPayerShipping.scss";
+
 const CheckoutPayerShipping = () => {
-  const [checked, setChecked] = useState({
-    erevan: true,
-    regions: false,
-  });
+  const { checkoutData, inputOnChange, changeShippingState } =
+    useContext(CheckoutContext);
+
   return (
     <div className="information">
       <div className="information-title">Payer & shipping information</div>
@@ -15,16 +17,35 @@ const CheckoutPayerShipping = () => {
         <div className="information-payer-name">Payer Information</div>
         <form action="" className="information-payer-form" autoComplete="off">
           <div className="information-payer-form-item">
-            <label htmlFor="fname">First name</label>
-            <input type="text" name="fname" />
+            <label htmlFor="first_name">First name</label>
+            <input
+              type="text"
+              name="first_name"
+              id="first_name"
+              value={checkoutData.first_name}
+              onChange={inputOnChange}
+            />
           </div>
           <div className="information-payer-form-item">
-            <label htmlFor="lname">Last name</label>
-            <input type="text" name="lname" />
+            <label htmlFor="last_name">Last name</label>
+            <input
+              type="text"
+              name="last_name"
+              id="last_name"
+              value={checkoutData.last_name}
+              onChange={inputOnChange}
+            />
           </div>
           <div className="information-payer-form-item">
-            <label htmlFor="phone">Phone number</label>
-            <input type="text" name="phone" />
+            <label htmlFor="phone_number">Phone number</label>
+            <input
+              type="number"
+              name="phone"
+              min={0}
+              id="phone_number"
+              value={checkoutData.phone}
+              onChange={inputOnChange}
+            />
           </div>
         </form>
       </div>
@@ -39,29 +60,23 @@ const CheckoutPayerShipping = () => {
               <input
                 type="checkbox"
                 id="erevan"
-                checked={checked.erevan}
+                checked={checkoutData.shipping === "yerevan" ? true : false}
                 onChange={() => {
-                  if (checked.erevan) return;
-                  setChecked({
-                    erevan: !checked.erevan,
-                    regions: false,
-                  });
+                  if (checkoutData.shipping === "yerevan") return;
+                  changeShippingState("yerevan");
                 }}
               />
               <label htmlFor="erevan"></label>
-              <div>Erevan</div>
+              <div>Yerevan</div>
             </div>
             <div className="information-shipping-title-cityName-check">
               <input
                 type="checkbox"
                 id="regions"
-                checked={checked.regions}
+                checked={checkoutData.shipping === "regions" ? true : false}
                 onChange={() => {
-                  if (checked.regions) return;
-                  setChecked({
-                    erevan: false,
-                    regions: !checked.regions,
-                  });
+                  if (checkoutData.shipping === "regions") return;
+                  changeShippingState("regions");
                 }}
               />
               <label htmlFor="regions"></label>
@@ -69,11 +84,21 @@ const CheckoutPayerShipping = () => {
             </div>
           </div>
         </div>
-        {checked.erevan ? <FormForErevan /> : <FormForRegions />}
+        {checkoutData.shipping === "yerevan" ? (
+          <FormForErevan />
+        ) : (
+          <FormForRegions />
+        )}
 
         <div className="information-shipping-notes">
           <label htmlFor="notes">Notes Field</label>
-          <input type="text" name="notes" id="notes" />
+          <input
+            type="text"
+            name="notes"
+            id="notes"
+            value={checkoutData.notes}
+            onChange={inputOnChange}
+          />
         </div>
       </div>
     </div>

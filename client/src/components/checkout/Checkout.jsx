@@ -3,7 +3,8 @@ import CheckoutPayerShipping from "./CheckoutForm/CheckoutPayerShipping";
 import CheckoutItems from "./checkoutItems/CheckoutItems";
 
 import "./Checkout.scss";
-import { useState } from "react";
+import { createContext, useState } from "react";
+export const CheckoutContext = createContext(null);
 
 const Checkout = () => {
   const [checkoutData, setCheckoutData] = useState({
@@ -12,21 +13,72 @@ const Checkout = () => {
     phone: "",
     yerevan: {
       address: "",
-      time: "",
+      time: "12:00 - 18:00",
     },
     regions: {
       state_village_city: "",
       postal_code: "",
       address: "",
     },
+    shipping: "yerevan",
+    notes: "",
   });
+
+  console.log(checkoutData);
 
   function inputOnChange(e) {
     setCheckoutData((prev) => {
       return {
         ...prev,
+        [e.target.name]: e.target.value,
       };
     });
+  }
+
+  function inputOnChangeWithNesteds(nestedObj, key, value) {
+    setCheckoutData((prev) => {
+      return {
+        ...prev,
+        [nestedObj]: {
+          ...prev[nestedObj],
+          [key]: value,
+        },
+      };
+    });
+  }
+
+  function changeShippingState(val) {
+    setCheckoutData((prev) => {
+      return {
+        ...prev,
+        shipping: val,
+      };
+    });
+  }
+
+  function clearShippingInfo(key) {
+    if (key === "yerevan") {
+      setCheckoutData((prev) => {
+        return {
+          ...prev,
+          yerevan: {
+            address: "",
+            time: "12:00 - 18:00",
+          },
+        };
+      });
+    } else if (key === "regions") {
+      setCheckoutData((prev) => {
+        return {
+          ...prev,
+          regions: {
+            state_village_city: "",
+            postal_code: "",
+            address: "",
+          },
+        };
+      });
+    }
   }
 
   return (
@@ -34,8 +86,19 @@ const Checkout = () => {
       <Container>
         <div className="checkout-inner">
           <h1 className="checkout-inner-title">ORDER FORM</h1>
-          <CheckoutPayerShipping />
-          <CheckoutItems />
+          <CheckoutContext.Provider
+            value={{
+              checkoutData,
+              setCheckoutData,
+              inputOnChange,
+              inputOnChangeWithNesteds,
+              clearShippingInfo,
+              changeShippingState,
+            }}
+          >
+            <CheckoutPayerShipping />
+            <CheckoutItems />
+          </CheckoutContext.Provider>
         </div>
       </Container>
     </div>

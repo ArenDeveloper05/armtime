@@ -1,9 +1,9 @@
 {
   "header": {
     "header_basket": {
-      "my cart": "My Cart",
+      "my_cart": "My Cart",
       "total": "Total",
-      "put order": "Put Order",
+      "put_order": "Put Order",
       "view product": "View Product"
     },
     "header_selectLang": {

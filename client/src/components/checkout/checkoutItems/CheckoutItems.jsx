@@ -11,6 +11,9 @@ import noImage from "../../../images/no-image.jpg";
 
 import "./CheckoutItems.scss";
 import { useTranslation } from "react-i18next";
+import { sendTelegramData } from "../../../api/api";
+import { useContext } from "react";
+import { CheckoutContext } from "../Checkout";
 
 const CheckoutItems = () => {
   const basketWatches = useSelector(
@@ -22,6 +25,8 @@ const CheckoutItems = () => {
     i18n: { language },
   } = useTranslation();
 
+  const { checkoutData, inputOnChange } = useContext(CheckoutContext);
+
   const onCalcPrice = () => {
     let price = 0;
     if (basketWatches.length !== 0) {
@@ -30,9 +35,50 @@ const CheckoutItems = () => {
         return "";
       });
     }
-
     return +price;
   };
+
+  function seeShippingDetails(checkoutData) {
+    let shippingDetails = {};
+    if (checkoutData.shipping === "yerevan") {
+      shippingDetails = {
+        Հասցե: checkoutData[checkoutData.shipping].address,
+        ժամանակ: checkoutData[checkoutData.shipping].time,
+      };
+    } else if (checkoutData.shipping === "regions") {
+      shippingDetails = {
+        Մարզ: checkoutData[checkoutData.shipping].state_village_city,
+        Փոստ: checkoutData[checkoutData.shipping].postal_code,
+        Հասցե: checkoutData[checkoutData.shipping].address,
+      };
+    }
+    return shippingDetails;
+  }
+
+  async function sendTelegramDataFunction(watchList) {
+    try {
+      const shippingDetails = seeShippingDetails(checkoutData);
+      console.log(shippingDetails);
+
+      for (let i = 0; i < watchList.length; i++) {
+        const watch = watchList[i];
+        const x = await sendTelegramData({
+          Անուն: checkoutData.first_name,
+          Ազգանուն: checkoutData.last_name,
+          Հեռախոսահամար: checkoutData.phone,
+          Առաքում: checkoutData.shipping,
+          Նամակ: checkoutData.notes,
+          ...shippingDetails,
+          Անվանում: watch.name_am,
+          Գին: watch.discounted_price,
+          Նկար: watch.image[0] ? generateImage(watch.image[0].url) : "",
+          Նկարագրություն: watch.desc_am,
+        });
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  }
   return (
     <div className="checkoutItems">
       <div className="checkoutItems-title">Items</div>
@@ -86,13 +132,20 @@ const CheckoutItems = () => {
           </div>
           <div className="checkoutItems-footer">
             <div className="checkoutItems-footer-total">
-              Total*{" "}
+              Total*
               <span>
                 {onCalcPrice()} <TbCurrencyDram />
               </span>
             </div>
 
-            <div className="checkoutItems-footer-confirm">Confirm</div>
+            <div
+              className="checkoutItems-footer-confirm"
+              onClick={() => {
+                sendTelegramDataFunction(basketWatches);
+              }}
+            >
+              Confirm
+            </div>
           </div>
         </>
       ) : (

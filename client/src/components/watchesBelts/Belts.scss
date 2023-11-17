@@ -1,13 +1,15 @@
 .belts {
   padding: 20px 10px;
   &-list {
+    min-height: 600px;
     border: solid;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    align-items: center;
     flex-wrap: wrap;
+    gap: 40px;
     &-item {
       width: 300px;
-      margin: 10px auto;
       cursor: pointer;
       transition: 250ms;
       border: 1px solid rgba(0, 0, 0, 0.2);
@@ -17,7 +19,7 @@
         box-shadow: 1px 1px 10px 1px #c59d5f;
       }
 
-      &-images {
+      &-image {
         width: 100%;
 
         > img {
@@ -64,6 +66,13 @@
           }
         }
       }
+    }
+  }
+
+  @media only screen and (max-width: 692px) {
+    &-list {
+      flex-wrap: nowrap;
+      gap: 12px;
     }
   }
 

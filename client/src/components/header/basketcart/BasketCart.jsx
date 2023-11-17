@@ -12,6 +12,7 @@ import { useSelector } from "react-redux";
 import BasketWatchesList from "./basketwatcheslist/BasketWatchesList";
 
 import "./BasketCart.scss";
+import { useTranslation } from "react-i18next";
 
 const BasketCart = () => {
   const [basketDialogOpen, setBasketDialogOpen] = useState(false);
@@ -19,6 +20,8 @@ const BasketCart = () => {
   const basketWatches = useSelector(
     (state) => state.basketWatches.basketWatches
   );
+
+  const { t } = useTranslation();
 
   useEffect(() => {
     if (basketWatches.length === 0) {
@@ -53,7 +56,9 @@ const BasketCart = () => {
           <div className="buy-inner-icon-counter">{basketWatches.length}</div>
           <SlBasket className="buy-inner-icon-icn" />
         </div>
-        <div className="buy-inner-cartName">My cart</div>
+        <div className="buy-inner-cartName">
+          {t("header.header_basket.my_cart")}
+        </div>
         <div className="buy-inner-price">
           {onCalcPrice()}
           <TbCurrencyDram style={{ width: "18px", height: "18px" }} />
