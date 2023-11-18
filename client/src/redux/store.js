@@ -13,14 +13,12 @@ import storage from "redux-persist/lib/storage";
 import watchesReducer from "./slices/watchesSlice";
 import basketWatchesReducer from "./slices/basketWatchesSlice";
 import beltsReducer from "./slices/beltsSlice";
-import deliveryReducer from "./slices/deliverySlice";
 import sliderReducer from "./slices/sliderSlice";
 
 const rootReducer = combineReducers({
   watches: watchesReducer,
   basketWatches: basketWatchesReducer,
   belts: beltsReducer,
-  delivery: deliveryReducer,
   slider: sliderReducer,
 });
 

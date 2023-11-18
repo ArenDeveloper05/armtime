@@ -12,7 +12,14 @@ const PageBanner = ({ mainTitle, BannerImage, links }) => {
         <h1>{mainTitle}</h1>
         <p>
           <Link to={ROUTER.HOME_PAGE_ROUTE}>{links[0]}</Link> /{" "}
-          <Link>{links[1]}</Link>
+          <Link
+            style={{
+              opacity: 0.7,
+              textTransform: "lowercase",
+            }}
+          >
+            {links[1]}
+          </Link>
         </p>
       </div>
     </div>
