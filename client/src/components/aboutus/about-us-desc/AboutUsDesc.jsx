@@ -1,7 +1,7 @@
 const AboutUsDesc = () => {
   return (
     <div className="about-us-desc">
-      <p className="about-us-desc-title">Մեր Մասին</p>
+      {/* <p className="about-us-desc-title">Մեր Մասին</p> */}
 
       <p className="about-us-desc-txt">
         Armenian Time հայկական ժամացույցների բրենդը հիմնադրվել է 2020 թվականին և

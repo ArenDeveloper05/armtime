@@ -3,11 +3,18 @@ import BaseCard from "../common/base-card/BaseCard";
 import "./ContactUs.scss";
 
 import ContactUsDesc from "./contact-us-desc/ContactUsDesc";
+import PageBanner from "../common/page-banner/PageBanner";
+import contactBg from "../../images/banner/contact-bg.jpg";
 
 const ContactUs = () => {
+  const links = ["Home", "Contact"];
   return (
     <div className="contact-us">
-      <p className="contact-us-title">Contact Us</p>
+      <PageBanner
+        mainTitle="Contact Us"
+        BannerImage={contactBg}
+        links={links}
+      />
 
       {/* <div className="contact-us-cards">
         <BaseCard
