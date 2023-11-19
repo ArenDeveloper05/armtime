@@ -23,7 +23,7 @@
   &-contact {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     justify-content: flex-start;
     gap: 15px;
 
@@ -53,7 +53,7 @@
   &-follow {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     justify-content: flex-start;
     gap: 10px;
 
@@ -84,7 +84,7 @@
     }
   }
 
-  @media only screen and (max-width: 700px) {
+  @media only screen and (max-width: 870px) {
     flex-direction: column;
     align-items: center;
     padding: 20px;
@@ -99,10 +99,12 @@
 
     &-contact {
       width: 100%;
+      align-items: center;
     }
 
     &-follow {
       width: 100%;
+      align-items: center;
     }
   }
 }

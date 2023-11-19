@@ -9,6 +9,7 @@
     align-items: center;
     gap: 25px;
     position: relative;
+    padding: 0 15px;
     &-select {
       display: flex;
       align-items: center;
@@ -152,7 +153,7 @@
       }
     }
     &-rangeSlider {
-      width: 35%;
+      width: 100%;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -170,8 +171,7 @@
 
     &-selection {
       position: relative;
-      width: 15%;
-
+      width: 32%;
       gap: 2px;
       &-select {
         cursor: pointer;
@@ -210,6 +210,18 @@
             background-color: var(--grey);
           }
         }
+      }
+    }
+  }
+}
+
+@media (max-width: 790px) {
+  .filter {
+    &-inner {
+      flex-direction: column;
+      padding: 25px 0px;
+      &-rangeSlider {
+        // width: 50%;
       }
     }
   }

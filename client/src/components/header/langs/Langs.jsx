@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { IoIosArrowDown } from "react-icons/io";
 
 import { langs } from "../../../config";
@@ -35,7 +35,6 @@ const Langs = () => {
         {langDialogOpen && (
           <div className="header-inner-language-dialog">
             {langs.map(({ id, title, type }) => {
-              console.log(type);
               return (
                 <div
                   className="header-inner-language-dialog-item"
