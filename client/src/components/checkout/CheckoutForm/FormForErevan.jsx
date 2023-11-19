@@ -19,7 +19,7 @@ const FormForErevan = () => {
   return (
     <form className="information-formForErevan">
       <div className="information-formForErevan-address">
-        <label>{t("main.main_putOrder.Address")}</label>
+        <label htmlFor="address">{t("main.main_putOrder.Address")}</label>
         <input
           type="text"
           name="address"

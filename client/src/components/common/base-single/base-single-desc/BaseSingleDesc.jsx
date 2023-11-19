@@ -7,7 +7,6 @@ const BaseSingleDesc = ({ type }) => {
     <div className="base-single-desc">
       <BaseSingleDescInfo />
       {type && <BaseSingleDescType type={type} />}
-
       <BaseSingleDescBuy />
     </div>
   );

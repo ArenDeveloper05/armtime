@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import { ROUTER } from "../../../../router/router";
 import { Link, useNavigate } from "react-router-dom";
 
@@ -18,11 +17,13 @@ const WatchesListItem = ({ item, lang }) => {
   const basketWatches = useSelector(
     (state) => state.basketWatches.basketWatches
   );
-  const [status, setStatus] = useState([]);
 
-  useEffect(() => {
-    setStatus(basketWatches.filter((watch) => watch.id === item.id));
-  }, [basketWatches, item.id]);
+  function itemInBasket() {
+    const filtered = basketWatches.filter(
+      (watch) => watch.id === Number(item.id)
+    );
+    return filtered.length === 0;
+  }
 
   return (
     <div
@@ -74,7 +75,7 @@ const WatchesListItem = ({ item, lang }) => {
             <TbCurrencyDram style={{ width: "17px", height: "17px" }} />
           </p>
 
-          {status.length === 0 ? (
+          {itemInBasket() ? (
             <button
               className="watches-list-item-description-buy-btn"
               onClick={(e) => {
@@ -82,7 +83,7 @@ const WatchesListItem = ({ item, lang }) => {
                 dispatch(onAddWatch(item));
               }}
             >
-              Buy
+              {t("buy")}
             </button>
           ) : (
             <Link
@@ -90,7 +91,7 @@ const WatchesListItem = ({ item, lang }) => {
               to={ROUTER.CHECKOUT_PAGE_ROUTE}
               onClick={(e) => e.stopPropagation()}
             >
-              Put order
+              {t("main.main_putOrder.Put_Order")}
             </Link>
           )}
         </div>

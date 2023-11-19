@@ -1,14 +1,19 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { generateImage } from "../../../../utils/helpers/generateImage";
-
-import noImage from "../../../../images/no-image.jpg";
-import BaseSingleFeatures from "../base-single-desc/base-single-features/BaseSingleFeatures";
 import { BaseSingleContext } from "../BaseSingle";
 
-const BaseSingleImage = ({ images }) => {
+import BaseSingleFeatures from "../base-single-desc/base-single-features/BaseSingleFeatures";
+
+import noImage from "../../../../images/no-image.jpg";
+
+const BaseSingleImage = ({ images, video }) => {
   const [mainImg, setMainImg] = useState(
     images && images.length !== 0 ? generateImage(images[0].url) : noImage
   );
+
+  useEffect(() => {
+    setMainImg(generateImage(images[0].url));
+  }, [images]);
 
   const chooseMainImg = (evt) => {
     setMainImg(evt.target.src);
@@ -36,15 +41,28 @@ const BaseSingleImage = ({ images }) => {
           images.length !== 0 &&
           images.map(({ id, url }) => {
             return (
-              <img
-                src={generateImage(url)}
-                alt="img"
-                onClick={chooseMainImg}
-                key={id}
-              />
+              <div key={id} className="base-single-image-imgs-item">
+                <img
+                  src={generateImage(url)}
+                  alt="watch-or-belt"
+                  onClick={chooseMainImg}
+                />
+              </div>
             );
           })}
       </div>
+      <div className="base-single-image-videos">
+        {video &&
+          video.lentgh !== 0 &&
+          video.map(({ id, url }) => {
+            return (
+              <div className="base-single-image-videos-video" key={id}>
+                <video src={generateImage(url)} controls muted></video>
+              </div>
+            );
+          })}
+      </div>
+
       <BaseSingleFeatures
         featuresData={{
           type,

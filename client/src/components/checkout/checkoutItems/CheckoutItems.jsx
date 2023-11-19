@@ -14,7 +14,6 @@ import { useTranslation } from "react-i18next";
 import { sendTelegramData } from "../../../api/api";
 import { useContext } from "react";
 import { CheckoutContext } from "../Checkout";
-import { toast } from "react-toastify";
 import { notifyError, notifySuccess } from "../../../utils/toast/toastify";
 
 const CheckoutItems = () => {
@@ -115,7 +114,13 @@ const CheckoutItems = () => {
                     <Link
                       className="checkoutItems-items-item-info-view"
                       onClick={() => {
-                        navigate(`/watches/${item.id}`);
+                        navigate(
+                          `${
+                            "band_material" in item
+                              ? ROUTER.WATCHES_PAGE_ROUTE
+                              : ROUTER.BELTS_PAGE_ROUTE
+                          }/${item.id}`
+                        );
                       }}
                     >
                       {t("header.header_basket.view_product")}

@@ -17,8 +17,6 @@ const SingleWatch = () => {
     i18n: { language },
   } = useTranslation();
 
-  console.log(id);
-
   useEffect(() => {
     async function getData() {
       try {
@@ -32,7 +30,7 @@ const SingleWatch = () => {
       }
     }
     getData();
-  }, []);
+  }, [id]);
 
   useEffect(() => {
     console.log(watchData);
@@ -43,9 +41,10 @@ const SingleWatch = () => {
       {Object.keys(watchData).length !== 0 && (
         <BaseSingle
           images={watchData.image}
+          video={watchData.video}
           title={watchData[`name_${language}`]}
           price={watchData.discounted_price}
-          deliveryInfo={watchData[`desc_${language}`]}
+          description={watchData[`desc_${language}`]}
           type={watchData.type}
           sex={watchData.sex}
           case_material={watchData.case_material}
@@ -54,6 +53,8 @@ const SingleWatch = () => {
           band_material={watchData.band_material}
           water_resistant={watchData.water_resistant}
           weight={watchData.weight}
+          id={id}
+          item={watchData}
         />
       )}
       {loading && <Loading />}

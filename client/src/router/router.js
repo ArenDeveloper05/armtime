@@ -8,5 +8,5 @@ export const ROUTER = {
   SINGLE_WATCH_PAGE_ROUTE: "/watches/:id",
   CHECKOUT_PAGE_ROUTE: "/checkout",
   DELIVERY_PAGE_ROUTE: "/delivery_terms",
-  ERROR_PAGE_ROUTE: "/error",
+  ERROR_PAGE_ROUTE: "*",
 };

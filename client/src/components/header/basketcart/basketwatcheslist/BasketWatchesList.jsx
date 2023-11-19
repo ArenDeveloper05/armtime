@@ -7,6 +7,7 @@ import { generateImage } from "../../../../utils/helpers/generateImage";
 
 import noImage from "../../../../images/no-image.jpg";
 import { useTranslation } from "react-i18next";
+import { ROUTER } from "../../../../router/router";
 
 const BasketWatchesList = ({ watch }) => {
   const navigate = useNavigate();
@@ -43,7 +44,11 @@ const BasketWatchesList = ({ watch }) => {
           className="buy-dialog-inner-watchList-info-view"
           onClick={() => {
             navigate(
-              `/${"band_material" in watch ? "watches" : "belts"}/${watch.id}`
+              `${
+                "band_material" in watch
+                  ? ROUTER.WATCHES_PAGE_ROUTE
+                  : ROUTER.BELTS_PAGE_ROUTE
+              }/${watch.id}`
             );
           }}
         >

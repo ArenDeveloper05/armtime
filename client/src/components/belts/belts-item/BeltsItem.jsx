@@ -13,7 +13,10 @@ const BeltsItem = ({ item }) => {
         navigate(`/belts/${item.id}`);
       }}
     >
-      <BeltsItemImage img={generateImage(item.image[0].url)} />
+      <BeltsItemImage
+        img={generateImage(item.image[0].url)}
+        exist={item.exist}
+      />
       <BeltsItemDescription item={item} />
     </div>
   );

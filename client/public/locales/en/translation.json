@@ -83,6 +83,7 @@
     "yes": "available",
     "no": "not available"
   },
+  "buy": "Buy",
   "filter": "Filter",
   "footer": {
     "contact": "Contact",

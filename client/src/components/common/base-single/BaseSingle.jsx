@@ -20,6 +20,9 @@ const BaseSingle = ({
   band_material,
   water_resistant,
   weight,
+  id,
+  video,
+  item,
 }) => {
   return (
     <div className="base-single">
@@ -39,9 +42,12 @@ const BaseSingle = ({
           band_material,
           water_resistant,
           weight,
+          id,
+          video,
+          item,
         }}
       >
-        <BaseSingleImage images={images} />
+        <BaseSingleImage images={images} video={video} />
         <BaseSingleDesc type={type} />
       </BaseSingleContext.Provider>
     </div>
