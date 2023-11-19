@@ -18,6 +18,7 @@ import "./i18n";
 
 import "./index.css";
 import Loading from "./components/loading/Loading";
+import ErrorPage from "./pages/ErrorPage";
 
 const router = createBrowserRouter([
   {
@@ -53,6 +54,10 @@ const router = createBrowserRouter([
   {
     path: ROUTER.DELIVERY_PAGE_ROUTE,
     element: <DeliveryPage />,
+  },
+  {
+    path: ROUTER.ERROR_PAGE_ROUTE,
+    element: <ErrorPage />,
   },
 ]);
 
