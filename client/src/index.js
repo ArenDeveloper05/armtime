@@ -19,6 +19,7 @@ import "./i18n";
 import "./index.css";
 import Loading from "./components/loading/Loading";
 import ErrorPage from "./pages/ErrorPage";
+import RequestErrorPage from "./pages/RequestErrorPage";
 
 const router = createBrowserRouter([
   {
@@ -59,6 +60,7 @@ const router = createBrowserRouter([
     path: ROUTER.ERROR_PAGE_ROUTE,
     element: <ErrorPage />,
   },
+  { path: ROUTER.REQUEST_ERROR_PAGE_ROUTE, element: <RequestErrorPage /> },
 ]);
 
 createRoot(document.getElementById("root")).render(

@@ -1,4 +1,4 @@
-import Error from "../components/error/Error";
+import Error from "../components/errors/Error";
 import Layout from "../layout/Layout";
 const ErrorPage = () => {
   return (
