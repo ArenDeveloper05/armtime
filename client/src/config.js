@@ -52,7 +52,7 @@ export const navConfig = [
     title: {
       am: "Առաքման պայմաններ",
       en: "Delivery terms",
-      ру: "условия доставки",
+      ru: "условия доставки",
     },
     icon: TbTruckDelivery,
     link: ROUTER.DELIVERY_PAGE_ROUTE,
