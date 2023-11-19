@@ -63,9 +63,19 @@
         justify-content: space-between;
         text-transform: capitalize;
         color: black;
+        &-title {
+          font-size: 22px;
+          font-weight: 600;
+        }
+        &-color {
+          color: grey;
+        }
 
         > p {
           margin-bottom: 10px;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
         }
 
         &-buy {

@@ -6,6 +6,48 @@ import { useTranslation } from "react-i18next";
 
 const BaseSingleFeatures = ({ featuresData }) => {
   const [featuresOpen, setFeaturesOpen] = useState(false);
+  const [features, setFeatures] = useState([
+    {
+      id: 1,
+      translation_key: "features.gender",
+      validation_key: "sex",
+    },
+    {
+      id: 2,
+      translation_key: "features.movement_type",
+      validation_key: "type",
+    },
+    {
+      id: 3,
+      translation_key: "features.case_material",
+      validation_key: "case_material",
+    },
+    {
+      id: 4,
+      translation_key: "features.case_size",
+      validation_key: "case_size",
+    },
+    {
+      id: 5,
+      translation_key: "features.case_thickness",
+      validation_key: "case_thickness",
+    },
+    {
+      id: 6,
+      translation_key: "features.band_material",
+      validation_key: "band_material",
+    },
+    {
+      id: 7,
+      translation_key: "features.water_resistance",
+      validation_key: "water_resistant",
+    },
+    {
+      id: 8,
+      translation_key: "features.watch_weight",
+      validation_key: "weight",
+    },
+  ]);
 
   const { t } = useTranslation();
 
@@ -37,76 +79,20 @@ const BaseSingleFeatures = ({ featuresData }) => {
           display: featuresOpen ? "flex" : "none",
         }}
       >
-        <div className="features-info-block">
-          <div className="features-info-block-type">{t("features.gender")}</div>
-          <div className="features-info-block-name">
-            {featuresData && checkValidations(featuresData.sex)}
-          </div>
-        </div>
-
-        <div className="features-info-block">
-          <div className="features-info-block-type">
-            {t("features.movement_type")}
-          </div>
-          <div className="features-info-block-name">
-            {featuresData && checkValidations(featuresData.type)}
-          </div>
-        </div>
-
-        <div className="features-info-block">
-          <div className="features-info-block-type">
-            {t("features.case_material")}
-          </div>
-          <div className="features-info-block-name">
-            {featuresData && checkValidations(featuresData.case_material)}
-          </div>
-        </div>
-
-        <div className="features-info-block">
-          <div className="features-info-block-type">
-            {t("features.case_size")}
-          </div>
-          <div className="features-info-block-name">
-            {featuresData && checkValidations(featuresData.case_size)}
-          </div>
-        </div>
-
-        <div className="features-info-block">
-          <div className="features-info-block-type">
-            {" "}
-            {t("features.case_thickness")}
-          </div>
-          <div className="features-info-block-name">
-            {featuresData && checkValidations(featuresData.case_thickness)}
-          </div>
-        </div>
-
-        <div className="features-info-block">
-          <div className="features-info-block-type">
-            {t("features.band_material")}
-          </div>
-          <div className="features-info-block-name">
-            {featuresData && checkValidations(featuresData.band_material)}
-          </div>
-        </div>
-
-        <div className="features-info-block">
-          <div className="features-info-block-type">
-            {t("features.water_resistance")}
-          </div>
-          <div className="features-info-block-name">
-            {featuresData && checkValidations(featuresData.water_resistant)}
-          </div>
-        </div>
-
-        <div className="features-info-block">
-          <div className="features-info-block-type">
-            {t("features.watch_weight")}
-          </div>
-          <div className="features-info-block-name">
-            {featuresData && checkValidations(featuresData.weight)}
-          </div>
-        </div>
+        {features &&
+          features.map(({ id, translation_key, validation_key }) => {
+            return (
+              <div className="features-info-block" key={id}>
+                <div className="features-info-block-type">
+                  {t(translation_key)}
+                </div>
+                <div className="features-info-block-name">
+                  {featuresData &&
+                    checkValidations(featuresData[validation_key])}
+                </div>
+              </div>
+            );
+          })}
       </div>
     </div>
   );

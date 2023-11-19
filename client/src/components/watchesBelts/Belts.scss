@@ -2,7 +2,6 @@
   padding: 20px 10px;
   &-list {
     min-height: 600px;
-    border: solid;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -31,6 +30,17 @@
 
       &-description {
         padding: 16px;
+        &-title {
+          font-size: 22px;
+          font-weight: 600;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          margin-bottom: 8px;
+        }
+        &-color {
+          color: grey;
+        }
 
         &-buy {
           display: flex;

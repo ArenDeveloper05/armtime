@@ -1,12 +1,17 @@
+import { createContext, useState } from "react";
 import { Container } from "@mui/material";
+import { useTranslation } from "react-i18next";
+
 import CheckoutPayerShipping from "./CheckoutForm/CheckoutPayerShipping";
 import CheckoutItems from "./checkoutItems/CheckoutItems";
 
 import "./Checkout.scss";
-import { createContext, useState } from "react";
+
 export const CheckoutContext = createContext(null);
 
 const Checkout = () => {
+  const { t } = useTranslation();
+
   const [checkoutData, setCheckoutData] = useState({
     first_name: "",
     last_name: "",
@@ -85,7 +90,7 @@ const Checkout = () => {
     <div className="checkout">
       <Container>
         <div className="checkout-inner">
-          <h1 className="checkout-inner-title">ORDER FORM</h1>
+          <h1 className="checkout-inner-title">{t("checkout.title")}</h1>
           <CheckoutContext.Provider
             value={{
               checkoutData,

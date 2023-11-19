@@ -4,7 +4,7 @@ import { useContext } from "react";
 import { BaseSingleContext } from "../../BaseSingle";
 
 const BaseSingleDescInfo = () => {
-  const { title, code, price, deliveryInfo } = useContext(BaseSingleContext);
+  const { title, code, price, description } = useContext(BaseSingleContext);
   return (
     <div className="base-single-desc-info">
       <p className="base-single-desc-info-title">{title ? title : ""}</p>
@@ -12,12 +12,12 @@ const BaseSingleDescInfo = () => {
       <p className="base-single-desc-info-code">{code ? code : code}</p>
 
       <p className="base-single-desc-info-price">
-        {price ? price : ""}{" "}
+        {price ? price : ""}
         <TbCurrencyDram style={{ width: "20px", height: "20px" }} />
       </p>
 
       <p className="base-single-desc-info-deliveryInfo">
-        <BiWorld /> <span>{deliveryInfo ? deliveryInfo : ""}</span>
+        <BiWorld /> <span>{description ? description : ""}</span>
       </p>
     </div>
   );

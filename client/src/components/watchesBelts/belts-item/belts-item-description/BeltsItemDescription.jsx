@@ -23,8 +23,10 @@ const BeltsItemDescription = ({ item }) => {
 
   return (
     <div className="belts-list-item-description">
-      <p>Name: {item[`name_${language}`]}</p>
-      <p>Color: {item.color}</p>
+      <p className="belts-list-item-description-title">
+        {item[`name_${language}`]}
+      </p>
+      <p className="belts-list-item-description-color">{item.color}</p>
 
       <div className="belts-list-item-description-buy">
         <p className="belts-list-item-description-buy-price">
@@ -36,7 +38,8 @@ const BeltsItemDescription = ({ item }) => {
         {status.length === 0 ? (
           <button
             className="belts-list-item-description-buy-btn"
-            onClick={() => {
+            onClick={(e) => {
+              e.stopPropagation();
               dispatch(onAddWatch(item));
             }}
           >

@@ -10,6 +10,7 @@ import { TbCurrencyDram } from "react-icons/tb";
 import noImage from "../../../../images/no-image.jpg";
 
 import { generateImage } from "../../../../utils/helpers/generateImage";
+import { t } from "i18next";
 
 const WatchesListItem = ({ item, lang }) => {
   const navigate = useNavigate();
@@ -48,24 +49,27 @@ const WatchesListItem = ({ item, lang }) => {
             backgroundColor: item.exist ? "#28B464" : "#C41E3A",
           }}
         >
-          {item.exist ? "arka" : "voch arka"}
+          {item.exist ? t("available.yes") : t("available.no")}
         </div>
       </div>
 
       <div className="watches-list-item-description">
         <p className="watches-list-item-description-title">
-          Name: {item[`name_${lang}`]}
+          {item[`name_${lang}`]}
         </p>
 
-        <p className="watches-list-item-description-color">
-          Color: {item.color}
-        </p>
+        <p className="watches-list-item-description-color">{item.color}</p>
 
-        <p className="watches-list-item-description-type">Type: {item.type}</p>
+        <p className="watches-list-item-description-type">{item.type}</p>
 
         <div className="watches-list-item-description-buy">
           <p className="watches-list-item-description-buy-price">
-            <del>{item.price && item.price}</del>
+            <del>
+              {item.price !== 0 && item.price}
+              {item.price !== 0 && (
+                <TbCurrencyDram style={{ width: "17px", height: "17px" }} />
+              )}
+            </del>
             {item.discounted_price}
             <TbCurrencyDram style={{ width: "17px", height: "17px" }} />
           </p>

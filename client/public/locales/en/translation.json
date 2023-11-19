@@ -71,6 +71,18 @@
     "water_resistance": "Water Resistance",
     "watch_weight": "Weight"
   },
+  "toast": {
+    "success": "The order was successfully completed",
+    "error": "An error occurred"
+  },
+  "checkout": {
+    "title": "Order here",
+    "other": "Choose other items to add to this order"
+  },
+  "available": {
+    "yes": "available",
+    "no": "not available"
+  },
   "filter": "Filter",
   "footer": {
     "contact": "Contact",

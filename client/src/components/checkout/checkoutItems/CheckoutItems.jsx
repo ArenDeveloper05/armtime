@@ -14,6 +14,8 @@ import { useTranslation } from "react-i18next";
 import { sendTelegramData } from "../../../api/api";
 import { useContext } from "react";
 import { CheckoutContext } from "../Checkout";
+import { toast } from "react-toastify";
+import { notifyError, notifySuccess } from "../../../utils/toast/toastify";
 
 const CheckoutItems = () => {
   const basketWatches = useSelector(
@@ -26,7 +28,7 @@ const CheckoutItems = () => {
     i18n: { language },
   } = useTranslation();
 
-  const { checkoutData, inputOnChange } = useContext(CheckoutContext);
+  const { checkoutData } = useContext(CheckoutContext);
 
   const onCalcPrice = () => {
     let price = 0;
@@ -63,7 +65,7 @@ const CheckoutItems = () => {
 
       for (let i = 0; i < watchList.length; i++) {
         const watch = watchList[i];
-        const x = await sendTelegramData({
+        await sendTelegramData({
           Անուն: checkoutData.first_name,
           Ազգանուն: checkoutData.last_name,
           Հեռախոսահամար: checkoutData.phone,
@@ -76,8 +78,9 @@ const CheckoutItems = () => {
           Նկարագրություն: watch.desc_am,
         });
       }
+      notifySuccess(t("toast.success"));
     } catch (error) {
-      console.log(error);
+      notifyError(t("toast.error"));
     }
   }
   return (
@@ -115,7 +118,7 @@ const CheckoutItems = () => {
                         navigate(`/watches/${item.id}`);
                       }}
                     >
-                      View
+                      {t("header.header_basket.view_product")}
                     </Link>
                   </div>
 
@@ -145,13 +148,13 @@ const CheckoutItems = () => {
                 sendTelegramDataFunction(basketWatches);
               }}
             >
-              Confirm
+              {t("header.header_basket.put_order")}
             </div>
           </div>
         </>
       ) : (
         <Link className="checkoutItems-none" to={ROUTER.HOME_PAGE_ROUTE}>
-          Choose other items to add to this order
+          {t("checkout.other")}
         </Link>
       )}
     </div>

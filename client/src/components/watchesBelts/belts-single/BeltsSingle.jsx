@@ -5,6 +5,7 @@ import { useTranslation } from "react-i18next";
 import { useParams } from "react-router-dom";
 
 import "./BeltsSingle.scss";
+import Loading from "../../loading/Loading";
 
 const BeltsSingle = () => {
   const { id } = useParams();
@@ -43,11 +44,14 @@ const BeltsSingle = () => {
           images={beltData.image}
           title={beltData[`name_${language}`]}
           price={beltData.discounted_price}
-          deliveryInfo={beltData[`desc_${language}`]}
+          description={beltData[`desc_${language}`]}
           type={beltData.type}
+          sex={beltData.sex}
+          sizes={beltData.sizes}
+          material={beltData.material}
         />
       )}
-      {loading && <h1>Loading...</h1>}
+      {loading && <Loading />}
       {error && error}
     </div>
   );
