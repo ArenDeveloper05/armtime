@@ -50,6 +50,18 @@
       "ChooseOtherItemsToAddToThisOrder": "Ընտրել այլ ժամացույցներ՝ այս պատվերին ավելացնելու համար"
     }
   },
+  "features": {
+    "title": "Հատկություններ",
+    "gender": "Սեռ",
+    "movement_type": "Մեխանիզմ",
+    "case_material": "Թվատախտակի տեսակ",
+    "case_size": "Իրանի չափսեր (մմ)",
+    "case_thickness": "Իրանի հաստություն (մմ)",
+    "band_material": "Գոտու տեսակ",
+    "water_resistance": "Ջրադիմացկունություն",
+    "watch_weight": "Քաշ (գ)"
+  },
+  "filter": "Ֆիլտրել",
   "footer": {
     "contact": "Կապ",
     "follow us": "Հետևեք մեզ"

@@ -50,6 +50,18 @@
       "ChooseOtherItemsToAddToThisOrder": "Choose other items to add to this order"
     }
   },
+  "features": {
+    "title": "Features",
+    "gender": "Gender",
+    "movement_type": "Movement Type",
+    "case_material": "Case Material",
+    "case_size": "Case Size",
+    "case_thickness": "Case Thickness",
+    "band_material": "Band Material",
+    "water_resistance": "Water Resistance",
+    "watch_weight": "Weight"
+  },
+  "filter": "Filter",
   "footer": {
     "contact": "Contact",
     "follow us": "Follow Us"

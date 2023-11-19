@@ -1,7 +1,9 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { generateImage } from "../../../../utils/helpers/generateImage";
 
 import noImage from "../../../../images/no-image.jpg";
+import BaseSingleFeatures from "../base-single-desc/base-single-features/BaseSingleFeatures";
+import { BaseSingleContext } from "../BaseSingle";
 
 const BaseSingleImage = ({ images }) => {
   const [mainImg, setMainImg] = useState(
@@ -11,6 +13,17 @@ const BaseSingleImage = ({ images }) => {
   const chooseMainImg = (evt) => {
     setMainImg(evt.target.src);
   };
+
+  const {
+    sex,
+    case_material,
+    case_size,
+    case_thickness,
+    band_material,
+    water_resistant,
+    weight,
+    type,
+  } = useContext(BaseSingleContext);
 
   return (
     <div className="base-single-image">
@@ -32,6 +45,18 @@ const BaseSingleImage = ({ images }) => {
             );
           })}
       </div>
+      <BaseSingleFeatures
+        featuresData={{
+          type,
+          sex,
+          case_material,
+          case_size,
+          case_thickness,
+          band_material,
+          water_resistant,
+          weight,
+        }}
+      />
     </div>
   );
 };

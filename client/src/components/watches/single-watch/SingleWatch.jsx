@@ -1,12 +1,12 @@
 import { useParams } from "react-router-dom";
 import { getSingleWatch } from "../../../api/api";
-import useFetch from "../../../hooks/useFetch";
+import { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 
 import BaseSingle from "../../common/base-single/BaseSingle";
 
 import "./SingleWatch.scss";
-import { useEffect, useState } from "react";
-import { useTranslation } from "react-i18next";
+import Loading from "../../loading/Loading";
 
 const SingleWatch = () => {
   const { id } = useParams();
@@ -47,10 +47,17 @@ const SingleWatch = () => {
           price={watchData.discounted_price}
           deliveryInfo={watchData[`desc_${language}`]}
           type={watchData.type}
+          sex={watchData.sex}
+          case_material={watchData.case_material}
+          case_size={watchData.case_size}
+          case_thickness={watchData.case_thickness}
+          band_material={watchData.band_material}
+          water_resistant={watchData.water_resistant}
+          weight={watchData.weight}
         />
       )}
-      {loading && <h1>Loading...</h1>}
-      {error && error}
+      {loading && <Loading />}
+      {error && "error"}
     </div>
   );
 };

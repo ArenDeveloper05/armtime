@@ -1,6 +1,7 @@
 import { RiEqualizerLine } from "react-icons/ri";
 import { filterSelectBeltConfig, filterBeltConfig } from "../../../config";
 import { VscTriangleUp } from "react-icons/vsc";
+import { useTranslation } from "react-i18next";
 
 const activeOptionStyles = {
   backgroundColor: "#e0e0e0",
@@ -16,6 +17,8 @@ const BeltsFilter = ({
   lang,
   implementBeltFilter,
 }) => {
+  const { t } = useTranslation();
+
   const selectType = (kind, option) => {
     if (filterData[kind] !== option) {
       setFilterData((prev) => {
@@ -70,7 +73,7 @@ const BeltsFilter = ({
             implementBeltFilter();
           }}
         >
-          filter
+          {t("filter")}
         </button>
       </div>
     </>

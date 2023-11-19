@@ -17,6 +17,8 @@ const BasketWatchesList = ({ watch }) => {
     i18n: { language },
   } = useTranslation();
 
+  console.log(watch);
+
   return (
     <div className="buy-dialog-inner-watchList">
       <div className="buy-dialog-inner-watchList-image">
@@ -41,7 +43,7 @@ const BasketWatchesList = ({ watch }) => {
           className="buy-dialog-inner-watchList-info-view"
           onClick={() => {
             navigate(
-              `/${watch.case_material ? "watches" : "belts"}/${watch.id}`
+              `/${"band_material" in watch ? "watches" : "belts"}/${watch.id}`
             );
           }}
         >

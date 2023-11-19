@@ -1,12 +1,14 @@
 import { useEffect } from "react";
 import { getWatchesThunk } from "../../redux/slices/watchesSlice";
+import { useDispatch, useSelector } from "react-redux";
 
 import Container from "../container/Container";
 import Filter from "../filter/Filter";
 import WatchesList from "./watches-list/WatchesList";
 
+import Loading from "../loading/Loading";
+
 import "./Watches.scss";
-import { useDispatch, useSelector } from "react-redux";
 
 const Watches = () => {
   const dispatch = useDispatch();
@@ -27,7 +29,7 @@ const Watches = () => {
         {watchesData && watchesData.length !== 0 && (
           <WatchesList data={watchesData} />
         )}
-        {loading && <h1>Loading</h1>}
+        {loading && <Loading />}
         {error && <h1>Error</h1>}
       </Container>
     </section>

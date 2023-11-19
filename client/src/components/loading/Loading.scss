@@ -1,0 +1,86 @@
+.loader-bg {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loader {
+  width: 200px;
+  position: relative;
+  background-color: white;
+  padding-left: 1.5em;
+  padding-right: 1.5em;
+  padding-top: 3em;
+  top: -0.4em;
+  border-radius: 25px;
+  z-index: 999;
+  box-shadow: 5px 2px 0px #666666;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.clock {
+  position: relative;
+  top: -1.4em;
+  left: 0.05em;
+}
+
+.stage {
+  position: relative;
+  left: 0.5em;
+  background-color: black;
+  width: 4em;
+  height: 0.4em;
+  border-radius: 15px;
+  box-shadow: 2px 2px 0px #666666;
+  z-index: 4;
+}
+
+.hold {
+  position: relative;
+  background-color: limegreen;
+  width: 0.1em;
+  height: 4em;
+  left: 0.5em;
+  top: -0.25em;
+  animation: 1.3s dangle infinite;
+  box-shadow: 4px 4px 0px #666666;
+  z-index: -1;
+}
+
+@keyframes dangle {
+  0% {
+    transform-origin: top center;
+    transform: rotate(45deg);
+  }
+
+  50% {
+    transform-origin: top center;
+    transform: rotate(-45deg);
+  }
+
+  100% {
+    transform-origin: top center;
+    transform: rotate(45deg);
+  }
+}
+
+.ball {
+  display: inline-block;
+  position: relative;
+  top: 3em;
+  left: -1.2em;
+  width: 2.5em;
+  height: 2.5em;
+  margin: 0;
+  border-radius: 50%;
+  background: #171717;
+  box-shadow: 1px 1px 0px #666666;
+}

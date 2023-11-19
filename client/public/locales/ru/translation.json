@@ -50,6 +50,18 @@
       "ChooseOtherItemsToAddToThisOrder": "Выбрать другие часы для добавления в этот заказ"
     }
   },
+  "features": {
+    "title": "Характеристики",
+    "gender": "Пол",
+    "movement_type": "Механизм",
+    "case_material": "Тип циферблата",
+    "case_size": "Размеры корпуса (мм)",
+    "case_thickness": "Толщина корпуса (мм)",
+    "band_material": "Тип ремешка",
+    "water_resistance": "Водонепроницаемость",
+    "watch_weight": "Вес (г)"
+  },
+  "filter": "Фильтровать",
   "footer": {
     "ru": {
       "contact": "Контакт",

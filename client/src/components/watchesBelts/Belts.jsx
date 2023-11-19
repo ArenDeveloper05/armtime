@@ -6,6 +6,7 @@ import BeltsItem from "./belts-item/BeltsItem";
 import Filter from "../filter/Filter";
 
 import "./Belts.scss";
+import Loading from "../loading/Loading";
 
 const Belts = () => {
   const dispatch = useDispatch();
@@ -26,7 +27,7 @@ const Belts = () => {
             return <BeltsItem key={item.id} item={item} />;
           })}
       </div>
-      {loading && <h1>Loading</h1>}
+      {loading && <Loading />}
       {error && <h1>error</h1>}
     </div>
   );

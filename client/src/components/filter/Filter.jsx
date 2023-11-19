@@ -24,6 +24,8 @@ import { useTranslation } from "react-i18next";
 import { filterBeltConfig, filterGenderConfig } from "../../config";
 
 const Filter = ({ filterName }) => {
+  const { t } = useTranslation();
+
   const dispatch = useDispatch();
   //states
   const {
@@ -37,7 +39,10 @@ const Filter = ({ filterName }) => {
   //select open
   const [selectOpen, setSelectOpen] = useState(false);
   //select data
-  const [priceArrangement, setPriceArrangement] = useState("Newest");
+  const [priceArrangement, setPriceArrangement] = useState(
+    t("main.main_priceFilter.newest")
+  );
+
   //price
   const [value, setValue] = useState({ min: 10000, max: 500000 });
   //watch data
@@ -189,37 +194,34 @@ const Filter = ({ filterName }) => {
                 <div
                   className="filter-inner-selection-options-option"
                   onClick={() => {
-                    setPriceArrangement("Newest");
+                    setPriceArrangement(t("main.main_priceFilter.newest"));
                   }}
                 >
-                  Newest
+                  {t("main.main_priceFilter.newest")}
                 </div>
                 <div
                   className="filter-inner-selection-options-option"
-                  onClick={() => setPriceArrangement("Prices descending")}
+                  onClick={() =>
+                    setPriceArrangement(
+                      t("main.main_priceFilter.prices_descending")
+                    )
+                  }
                 >
-                  Prices descending
+                  {t("main.main_priceFilter.prices_descending")}
                 </div>
                 <div
                   className="filter-inner-selection-options-option"
                   onClick={() => {
-                    setPriceArrangement("Prices ascending");
+                    setPriceArrangement(
+                      t("main.main_priceFilter.prices_ascending")
+                    );
                   }}
                 >
-                  Prices ascending
+                  {t("main.main_priceFilter.prices_ascending")}
                 </div>
               </div>
             )}
           </div>
-          {/* <button
-            onClick={() => {
-              filterName === "watches"
-                ? implementWatchFilter()
-                : implementBeltFilter();
-            }}
-          >
-            filter
-          </button> */}
         </div>
       </Container>
     </div>

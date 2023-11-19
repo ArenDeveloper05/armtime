@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
 import BaseSingle from "../../common/base-single/BaseSingle";
-import "./BeltsSingle.scss";
 import { getSingleBelt } from "../../../api/api";
 import { useTranslation } from "react-i18next";
 import { useParams } from "react-router-dom";
+
+import "./BeltsSingle.scss";
 
 const BeltsSingle = () => {
   const { id } = useParams();
