@@ -43,6 +43,10 @@ const Filter = ({ filterName }) => {
     t("main.main_priceFilter.newest")
   );
 
+  useEffect(() => {
+    setPriceArrangement(t("main.main_priceFilter.newest"));
+  }, [t]);
+
   //price
   const [value, setValue] = useState({ min: 10000, max: 500000 });
   //watch data

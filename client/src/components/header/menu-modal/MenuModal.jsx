@@ -10,7 +10,6 @@ const MenuModal = ({ setMenuModal }) => {
   return (
     <div className="menu-modal" onClick={closeModal}>
       <MobileNavBar />
-
       <IoCloseSharp />
     </div>
   );

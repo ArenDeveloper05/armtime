@@ -1,4 +1,4 @@
-import BeltsSingle from "../components/watchesBelts/belts-single/BeltsSingle";
+import BeltsSingle from "../components/belts/belts-single/BeltsSingle";
 import Layout from "../layout/Layout";
 
 const BeltsSinglePage = () => {

@@ -14,7 +14,7 @@ const BeltsItem = ({ item }) => {
       }}
     >
       <BeltsItemImage
-        img={generateImage(item.image[0].url)}
+        img={item.image && item.image[0] && generateImage(item.image[0].url)}
         exist={item.exist}
       />
       <BeltsItemDescription item={item} />

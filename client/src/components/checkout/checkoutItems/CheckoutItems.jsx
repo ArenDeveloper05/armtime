@@ -7,14 +7,15 @@ import { ROUTER } from "../../../router/router";
 
 import { generateImage } from "../../../utils/helpers/generateImage";
 
-import noImage from "../../../images/no-image.jpg";
-
-import "./CheckoutItems.scss";
 import { useTranslation } from "react-i18next";
 import { sendTelegramData } from "../../../api/api";
 import { useContext } from "react";
 import { CheckoutContext } from "../Checkout";
 import { notifyError, notifySuccess } from "../../../utils/toast/toastify";
+
+import noImage from "../../../images/no-image.jpg";
+
+import "./CheckoutItems.scss";
 
 const CheckoutItems = () => {
   const basketWatches = useSelector(
