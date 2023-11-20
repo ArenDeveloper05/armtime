@@ -27,10 +27,15 @@
           content: "";
           width: 50%;
           height: 7px;
+          transition: 500ms;
           position: absolute;
           left: 0;
           bottom: 0;
           background-color: rgb(203, 203, 203);
+        }
+
+        &:hover::after {
+          width: 100%;
         }
       }
 
@@ -68,10 +73,15 @@
           content: "";
           width: 50%;
           height: 7px;
+          transition: 500ms;
           position: absolute;
           left: 0;
           bottom: 0;
           background-color: rgb(203, 203, 203);
+        }
+
+        &:hover::after {
+          width: 100%;
         }
       }
 
@@ -94,15 +104,6 @@
       }
     }
   }
-
-  // &-cards {
-  //   width: 100%;
-  //   display: flex;
-  //   flex-wrap: wrap;
-  //   margin-top: 20px;
-  //   align-items: center;
-  //   justify-content: space-around;
-  // }
 
   @media only screen and (max-width: 615px) {
     &-desc {

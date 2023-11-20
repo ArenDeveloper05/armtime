@@ -32,7 +32,7 @@ export const navConfig = [
     title: {
       am: "Գոտիներ",
       en: "Belts",
-      ru: "Ремены",
+      ru: "Ремни",
     },
     icon: GiBeltBuckles,
     link: ROUTER.BELTS_PAGE_ROUTE,

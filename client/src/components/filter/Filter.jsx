@@ -32,19 +32,38 @@ const Filter = ({ filterName }) => {
     i18n: { language },
   } = useTranslation();
 
+  // Filter Sorting
+  const filterSortingData = [
+    {
+      id: 1,
+      translation_key: "main.main_priceFilter.newest",
+      type: "newest",
+    },
+    {
+      id: 2,
+      translation_key: "main.main_priceFilter.prices_descending",
+      type: "descending",
+    },
+    {
+      id: 3,
+      translation_key: "main.main_priceFilter.prices_ascending",
+      type: "ascending",
+    },
+  ];
+
+  const [filterSortActive, setFilterSortActive] = useState(
+    filterSortingData[0]
+  );
+
   const [filterOpen, setFilterOpen] = useState({
     beltOpen: false,
     watchOpen: false,
   });
   //select open
   const [selectOpen, setSelectOpen] = useState(false);
-  //select data
-  const [priceArrangement, setPriceArrangement] = useState(
-    t("main.main_priceFilter.newest")
-  );
 
   useEffect(() => {
-    setPriceArrangement(t("main.main_priceFilter.newest"));
+    setFilterSortActive(filterSortingData[0]);
   }, [t]);
 
   //price
@@ -54,13 +73,13 @@ const Filter = ({ filterName }) => {
     gender: filterGenderConfig[0].type,
     type: filterGenderConfig[0].type,
     price: value,
-    arrangement: priceArrangement,
+    arrangement: filterSortActive.type,
   });
   //belt data
   const [filterBeltData, setFilterBeltData] = useState({
     belt: filterBeltConfig[0].title[language],
     price: value,
-    arrangement: priceArrangement,
+    arrangement: filterSortActive.type,
   });
 
   //useEffect
@@ -70,7 +89,7 @@ const Filter = ({ filterName }) => {
         return {
           ...prev,
           price: value,
-          arrangement: priceArrangement,
+          arrangement: filterSortActive.type,
         };
       });
     } else {
@@ -78,11 +97,11 @@ const Filter = ({ filterName }) => {
         return {
           ...prev,
           price: value,
-          arrangement: priceArrangement,
+          arrangement: filterSortActive.type,
         };
       });
     }
-  }, [value, filterName, priceArrangement]);
+  }, [value, filterName, filterSortActive]);
 
   //ref
   const refWatch = useRef(null);
@@ -125,6 +144,11 @@ const Filter = ({ filterName }) => {
   const implementBeltFilter = () => {
     dispatch(filterBelts(filterBeltData));
   };
+
+  useEffect(() => {
+    console.log(filterSortActive);
+    console.log(filterWatchData);
+  }, [filterSortActive, filterWatchData]);
 
   return (
     <div className="filter">
@@ -182,7 +206,7 @@ const Filter = ({ filterName }) => {
             ref={refPrice}
           >
             <div className="filter-inner-selection-select">
-              <div>{priceArrangement}</div>
+              <div>{t(filterSortActive["translation_key"])}</div>
               <div className="filter-inner-selection-select-icn">
                 <IoIosArrowDown
                   style={{
@@ -195,34 +219,33 @@ const Filter = ({ filterName }) => {
 
             {selectOpen && (
               <div className="filter-inner-selection-options">
-                <div
-                  className="filter-inner-selection-options-option"
-                  onClick={() => {
-                    setPriceArrangement(t("main.main_priceFilter.newest"));
-                  }}
-                >
-                  {t("main.main_priceFilter.newest")}
-                </div>
-                <div
-                  className="filter-inner-selection-options-option"
-                  onClick={() =>
-                    setPriceArrangement(
-                      t("main.main_priceFilter.prices_descending")
-                    )
-                  }
-                >
-                  {t("main.main_priceFilter.prices_descending")}
-                </div>
-                <div
-                  className="filter-inner-selection-options-option"
-                  onClick={() => {
-                    setPriceArrangement(
-                      t("main.main_priceFilter.prices_ascending")
+                {filterSortingData &&
+                  filterSortingData.map((item) => {
+                    return (
+                      <div
+                        key={item.id}
+                        className="filter-inner-selection-options-option"
+                        onClick={() => {
+                          if (
+                            JSON.stringify(filterSortActive) !==
+                            JSON.stringify(item)
+                          )
+                            setFilterSortActive(item);
+
+                          if (
+                            window.location.href.includes("watches") ||
+                            window.location.pathname === "/"
+                          ) {
+                            implementWatchFilter();
+                          } else if (window.location.href.includes("belts")) {
+                            implementBeltFilter();
+                          }
+                        }}
+                      >
+                        {t(item.translation_key)}
+                      </div>
                     );
-                  }}
-                >
-                  {t("main.main_priceFilter.prices_ascending")}
-                </div>
+                  })}
               </div>
             )}
           </div>

@@ -16,14 +16,33 @@ const initialState = {
   filterList: [],
 };
 
+function sortBy(list, arrangement) {
+  if (arrangement === "newest") {
+    list.sort((a, b) => {
+      const dateA = new Date(a.created_at);
+      const dateB = new Date(b.created_at);
+      return dateB - dateA;
+    });
+  } else if (arrangement === "descending") {
+    list.sort((a, b) => b.discounted_price - a.discounted_price);
+  } else if (arrangement === "ascending") {
+    list.sort((a, b) => a.discounted_price - b.discounted_price);
+  }
+  console.log(list);
+  console.log(arrangement);
+  return list;
+}
+
 const watchesSlice = createSlice({
   name: "watches",
   initialState,
   reducers: {
     filterWatches(state, { payload }) {
       console.log(payload);
-
-      state.filterList = state.watchList.filter((item) => {
+      state.filterList = sortBy(
+        JSON.parse(JSON.stringify(state.watchList)),
+        payload.arrangement
+      ).filter((item) => {
         if (
           (item.type === payload.type || payload.type === "all") &&
           (item.sex === payload.gender || payload.gender === "all") &&

@@ -35,8 +35,6 @@ const Watches = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
-  // console.log(watchesData);
-
   return (
     <section className="watches">
       <Container>

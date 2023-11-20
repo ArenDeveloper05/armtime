@@ -16,14 +16,47 @@ const initialState = {
   filterList: [],
 };
 
+function sortBy(list, arrangement) {
+  if (arrangement === "newest") {
+    list.sort((a, b) => {
+      const dateA = new Date(a.created_at);
+      const dateB = new Date(b.created_at);
+      return dateB - dateA;
+    });
+  } else if (arrangement === "descending") {
+    list.sort((a, b) => b.discounted_price - a.discounted_price);
+  } else if (arrangement === "ascending") {
+    list.sort((a, b) => a.discounted_price - b.discounted_price);
+  }
+  console.log(list);
+  console.log(arrangement);
+  return list;
+}
+
 const beltsSlice = createSlice({
   name: "belts",
   initialState,
   reducers: {
+    // filterBelts(state, { payload }) {
+    //   console.log(payload);
+    //   state.filterList = state.filterList.filter((item) => item); //sharunakeli
+    //   console.log(state.filterList);
+    // },
+
     filterBelts(state, { payload }) {
       console.log(payload);
-      state.filterList = state.filterList.filter((item) => item); //sharunakeli
-      console.log(state.filterList);
+      state.filterList = sortBy(
+        JSON.parse(JSON.stringify(state.beltList)),
+        payload.arrangement
+      ).filter((item) => {
+        if (
+          (item.type === payload.type || payload.type === "all") &&
+          item.discounted_price >= payload.price.min &&
+          item.discounted_price <= payload.price.max
+        ) {
+          return item;
+        }
+      });
     },
   },
   extraReducers: (builder) => {
