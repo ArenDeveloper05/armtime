@@ -4,10 +4,15 @@ import { IoIosArrowDown } from "react-icons/io";
 import { langs } from "../../../config";
 import { changeLanguage } from "i18next";
 import useOutsideClick from "../../../utils/hooks/useOutsideClick";
+import { useTranslation } from "react-i18next";
 
 const Langs = () => {
   const [langDialogOpen, setLangDialogOpen] = useState(false);
   const [activeLang, setActiveLang] = useState(langs[0]);
+
+  const {
+    i18n: { language },
+  } = useTranslation();
 
   const langRef = useRef(null);
   useOutsideClick(langRef, () => {
@@ -15,6 +20,14 @@ const Langs = () => {
       setLangDialogOpen(false);
     }
   });
+
+  useEffect(() => {
+    langs.map((lang) => {
+      if (lang.type === language) {
+        setActiveLang(lang);
+      }
+    });
+  }, [setActiveLang, language]);
 
   return (
     <>

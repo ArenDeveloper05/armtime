@@ -50,8 +50,8 @@ export const navConfig = [
   {
     id: 4,
     title: {
-      am: "Առաքման պայմաններ",
-      en: "Delivery terms",
+      am: "Առաքման Պայմաններ",
+      en: "Delivery Terms",
       ru: "Условия Доставки",
     },
     icon: TbTruckDelivery,
