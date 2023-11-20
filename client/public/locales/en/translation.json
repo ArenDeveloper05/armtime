@@ -22,14 +22,14 @@
     "main_deliveryTerms": {
       "title": "Delivery Items",
       "delivery": "delivery",
-      "delivery_for_erevan_title": "Delivery to Yerevan",
-      "delivery_for_erevan_text": "We deliver in Yerevan the next working day after placing the order, from 12:00 to 18:00 or from 18:00 to 23:00. Delivery of watches is free. The cost of delivery of watch straps and other accessories is 500 AMD, if the order amount does not exceed 10,000 AMD.",
-      "delivery_for_erevan_return_title": "Return to Yerevan",
-      "delivery_for_erevan_return_text": "If you are not happy with the model delivered and make a return during delivery, no shipping charges will be charged. After the courier leaves, you can make a return by calling the numbers listed in the “Contacts” section. In this case, the cost of return is 500 AMD.",
-      "delivery_for_region_title": "Delivery to Regions",
-      "delivery_for_region_text": "Delivery to the regions is carried out through the company <<Hay Post>> within 1-3 business days. You make payment on site, at the corresponding branch of the Armenian Post, at the time of receipt of the parcel.",
-      "delivery_for_region_return_title": "Return to Region",
-      "delivery_for_region_return_text": "If you do not like the order and return it, the refund is also carried out through I Post. After sending the parcel back and receiving it, we will refund you the amount you paid for the product online (transfer to card, Idram, etc.). The return cost is 500 AMD."
+      "delivery_for_erevan_title": "Delivery in Yerevan",
+      "delivery_for_erevan_text": "Yerevan deliveries guarantee fast service, reaching you on the next working day post-order registration, with convenient time slots between 12:00-18:00 or 18:00-23:00. Enjoy complimentary shipping for watches, while watch bands and accessories incur a nominal AMD 500 fee for orders below AMD 10,000.",
+      "delivery_for_erevan_return_title": "Returns in Yerevan",
+      "delivery_for_erevan_return_text": "For returns in Yerevan, if you opt for an immediate return upon delivery, there’s no additional charge. Should you decide later, post-courier departure, a return can be arranged by contacting the provided phone numbers in the “Contact Us” section, with a return fee of AMD 500.",
+      "delivery_for_region_title": "Region-specific delivery",
+      "delivery_for_region_text": "Region-specific delivery is facilitated by the esteemed “Hay Post” company, ensuring a swift 1-3 working day delivery window. Payment is conveniently made on-site at the designated Armenian Post department upon parcel receipt.",
+      "delivery_for_region_return_title": "Region-specific returns",
+      "delivery_for_region_return_text": "For returns within regions, the process is seamless through Hay Post. Simply send the parcel back, and upon its receipt, we’ll promptly refund your online payment (via card transfer, Idram, etc.). Please note a return fee of AMD 500 applies."
     },
     "main_aboutUs": {
       "title": "About Us",
