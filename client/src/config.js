@@ -45,7 +45,7 @@ export const navConfig = [
       ru: "Гарантия",
     },
     icon: SiAdguard,
-    link: ROUTER.WATCHES_PAGE_ROUTE,
+    link: ROUTER.GARUANTEE_PAGE_ROUTE,
   },
   {
     id: 4,

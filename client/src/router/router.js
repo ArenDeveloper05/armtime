@@ -4,6 +4,7 @@ export const ROUTER = {
   BELTS_PAGE_ROUTE: "/belts",
   BELTS_SINGLE_PAGE_ROUTE: "/belts/:id",
   ABOUTUS_PAGE_ROUTE: "/aboutus",
+  GARUANTEE_PAGE_ROUTE: "/garuantee",
   CONTACTUS_PAGE_ROUTE: "/contactus",
   SINGLE_WATCH_PAGE_ROUTE: "/watches/:id",
   CHECKOUT_PAGE_ROUTE: "/checkout",
