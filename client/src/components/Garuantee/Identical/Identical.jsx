@@ -17,7 +17,7 @@ const Identical = ({ data }) => {
         <Swiper
           modules={[Navigation, Pagination, Scrollbar, A11y, Thumbs]}
           spaceBetween={5}
-          slidesPerView={5}
+          slidesPerView={4}
           onSlideChange={() => console.log("slide change")}
           onSwiper={(swiper) => console.log(swiper)}
           className="identical-slider"
