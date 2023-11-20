@@ -67,6 +67,7 @@
       height: 100%;
       position: relative;
       overflow-y: scroll;
+      overflow-x: hidden;
       padding-bottom: 50px;
       &-triIcon {
         width: 30px;
@@ -130,7 +131,7 @@
               white-space: nowrap;
               overflow: hidden;
               text-overflow: ellipsis;
-              width: 45%;
+              max-width: 230px;
             }
           }
           &-price {

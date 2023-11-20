@@ -14,12 +14,14 @@ import watchesReducer from "./slices/watchesSlice";
 import basketWatchesReducer from "./slices/basketWatchesSlice";
 import beltsReducer from "./slices/beltsSlice";
 import sliderReducer from "./slices/sliderSlice";
+import paginationReducer from "./slices/paginationSlice";
 
 const rootReducer = combineReducers({
   watches: watchesReducer,
   basketWatches: basketWatchesReducer,
   belts: beltsReducer,
   slider: sliderReducer,
+  pagination: paginationReducer,
 });
 
 const persistConfig = {

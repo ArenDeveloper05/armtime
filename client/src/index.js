@@ -14,13 +14,11 @@ import BeltsPage from "./pages/BeltsPage";
 import CheckoutPage from "./pages/CheckoutPage";
 import BeltsSinglePage from "./pages/BeltsSinglePage";
 import DeliveryPage from "./pages/DeliveryPage";
-import "./i18n";
-
-import "./index.css";
 import Loading from "./components/loading/Loading";
 import ErrorPage from "./pages/ErrorPage";
-import RequestErrorPage from "./pages/RequestErrorPage";
 
+import "./i18n";
+import "./index.css";
 const router = createBrowserRouter([
   {
     path: ROUTER.HOME_PAGE_ROUTE,
@@ -60,7 +58,6 @@ const router = createBrowserRouter([
     path: ROUTER.ERROR_PAGE_ROUTE,
     element: <ErrorPage />,
   },
-  { path: ROUTER.REQUEST_ERROR_PAGE_ROUTE, element: <RequestErrorPage /> },
 ]);
 
 createRoot(document.getElementById("root")).render(

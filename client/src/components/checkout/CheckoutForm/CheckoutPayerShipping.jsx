@@ -6,10 +6,15 @@ import FormForRegions from "./FormForRegions";
 
 import "./CheckoutPayerShipping.scss";
 import { useTranslation } from "react-i18next";
+import { errorStyles } from "../../../utils/constants";
 
 const CheckoutPayerShipping = () => {
-  const { checkoutData, inputOnChange, changeShippingState } =
-    useContext(CheckoutContext);
+  const {
+    checkoutData,
+    inputOnChange,
+    changeShippingState,
+    checkoutValidations,
+  } = useContext(CheckoutContext);
 
   const { t } = useTranslation();
 
@@ -28,6 +33,7 @@ const CheckoutPayerShipping = () => {
               {t("main.main_putOrder.First_Name")}
             </label>
             <input
+              style={checkoutValidations["first_name"] ? {} : errorStyles}
               type="text"
               name="first_name"
               id="first_name"
@@ -40,6 +46,7 @@ const CheckoutPayerShipping = () => {
               {t("main.main_putOrder.Last_Name")}
             </label>
             <input
+              style={checkoutValidations["last_name"] ? {} : errorStyles}
               type="text"
               name="last_name"
               id="last_name"
@@ -52,6 +59,7 @@ const CheckoutPayerShipping = () => {
               {t("main.main_putOrder.Phone_Number")}
             </label>
             <input
+              style={checkoutValidations["phone"] ? {} : errorStyles}
               type="number"
               name="phone"
               min={0}
@@ -106,6 +114,7 @@ const CheckoutPayerShipping = () => {
         <div className="information-shipping-notes">
           <label htmlFor="notes">{t("main.main_putOrder.Notes_Field")}</label>
           <input
+            style={checkoutValidations["notes"] ? {} : errorStyles}
             type="text"
             name="notes"
             id="notes"

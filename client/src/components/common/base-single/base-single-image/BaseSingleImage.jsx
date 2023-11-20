@@ -28,6 +28,8 @@ const BaseSingleImage = ({ images, video }) => {
     water_resistant,
     weight,
     type,
+    material,
+    sizes,
   } = useContext(BaseSingleContext);
 
   return (
@@ -73,6 +75,8 @@ const BaseSingleImage = ({ images, video }) => {
           band_material,
           water_resistant,
           weight,
+          material,
+          sizes,
         }}
       />
     </div>

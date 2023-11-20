@@ -5,6 +5,7 @@ import { useParams } from "react-router-dom";
 
 import BaseSingle from "../../common/base-single/BaseSingle";
 import Loading from "../../loading/Loading";
+import RequestError from "../../errors/requestError/RequestError";
 
 import "./BeltsSingle.scss";
 
@@ -32,10 +33,6 @@ const BeltsSingle = () => {
     getData();
   }, [id]);
 
-  useEffect(() => {
-    console.log(beltData);
-  }, [beltData]);
-
   return (
     <div className="single-watch">
       {Object.keys(beltData).length !== 0 && (
@@ -54,7 +51,7 @@ const BeltsSingle = () => {
         />
       )}
       {loading && <Loading />}
-      {error && error}
+      {error && <RequestError />}
     </div>
   );
 };

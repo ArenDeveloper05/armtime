@@ -23,6 +23,8 @@ const BaseSingle = ({
   id,
   video,
   item,
+  material,
+  sizes,
 }) => {
   return (
     <div className="base-single">
@@ -45,6 +47,8 @@ const BaseSingle = ({
           id,
           video,
           item,
+          material,
+          sizes,
         }}
       >
         <BaseSingleImage images={images} video={video} />

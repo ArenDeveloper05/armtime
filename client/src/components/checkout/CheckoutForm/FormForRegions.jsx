@@ -1,10 +1,15 @@
 import { useContext, useEffect } from "react";
 import { CheckoutContext } from "../Checkout";
 import { useTranslation } from "react-i18next";
+import { errorStyles } from "../../../utils/constants";
 
 const FormForRegions = () => {
-  const { checkoutData, inputOnChangeWithNesteds, clearShippingInfo } =
-    useContext(CheckoutContext);
+  const {
+    checkoutData,
+    inputOnChangeWithNesteds,
+    clearShippingInfo,
+    checkoutValidations,
+  } = useContext(CheckoutContext);
   const { t } = useTranslation();
 
   useEffect(() => {
@@ -21,6 +26,9 @@ const FormForRegions = () => {
           {t("main.main_putOrder.Region/City/Village")}
         </label>
         <input
+          style={
+            checkoutValidations.regions["state_village_city"] ? {} : errorStyles
+          }
           type="text"
           id="state"
           value={checkoutData.regions.state_village_city}
@@ -38,6 +46,7 @@ const FormForRegions = () => {
           {t("main.main_putOrder.Zip/Postal_Code")}
         </label>
         <input
+          style={checkoutValidations.regions["postal_code"] ? {} : errorStyles}
           type="text"
           id="zip"
           value={checkoutData.regions.postal_code}
@@ -54,6 +63,7 @@ const FormForRegions = () => {
           {t("main.main_putOrder.Address")}
         </label>
         <input
+          style={checkoutValidations.regions["address"] ? {} : errorStyles}
           type="text"
           id="address"
           value={checkoutData.regions.address}

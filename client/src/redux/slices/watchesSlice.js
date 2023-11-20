@@ -22,6 +22,7 @@ const watchesSlice = createSlice({
   reducers: {
     filterWatches(state, { payload }) {
       console.log(payload);
+
       state.filterList = state.watchList.filter((item) => {
         if (
           (item.type === payload.type || payload.type === "all") &&

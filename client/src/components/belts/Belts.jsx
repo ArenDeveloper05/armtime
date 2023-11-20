@@ -6,6 +6,7 @@ import BeltsItem from "./belts-item/BeltsItem";
 import Filter from "../filter/Filter";
 
 import Loading from "../loading/Loading";
+import RequestError from "../errors/requestError/RequestError";
 import ReactPaginate from "react-paginate";
 
 import "./Belts.scss";
@@ -41,9 +42,9 @@ const Belts = () => {
           currentItems.map((item) => {
             return <BeltsItem key={item.id} item={item} />;
           })}
+        {loading && <Loading />}
+        {error && <RequestError />}
       </div>
-      {loading && <Loading />}
-      {error && <h1>error</h1>}
       <ReactPaginate
         breakLabel="..."
         nextLabel=">"

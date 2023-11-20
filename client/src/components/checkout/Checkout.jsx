@@ -29,7 +29,22 @@ const Checkout = () => {
     notes: "",
   });
 
-  console.log(checkoutData);
+  const [checkoutValidations, setCheckoutValidations] = useState({
+    first_name: true,
+    last_name: true,
+    phone: true,
+    yerevan: {
+      address: true,
+      time: true,
+    },
+    regions: {
+      state_village_city: true,
+      postal_code: true,
+      address: true,
+    },
+    shipping: true,
+    notes: true,
+  });
 
   function inputOnChange(e) {
     setCheckoutData((prev) => {
@@ -86,6 +101,21 @@ const Checkout = () => {
     }
   }
 
+  function checkValidations(checkoutData, obj) {
+    for (let key in checkoutData) {
+      if (typeof checkoutData[key] === "object") {
+        checkValidations(checkoutData[key], obj[key]);
+      } else {
+        if (!checkoutData[key].trim()) {
+          obj[key] = false;
+        } else {
+          obj[key] = true;
+        }
+      }
+    }
+    return obj;
+  }
+
   return (
     <div className="checkout">
       <Container>
@@ -99,6 +129,9 @@ const Checkout = () => {
               inputOnChangeWithNesteds,
               clearShippingInfo,
               changeShippingState,
+              checkValidations,
+              checkoutValidations,
+              setCheckoutValidations,
             }}
           >
             <CheckoutPayerShipping />

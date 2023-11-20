@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { CheckoutContext } from "../Checkout";
 import { useTranslation } from "react-i18next";
+import { errorStyles } from "../../../utils/constants";
 
 const FormForErevan = () => {
   const [checkedTime, setCheckedTime] = useState({
@@ -9,8 +10,12 @@ const FormForErevan = () => {
   });
   const { t } = useTranslation();
 
-  const { checkoutData, inputOnChangeWithNesteds, clearShippingInfo } =
-    useContext(CheckoutContext);
+  const {
+    checkoutData,
+    inputOnChangeWithNesteds,
+    clearShippingInfo,
+    checkoutValidations,
+  } = useContext(CheckoutContext);
 
   useEffect(() => {
     clearShippingInfo("regions");
@@ -21,6 +26,7 @@ const FormForErevan = () => {
       <div className="information-formForErevan-address">
         <label htmlFor="address">{t("main.main_putOrder.Address")}</label>
         <input
+          style={checkoutValidations.yerevan["address"] ? {} : errorStyles}
           type="text"
           name="address"
           id="address"

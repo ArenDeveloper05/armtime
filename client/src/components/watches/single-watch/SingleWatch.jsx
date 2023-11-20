@@ -5,8 +5,10 @@ import { useTranslation } from "react-i18next";
 
 import BaseSingle from "../../common/base-single/BaseSingle";
 
-import "./SingleWatch.scss";
 import Loading from "../../loading/Loading";
+import RequestError from "../../errors/requestError/RequestError";
+
+import "./SingleWatch.scss";
 
 const SingleWatch = () => {
   const { id } = useParams();
@@ -58,7 +60,7 @@ const SingleWatch = () => {
         />
       )}
       {loading && <Loading />}
-      {error && "error"}
+      {error && <RequestError />}
     </div>
   );
 };

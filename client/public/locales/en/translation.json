@@ -69,7 +69,9 @@
     "case_thickness": "Case Thickness",
     "band_material": "Band Material",
     "water_resistance": "Water Resistance",
-    "watch_weight": "Weight"
+    "watch_weight": "Weight",
+    "material": "Material",
+    "sizes": "Size"
   },
   "toast": {
     "success": "The order was successfully completed",

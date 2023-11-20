@@ -28,7 +28,12 @@ const CheckoutItems = () => {
     i18n: { language },
   } = useTranslation();
 
-  const { checkoutData } = useContext(CheckoutContext);
+  const {
+    checkoutData,
+    checkValidations,
+    checkoutValidations,
+    setCheckoutValidations,
+  } = useContext(CheckoutContext);
 
   const onCalcPrice = () => {
     let price = 0;
@@ -61,8 +66,6 @@ const CheckoutItems = () => {
   async function sendTelegramDataFunction(watchList) {
     try {
       const shippingDetails = seeShippingDetails(checkoutData);
-      console.log(shippingDetails);
-
       for (let i = 0; i < watchList.length; i++) {
         const watch = watchList[i];
         await sendTelegramData({
@@ -73,7 +76,7 @@ const CheckoutItems = () => {
           Նամակ: checkoutData.notes,
           ...shippingDetails,
           Անվանում: watch.name_am,
-          Գին: watch.discounted_price,
+          Գին: watch.discounted_price + " ֏",
           Նկար: watch.image[0] ? generateImage(watch.image[0].url) : "",
           Նկարագրություն: watch.desc_am,
         });
@@ -83,6 +86,7 @@ const CheckoutItems = () => {
       notifyError(t("toast.error"));
     }
   }
+
   return (
     <div className="checkoutItems">
       <div className="checkoutItems-title">{t("main.main_putOrder.Items")}</div>
@@ -99,7 +103,7 @@ const CheckoutItems = () => {
                           ? generateImage(item.image[0].url)
                           : noImage
                       }
-                      alt=""
+                      alt="checkout-item"
                       className="checkoutItems-items-item-image-img"
                     />
                   </div>
@@ -147,11 +151,25 @@ const CheckoutItems = () => {
                 {onCalcPrice()} <TbCurrencyDram />
               </span>
             </div>
-
             <div
               className="checkoutItems-footer-confirm"
               onClick={() => {
-                sendTelegramDataFunction(basketWatches);
+                console.log(
+                  JSON.stringify(checkoutValidations).includes("false")
+                );
+                const res = checkValidations(checkoutData, checkoutValidations);
+                setCheckoutValidations({ ...res });
+
+                if (checkoutData.shipping === "yerevan") {
+                  delete res.regions;
+                } else if (checkoutData.shipping === "regions") {
+                  delete res.yerevan;
+                }
+                if (JSON.stringify(res).includes("false")) {
+                  window.scrollTo({ top: 0, behavior: "smooth" });
+                } else {
+                  sendTelegramDataFunction(basketWatches);
+                }
               }}
             >
               {t("header.header_basket.put_order")}

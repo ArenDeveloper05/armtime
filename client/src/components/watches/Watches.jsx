@@ -8,6 +8,7 @@ import Filter from "../filter/Filter";
 import WatchesList from "./watches-list/WatchesList";
 
 import Loading from "../loading/Loading";
+import RequestError from "../errors/requestError/RequestError";
 
 import "./Watches.scss";
 import "../../styles/Pagination.css";
@@ -44,7 +45,8 @@ const Watches = () => {
           <WatchesList data={currentItems} />
         )}
         {loading && <Loading />}
-        {error && <h1>Error</h1>}
+        {error && <RequestError />}
+
         <ReactPaginate
           breakLabel="..."
           nextLabel=">"

@@ -69,7 +69,9 @@
     "case_thickness": "Толщина корпуса (мм)",
     "band_material": "Тип ремешка",
     "water_resistance": "Водонепроницаемость",
-    "watch_weight": "Вес (г)"
+    "watch_weight": "Вес (г)",
+    "material": "Материал",
+    "sizes": "Размер"
   },
   "toast": {
     "success": "Заказ успешно выполнен",

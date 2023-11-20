@@ -9,5 +9,4 @@ export const ROUTER = {
   CHECKOUT_PAGE_ROUTE: "/checkout",
   DELIVERY_PAGE_ROUTE: "/delivery_terms",
   ERROR_PAGE_ROUTE: "*",
-  REQUEST_ERROR_PAGE_ROUTE: "/request_error",
 };

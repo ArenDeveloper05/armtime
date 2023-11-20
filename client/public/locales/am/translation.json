@@ -69,7 +69,9 @@
     "case_thickness": "Իրանի հաստություն (մմ)",
     "band_material": "Գոտու տեսակ",
     "water_resistance": "Ջրադիմացկունություն",
-    "watch_weight": "Քաշ (գ)"
+    "watch_weight": "Քաշ (գ)",
+    "material": "Նյութ",
+    "sizes": "Չափսեր"
   },
   "toast": {
     "success": "Պատվերը հաջողությամբ կատարվեց",

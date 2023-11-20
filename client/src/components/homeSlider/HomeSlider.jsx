@@ -16,6 +16,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
+import "../../styles/Swiper.css";
 //Images
 import slide1 from "../../images/slider/slider-1.png";
 //Scss
