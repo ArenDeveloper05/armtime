@@ -45,7 +45,7 @@ export const navConfig = [
       ru: "Гарантия",
     },
     icon: SiAdguard,
-    link: ROUTER.WATCHES_PAGE_ROUTE,
+    link: ROUTER.GARUANTEE_PAGE_ROUTE,
   },
   {
     id: 4,
@@ -163,17 +163,17 @@ export const filterBeltConfig = [
   {
     id: 2,
     title: {
-      am: "օձի կաշվով",
-      en: "with snake skin",
-      ru: "в змеиной коже",
+      am: "Էկզոտիկ կաշվից գոտի",
+      en: "Exotic leather belt",
+      ru: "Ремень из экзотической кожи",
     },
   },
   {
     id: 3,
     title: {
-      am: "կոկորդիլոսի կաշվով",
-      en: "with crocodile skin",
-      ru: "с крокодиловой кожей",
+      am: "Բնական կաշվից գոտի",
+      en: "Genuine leather belt",
+      ru: "Ремень из натуральной кожи",
     },
   },
 ];

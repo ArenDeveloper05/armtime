@@ -19,6 +19,7 @@ import ErrorPage from "./pages/ErrorPage";
 
 import "./i18n";
 import "./index.css";
+import GaruanteePage from "./pages/GaruanteePage";
 const router = createBrowserRouter([
   {
     path: ROUTER.HOME_PAGE_ROUTE,
@@ -31,6 +32,10 @@ const router = createBrowserRouter([
   {
     path: ROUTER.CONTACTUS_PAGE_ROUTE,
     element: <ContactUsPage />,
+  },
+  {
+    path: ROUTER.GARUANTEE_PAGE_ROUTE,
+    element: <GaruanteePage />,
   },
   {
     path: ROUTER.WATCHES_PAGE_ROUTE,
