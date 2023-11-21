@@ -37,8 +37,6 @@ const HomeSlider = () => {
     dispatch(getSliderThunk());
   }, []);
 
-  console.log(sliderData);
-
   return (
     <Swiper
       modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}

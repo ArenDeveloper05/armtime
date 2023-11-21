@@ -6,7 +6,7 @@ import { useTranslation } from "react-i18next";
 import BaseSingle from "../../common/base-single/BaseSingle";
 
 import Loading from "../../loading/Loading";
-import RequestError from "../../errors/requestError/RequestError";
+import RequestError from "../../errors/request-error/RequestError";
 
 import "./SingleWatch.scss";
 
@@ -24,7 +24,6 @@ const SingleWatch = () => {
       try {
         const { data } = await getSingleWatch(id);
         setWatchData(data.message);
-        console.log(data);
       } catch (error) {
         setError(true);
       } finally {
@@ -33,10 +32,6 @@ const SingleWatch = () => {
     }
     getData();
   }, [id]);
-
-  useEffect(() => {
-    console.log(watchData);
-  }, [watchData]);
 
   return (
     <div className="single-watch">

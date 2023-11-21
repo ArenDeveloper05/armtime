@@ -18,8 +18,6 @@ const BasketWatchesList = ({ watch }) => {
     i18n: { language },
   } = useTranslation();
 
-  console.log(watch);
-
   return (
     <div className="buy-dialog-inner-watchList">
       <div className="buy-dialog-inner-watchList-image">

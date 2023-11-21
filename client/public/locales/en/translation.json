@@ -89,6 +89,8 @@
   },
   "buy": "Buy",
   "filter": "Filter",
+  "not-found": "Not Found",
+  "more": "Other offers",
   "footer": {
     "contact": "Contact",
     "follow_us": "Follow Us"

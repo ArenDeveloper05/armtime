@@ -1,6 +1,6 @@
 .belts {
   &-list {
-    min-height: 600px;
+    min-height: 400px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -90,7 +90,6 @@
 
   @media only screen and (max-width: 692px) {
     &-list {
-      flex-wrap: nowrap;
       gap: 12px;
     }
   }

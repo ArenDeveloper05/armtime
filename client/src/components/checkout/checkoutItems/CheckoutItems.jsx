@@ -75,7 +75,7 @@ const CheckoutItems = () => {
           Առաքում: checkoutData.shipping,
           Նամակ: checkoutData.notes,
           ...shippingDetails,
-          Անվանում: watch.name_am,
+          Մոդել: watch.name_am,
           Գին: watch.discounted_price + " ֏",
           Նկար: watch.image[0] ? generateImage(watch.image[0].url) : "",
           Նկարագրություն: watch.desc_am,
@@ -154,9 +154,6 @@ const CheckoutItems = () => {
             <div
               className="checkoutItems-footer-confirm"
               onClick={() => {
-                console.log(
-                  JSON.stringify(checkoutValidations).includes("false")
-                );
                 const res = checkValidations(checkoutData, checkoutValidations);
                 setCheckoutValidations({ ...res });
 

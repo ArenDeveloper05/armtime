@@ -2,7 +2,7 @@ import { createContext, useState } from "react";
 import { Container } from "@mui/material";
 import { useTranslation } from "react-i18next";
 
-import CheckoutPayerShipping from "./CheckoutForm/CheckoutPayerShipping";
+import CheckoutPayerShipping from "./checkout-form/CheckoutPayerShipping";
 import CheckoutItems from "./checkoutItems/CheckoutItems";
 
 import "./Checkout.scss";

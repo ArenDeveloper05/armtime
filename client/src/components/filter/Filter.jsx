@@ -16,12 +16,30 @@ import { IoIosArrowDown } from "react-icons/io";
 import WatchesFilter from "./watches-filter/WatchesFilter";
 import BeltsFilter from "./belts-filter/BeltsFilter";
 import useOutsideClick from "../../utils/hooks/useOutsideClick";
-import RangeSlider from "./Range-slider/RangeSlider";
+import RangeSlider from "./range-slider/RangeSlider";
 
 import { useTranslation } from "react-i18next";
 //Config
 
 import { filterBeltConfig, filterGenderConfig } from "../../config";
+
+const filterSortingData = [
+  {
+    id: 1,
+    translation_key: "main.main_priceFilter.newest",
+    type: "newest",
+  },
+  {
+    id: 2,
+    translation_key: "main.main_priceFilter.prices_descending",
+    type: "descending",
+  },
+  {
+    id: 3,
+    translation_key: "main.main_priceFilter.prices_ascending",
+    type: "ascending",
+  },
+];
 
 const Filter = ({ filterName }) => {
   const { t } = useTranslation();
@@ -33,23 +51,6 @@ const Filter = ({ filterName }) => {
   } = useTranslation();
 
   // Filter Sorting
-  const filterSortingData = [
-    {
-      id: 1,
-      translation_key: "main.main_priceFilter.newest",
-      type: "newest",
-    },
-    {
-      id: 2,
-      translation_key: "main.main_priceFilter.prices_descending",
-      type: "descending",
-    },
-    {
-      id: 3,
-      translation_key: "main.main_priceFilter.prices_ascending",
-      type: "ascending",
-    },
-  ];
 
   const [filterSortActive, setFilterSortActive] = useState(
     filterSortingData[0]
@@ -62,10 +63,6 @@ const Filter = ({ filterName }) => {
   //select open
   const [selectOpen, setSelectOpen] = useState(false);
 
-  useEffect(() => {
-    setFilterSortActive(filterSortingData[0]);
-  }, [t]);
-
   //price
   const [value, setValue] = useState({ min: 10000, max: 500000 });
   //watch data
@@ -77,7 +74,7 @@ const Filter = ({ filterName }) => {
   });
   //belt data
   const [filterBeltData, setFilterBeltData] = useState({
-    belt: filterBeltConfig[0].title[language],
+    belt: filterBeltConfig[0].type,
     price: value,
     arrangement: filterSortActive.type,
   });
@@ -146,9 +143,15 @@ const Filter = ({ filterName }) => {
   };
 
   useEffect(() => {
-    console.log(filterSortActive);
-    console.log(filterWatchData);
-  }, [filterSortActive, filterWatchData]);
+    if (
+      window.location.href.includes("watches") ||
+      window.location.pathname === "/"
+    ) {
+      implementWatchFilter();
+    } else if (window.location.href.includes("belts")) {
+      implementBeltFilter();
+    }
+  }, [filterSortActive]);
 
   return (
     <div className="filter">
@@ -229,16 +232,14 @@ const Filter = ({ filterName }) => {
                           if (
                             JSON.stringify(filterSortActive) !==
                             JSON.stringify(item)
-                          )
-                            setFilterSortActive(item);
-
-                          if (
-                            window.location.href.includes("watches") ||
-                            window.location.pathname === "/"
                           ) {
-                            implementWatchFilter();
-                          } else if (window.location.href.includes("belts")) {
-                            implementBeltFilter();
+                            setFilterSortActive(item);
+                            setFilterWatchData((prev) => {
+                              return {
+                                ...prev,
+                                arrangement: item.type,
+                              };
+                            });
                           }
                         }}
                       >

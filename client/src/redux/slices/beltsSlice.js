@@ -28,8 +28,7 @@ function sortBy(list, arrangement) {
   } else if (arrangement === "ascending") {
     list.sort((a, b) => a.discounted_price - b.discounted_price);
   }
-  console.log(list);
-  console.log(arrangement);
+
   return list;
 }
 
@@ -37,14 +36,7 @@ const beltsSlice = createSlice({
   name: "belts",
   initialState,
   reducers: {
-    // filterBelts(state, { payload }) {
-    //   console.log(payload);
-    //   state.filterList = state.filterList.filter((item) => item); //sharunakeli
-    //   console.log(state.filterList);
-    // },
-
     filterBelts(state, { payload }) {
-      console.log(payload);
       state.filterList = sortBy(
         JSON.parse(JSON.stringify(state.beltList)),
         payload.arrangement
@@ -62,7 +54,6 @@ const beltsSlice = createSlice({
   extraReducers: (builder) => {
     builder
       .addCase(getBeltsThunk.fulfilled, (state, { payload }) => {
-        console.log(payload.data);
         state.beltList = payload.data;
         state.filterList = payload.data;
         state.beltListLoading = false;

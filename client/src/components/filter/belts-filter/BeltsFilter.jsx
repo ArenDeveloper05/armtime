@@ -51,22 +51,21 @@ const BeltsFilter = ({
       >
         <VscTriangleUp className="filter-inner-beltOptions-beltTriangle" />
         <div className="filter-inner-beltOptions-belts">
-          {filterBeltConfig.map(({ id, title }) => {
-            return (
-              <div
-                className="filter-inner-beltOptions-belts-item"
-                key={id}
-                onClick={() => {
-                  selectType("belt", title[lang]);
-                }}
-                style={
-                  filterData.belt === title[lang] ? activeOptionStyles : {}
-                }
-              >
-                {title[lang]}
-              </div>
-            );
-          })}
+          {filterBeltConfig &&
+            filterBeltConfig.map(({ id, title, type }) => {
+              return (
+                <div
+                  className="filter-inner-beltOptions-belts-item"
+                  key={id}
+                  onClick={() => {
+                    selectType("belt", type);
+                  }}
+                  style={filterData.belt === type ? activeOptionStyles : {}}
+                >
+                  {title[lang]}
+                </div>
+              );
+            })}
         </div>
         <button
           onClick={() => {

@@ -12,7 +12,11 @@ const BaseSingleImage = ({ images, video }) => {
   );
 
   useEffect(() => {
-    images && images.length && setMainImg(generateImage(images[0].url));
+    if (images) {
+      images.length
+        ? setMainImg(generateImage(images[0].url))
+        : setMainImg(noImage);
+    }
   }, [images]);
 
   const chooseMainImg = (evt) => {

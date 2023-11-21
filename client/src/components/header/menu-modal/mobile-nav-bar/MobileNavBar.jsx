@@ -9,13 +9,18 @@ const MobileNavBar = () => {
 
   return (
     <ul className="menu-modal-links">
-      {navConfig.map((item) => {
-        return (
-          <Link key={item.id} to={item.link} className="menu-modal-links-link">
-            <item.icon /> {item.title[language]}
-          </Link>
-        );
-      })}
+      {navConfig &&
+        navConfig.map((item) => {
+          return (
+            <Link
+              key={item.id}
+              to={item.link}
+              className="menu-modal-links-link"
+            >
+              <item.icon style={{ fontSize: "22px" }} /> {item.title[language]}
+            </Link>
+          );
+        })}
     </ul>
   );
 };

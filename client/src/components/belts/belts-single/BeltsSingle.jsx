@@ -5,7 +5,7 @@ import { useParams } from "react-router-dom";
 
 import BaseSingle from "../../common/base-single/BaseSingle";
 import Loading from "../../loading/Loading";
-import RequestError from "../../errors/requestError/RequestError";
+import RequestError from "../../errors/request-error/RequestError";
 
 import "./BeltsSingle.scss";
 

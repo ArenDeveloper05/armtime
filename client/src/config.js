@@ -159,6 +159,7 @@ export const filterBeltConfig = [
       en: "All",
       ru: "Все",
     },
+    type: "all",
   },
   {
     id: 2,
@@ -167,6 +168,7 @@ export const filterBeltConfig = [
       en: "Exotic leather belt",
       ru: "Ремень из экзотической кожи",
     },
+    type: "exotic",
   },
   {
     id: 3,
@@ -175,6 +177,7 @@ export const filterBeltConfig = [
       en: "Genuine leather belt",
       ru: "Ремень из натуральной кожи",
     },
+    type: "natural",
   },
 ];
 

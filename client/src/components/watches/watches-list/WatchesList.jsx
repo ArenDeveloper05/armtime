@@ -1,5 +1,6 @@
 import { useTranslation } from "react-i18next";
 import WatchesListItem from "./watchesListItem/WatchesListItem";
+import { memo } from "react";
 
 const WatchesList = ({ data }) => {
   const {
@@ -16,4 +17,4 @@ const WatchesList = ({ data }) => {
   );
 };
 
-export default WatchesList;
+export default memo(WatchesList);

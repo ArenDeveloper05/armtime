@@ -1,4 +1,4 @@
-import Garuantee from "../components/Garuantee/Garuantee";
+import Garuantee from "../components/garuantee/Garuantee";
 import Layout from "../layout/Layout";
 
 const GaruanteePage = () => {

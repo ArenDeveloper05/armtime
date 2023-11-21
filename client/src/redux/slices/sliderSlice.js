@@ -22,7 +22,6 @@ const sliderSlice = createSlice({
   extraReducers: (builder) => {
     builder
       .addCase(getSliderThunk.fulfilled, (state, { payload }) => {
-        console.log(payload.data);
         state.sliderList = payload.data;
         state.sliderListLoading = false;
         state.sliderListError = false;

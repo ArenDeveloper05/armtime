@@ -18,7 +18,7 @@ import Loading from "./components/loading/Loading";
 import ErrorPage from "./pages/ErrorPage";
 
 import "./i18n";
-import "./index.css";
+import "./index.scss";
 import GaruanteePage from "./pages/GaruanteePage";
 const router = createBrowserRouter([
   {
@@ -53,7 +53,6 @@ const router = createBrowserRouter([
     path: ROUTER.CHECKOUT_PAGE_ROUTE,
     element: <CheckoutPage />,
   },
-  ,
   { path: ROUTER.BELTS_SINGLE_PAGE_ROUTE, element: <BeltsSinglePage /> },
   {
     path: ROUTER.DELIVERY_PAGE_ROUTE,

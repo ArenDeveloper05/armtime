@@ -17,6 +17,7 @@ const initialState = {
 };
 
 function sortBy(list, arrangement) {
+  list = [...list];
   if (arrangement === "newest") {
     list.sort((a, b) => {
       const dateA = new Date(a.created_at);
@@ -28,8 +29,7 @@ function sortBy(list, arrangement) {
   } else if (arrangement === "ascending") {
     list.sort((a, b) => a.discounted_price - b.discounted_price);
   }
-  console.log(list);
-  console.log(arrangement);
+
   return list;
 }
 
@@ -38,7 +38,6 @@ const watchesSlice = createSlice({
   initialState,
   reducers: {
     filterWatches(state, { payload }) {
-      console.log(payload);
       state.filterList = sortBy(
         JSON.parse(JSON.stringify(state.watchList)),
         payload.arrangement

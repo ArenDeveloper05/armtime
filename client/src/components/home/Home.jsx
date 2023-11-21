@@ -1,4 +1,4 @@
-import HomeSlider from "../homeSlider/HomeSlider";
+import HomeSlider from "../home-slider/HomeSlider";
 import Watches from "../watches/Watches";
 import "./Home.scss";
 
