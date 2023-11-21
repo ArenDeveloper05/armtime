@@ -33,7 +33,12 @@ const BeltsItemDescription = ({ item }) => {
 
       <div className="belts-list-item-description-buy">
         <p className="belts-list-item-description-buy-price">
-          <del>{item.price}</del>
+          <del>
+            {item.price !== 0 && item.price}{" "}
+            {item.price !== 0 && (
+              <TbCurrencyDram style={{ width: "17px", height: "17px" }} />
+            )}
+          </del>
           {item.discounted_price}
           <TbCurrencyDram style={{ width: "17px", height: "17px" }} />
         </p>

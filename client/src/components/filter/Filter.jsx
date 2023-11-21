@@ -64,7 +64,7 @@ const Filter = ({ filterName }) => {
   const [selectOpen, setSelectOpen] = useState(false);
 
   //price
-  const [value, setValue] = useState({ min: 10000, max: 500000 });
+  const [value, setValue] = useState({ min: 0, max: 500000 });
   //watch data
   const [filterWatchData, setFilterWatchData] = useState({
     gender: filterGenderConfig[0].type,
@@ -79,7 +79,15 @@ const Filter = ({ filterName }) => {
     arrangement: filterSortActive.type,
   });
 
-  //useEffect
+  //watch filter function
+  const implementWatchFilter = () => {
+    dispatch(filterWatches(filterWatchData));
+  };
+  //belt filter function
+  const implementBeltFilter = () => {
+    dispatch(filterBelts(filterBeltData));
+  };
+
   useEffect(() => {
     if (filterName === "watches") {
       setFilterWatchData((prev) => {
@@ -99,6 +107,18 @@ const Filter = ({ filterName }) => {
       });
     }
   }, [value, filterName, filterSortActive]);
+
+  //useEffect
+  useEffect(() => {
+    if (
+      window.location.href.includes("watches") ||
+      window.location.pathname === "/"
+    ) {
+      implementWatchFilter();
+    } else if (window.location.href.includes("belts")) {
+      implementBeltFilter();
+    }
+  }, [filterSortActive]);
 
   //ref
   const refWatch = useRef(null);
@@ -132,26 +152,6 @@ const Filter = ({ filterName }) => {
       setSelectOpen(false);
     }
   });
-
-  //watch filter function
-  const implementWatchFilter = () => {
-    dispatch(filterWatches(filterWatchData));
-  };
-  //belt filter function
-  const implementBeltFilter = () => {
-    dispatch(filterBelts(filterBeltData));
-  };
-
-  useEffect(() => {
-    if (
-      window.location.href.includes("watches") ||
-      window.location.pathname === "/"
-    ) {
-      implementWatchFilter();
-    } else if (window.location.href.includes("belts")) {
-      implementBeltFilter();
-    }
-  }, [filterSortActive]);
 
   return (
     <div className="filter">
@@ -191,7 +191,7 @@ const Filter = ({ filterName }) => {
               <TbCurrencyDram />
             </div>
             <RangeSlider
-              min={10000}
+              min={0}
               max={500000}
               step={10000}
               value={value}
@@ -234,12 +234,20 @@ const Filter = ({ filterName }) => {
                             JSON.stringify(item)
                           ) {
                             setFilterSortActive(item);
-                            setFilterWatchData((prev) => {
-                              return {
-                                ...prev,
-                                arrangement: item.type,
-                              };
-                            });
+
+                            filterName === "watches"
+                              ? setFilterWatchData((prev) => {
+                                  return {
+                                    ...prev,
+                                    arrangement: item.type,
+                                  };
+                                })
+                              : setFilterBeltData((prev) => {
+                                  return {
+                                    ...prev,
+                                    arrangement: item.type,
+                                  };
+                                });
                           }
                         }}
                       >

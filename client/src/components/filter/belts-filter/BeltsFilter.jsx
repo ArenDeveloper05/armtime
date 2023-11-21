@@ -36,7 +36,7 @@ const BeltsFilter = ({
         className="filter-inner-select"
         onClick={() => {
           setFilterOpen({
-            beltOpen: !filterOpen.beltOpen,
+            beltOpen: true,
             watchOpen: false,
           });
         }}

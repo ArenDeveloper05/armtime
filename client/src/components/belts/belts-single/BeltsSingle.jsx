@@ -23,7 +23,6 @@ const BeltsSingle = () => {
       try {
         const { data } = await getSingleBelt(id);
         setBeltData(data.message);
-        console.log(data);
       } catch (error) {
         setError(true);
       } finally {

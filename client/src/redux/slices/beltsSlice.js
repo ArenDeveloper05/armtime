@@ -17,6 +17,7 @@ const initialState = {
 };
 
 function sortBy(list, arrangement) {
+  list = [...list];
   if (arrangement === "newest") {
     list.sort((a, b) => {
       const dateA = new Date(a.created_at);
@@ -24,9 +25,13 @@ function sortBy(list, arrangement) {
       return dateB - dateA;
     });
   } else if (arrangement === "descending") {
-    list.sort((a, b) => b.discounted_price - a.discounted_price);
+    list.sort(
+      (a, b) => Number(b.discounted_price) - Number(a.discounted_price)
+    );
   } else if (arrangement === "ascending") {
-    list.sort((a, b) => a.discounted_price - b.discounted_price);
+    list.sort(
+      (a, b) => Number(a.discounted_price) - Number(b.discounted_price)
+    );
   }
 
   return list;
@@ -37,18 +42,45 @@ const beltsSlice = createSlice({
   initialState,
   reducers: {
     filterBelts(state, { payload }) {
-      state.filterList = sortBy(
-        JSON.parse(JSON.stringify(state.beltList)),
-        payload.arrangement
-      ).filter((item) => {
-        if (
-          (item.type === payload.type || payload.type === "all") &&
-          item.discounted_price >= payload.price.min &&
-          item.discounted_price <= payload.price.max
-        ) {
-          return item;
-        }
-      });
+      if (payload.belt === "natural") {
+        state.filterList = sortBy(
+          JSON.parse(JSON.stringify(state.beltList)),
+          payload.arrangement
+        ).filter((item) => {
+          if (
+            item.material === "leather" &&
+            item.discounted_price >= payload.price.min &&
+            item.discounted_price <= payload.price.max
+          ) {
+            return item;
+          }
+        });
+      } else if (payload.belt === "all") {
+        state.filterList = sortBy(
+          JSON.parse(JSON.stringify(state.beltList)),
+          payload.arrangement
+        ).filter((item) => {
+          if (
+            item.discounted_price >= payload.price.min &&
+            item.discounted_price <= payload.price.max
+          ) {
+            return item;
+          }
+        });
+      } else if (payload.belt === "exotic") {
+        state.filterList = sortBy(
+          JSON.parse(JSON.stringify(state.beltList)),
+          payload.arrangement
+        ).filter((item) => {
+          if (
+            item.material !== "leather" &&
+            item.discounted_price >= payload.price.min &&
+            item.discounted_price <= payload.price.max
+          ) {
+            return item;
+          }
+        });
+      }
     },
   },
   extraReducers: (builder) => {
