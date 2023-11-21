@@ -19,6 +19,10 @@
       "prices_descending": "Prices Descending",
       "prices_ascending": "Prices Ascending"
     },
+    "main_garuantee": {
+      "garuantee": "Garuantee",
+      "text": "All watches bought from the <Armenian Time> website come with a one-year (12 months) warranty starting from the purchase date. If there's an issue, you'll need to show a receipt filled and signed by the organization along with the watch. Please note that attempting to fix any problems before bringing it to our attention voids the warranty, and we won't be able to provide free warranty service in such cases."
+    },
     "main_deliveryTerms": {
       "title": "Delivery Items",
       "delivery": "delivery",

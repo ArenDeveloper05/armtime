@@ -208,6 +208,19 @@
     }
   }
 
+  @media (max-width: 1000px) {
+    .buy {
+      width: 20px;
+      &-inner {
+        &-cartName {
+          display: none;
+        }
+        &-price {
+          display: none;
+        }
+      }
+    }
+  }
   @media only screen and (max-width: 540px) {
     &-dialog {
       width: 480px;

@@ -190,12 +190,12 @@ export const contactConfig = {
     },
     {
       id: 2,
-      title: "+374 11 12 12 12",
+      title: "+374 (94) 31 - 31 - 76",
       icon: FaPhone,
     },
     {
       id: 3,
-      title: "+374 12 13 13 13",
+      title: "+374 (43) 31 - 31 - 76",
       icon: FaPhone,
     },
   ],

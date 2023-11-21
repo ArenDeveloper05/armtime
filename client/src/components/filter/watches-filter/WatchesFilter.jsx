@@ -47,52 +47,54 @@ const WatchesFilter = ({
       >
         <RiEqualizerLine />
         <span>{filterSelectConfig[lang]}</span>
-      </div>
 
-      <div
-        className="filter-inner-options"
-        style={{ display: filterOpen.watchOpen ? "flex" : "none" }}
-      >
-        <VscTriangleUp className="filter-inner-options-triangle" />
-        <div className="filter-inner-options-gender">
-          {filterGenderConfig.map(({ id, title, type }) => {
-            return (
-              <div
-                className="filter-inner-options-gender-item"
-                key={id}
-                onClick={() => {
-                  selectType("gender", type);
-                }}
-                style={filterData.gender === type ? activeOptionStyles : {}}
-              >
-                {title[lang]}
-              </div>
-            );
-          })}
-        </div>
-        <div className="filter-inner-options-types">
-          {filterKindsConfig.map(({ id, title, type }) => {
-            return (
-              <div
-                className="filter-inner-options-types-option"
-                key={id}
-                onClick={() => {
-                  selectType("type", type);
-                }}
-                style={filterData.type === type ? activeOptionStyles : {}}
-              >
-                {title[lang]}
-              </div>
-            );
-          })}
-        </div>
-        <button
-          onClick={() => {
-            implementWatchFilter();
-          }}
+        <div
+          className="filter-inner-options"
+          style={{ display: filterOpen.watchOpen ? "flex" : "none" }}
+          onClick={(e) => e.stopPropagation()}
         >
-          {t("filter")}
-        </button>
+          <VscTriangleUp className="filter-inner-options-triangle" />
+          <div className="filter-inner-options-gender">
+            {filterGenderConfig.map(({ id, title, type }) => {
+              return (
+                <div
+                  className="filter-inner-options-gender-item"
+                  key={id}
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    selectType("gender", type);
+                  }}
+                  style={filterData.gender === type ? activeOptionStyles : {}}
+                >
+                  {title[lang]}
+                </div>
+              );
+            })}
+          </div>
+          <div className="filter-inner-options-types">
+            {filterKindsConfig.map(({ id, title, type }) => {
+              return (
+                <div
+                  className="filter-inner-options-types-option"
+                  key={id}
+                  onClick={() => {
+                    selectType("type", type);
+                  }}
+                  style={filterData.type === type ? activeOptionStyles : {}}
+                >
+                  {title[lang]}
+                </div>
+              );
+            })}
+          </div>
+          <button
+            onClick={() => {
+              implementWatchFilter();
+            }}
+          >
+            {t("filter")}
+          </button>
+        </div>
       </div>
     </>
   );

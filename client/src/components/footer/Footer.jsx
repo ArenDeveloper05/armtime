@@ -23,11 +23,11 @@ const Footer = () => {
             <div className="footer-inner-contact-info">
               <div className="footer-inner-contact-info-item">
                 <FaPhone style={{ width: "16px", height: "16px" }} />
-                <div>+374 ( 93 ) 45 - 35 - 50</div>
+                <div>+374 ( 94 ) 31 - 31 - 76</div>
               </div>
               <div className="footer-inner-contact-info-item">
-                <CgMail className="footer-inner-contact-info-item-icon" />
-                <div>rubinyan559@gmail.com</div>
+                <FaPhone style={{ width: "16px", height: "16px" }} />
+                <div>+374 ( 43 ) 31 - 31 - 76</div>
               </div>
             </div>
           </div>

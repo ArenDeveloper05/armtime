@@ -42,3 +42,42 @@
     }
   }
 }
+
+@media (max-width: 850px) {
+  .page-banner {
+    &-inner {
+      > h1 {
+        font-size: 45px;
+      }
+      > p a {
+        font-size: 17px;
+      }
+    }
+  }
+}
+
+@media (max-width: 850px) {
+  .page-banner {
+    &-inner {
+      > h1 {
+        font-size: 40px;
+      }
+      > p a {
+        font-size: 17px;
+      }
+    }
+  }
+}
+
+@media (max-width: 566px) {
+  .page-banner {
+    &-inner {
+      > h1 {
+        font-size: 30px;
+      }
+      > p a {
+        font-size: 15px;
+      }
+    }
+  }
+}
