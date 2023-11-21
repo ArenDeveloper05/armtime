@@ -159,13 +159,31 @@
     }
   }
 
-  @media only screen and (max-width: 440px) {
+  @media only screen and (max-width: 530px) {
+    padding: 0;
+
     &-logo {
       display: none;
     }
 
     &-mobile-logo {
       display: block;
+    }
+
+    &-language {
+      width: 60px;
+      border: solid 1px green;
+
+      &-lang {
+        font-size: 13px;
+        background-color: pink;
+      }
+
+      &-dialog {
+        border: solid blue;
+        right: 10px;
+        top: 34px;
+      }
     }
   }
 }

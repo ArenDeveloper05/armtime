@@ -61,7 +61,7 @@ const BasketCart = () => {
         </div>
         <div className="buy-inner-price">
           {onCalcPrice()}
-          <TbCurrencyDram style={{ width: "18px", height: "18px" }} />
+          <TbCurrencyDram />
         </div>
       </div>
 
