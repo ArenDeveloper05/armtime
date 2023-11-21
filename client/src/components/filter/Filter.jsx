@@ -64,7 +64,10 @@ const Filter = ({ filterName }) => {
   const [selectOpen, setSelectOpen] = useState(false);
 
   //price
-  const [value, setValue] = useState({ min: 0, max: 500000 });
+  const [value, setValue] = useState({
+    min: filterName === "watches" ? 16000 : 3000,
+    max: filterName === "watches" ? 120000 : 15000,
+  });
   //watch data
   const [filterWatchData, setFilterWatchData] = useState({
     gender: filterGenderConfig[0].type,
@@ -192,7 +195,7 @@ const Filter = ({ filterName }) => {
             </div>
             <RangeSlider
               min={0}
-              max={500000}
+              max={120000}
               step={10000}
               value={value}
               onChange={setValue}
