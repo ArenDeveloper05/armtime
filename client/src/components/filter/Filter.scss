@@ -166,7 +166,6 @@
         gap: 2px;
         width: 100px;
         height: 100%;
-        // background-color: red;
       }
     }
 
@@ -191,7 +190,6 @@
         height: auto;
         background-color: var(--white);
         position: absolute;
-        // bottom: 15px;
         z-index: 1000;
         display: flex;
         flex-direction: column;
@@ -200,6 +198,7 @@
         border: none;
         transition: all 0.3s linear;
         &-option {
+          background-color: var(--white);
           width: 100%;
           font-size: 15px;
           padding: 7px 3px;
@@ -212,6 +211,15 @@
           }
         }
       }
+    }
+  }
+}
+
+@media only screen and (max-width: 881px) {
+  .filter {
+    &-inner {
+      margin-top: 20px;
+      flex-direction: column;
     }
   }
 }
@@ -242,8 +250,12 @@
     &-inner {
       &-options {
         left: -36px;
+        width: 348px;
         &-triangle {
           left: 40%;
+        }
+        &-types {
+          flex-wrap: wrap;
         }
       }
       &-selection {
