@@ -64,7 +64,7 @@ const Filter = ({ filterName }) => {
   const [selectOpen, setSelectOpen] = useState(false);
 
   //price
-  const [value, setValue] = useState({ min: 0, max: 500000 });
+  const [value, setValue] = useState({ min: 16000, max: 120000 });
   //watch data
   const [filterWatchData, setFilterWatchData] = useState({
     gender: filterGenderConfig[0].type,
@@ -191,9 +191,9 @@ const Filter = ({ filterName }) => {
               <TbCurrencyDram />
             </div>
             <RangeSlider
-              min={0}
-              max={500000}
-              step={10000}
+              min={16000}
+              max={120000}
+              step={1000}
               value={value}
               onChange={setValue}
             />
