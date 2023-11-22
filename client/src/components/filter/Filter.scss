@@ -100,7 +100,6 @@
       }
     }
     &-beltOptions {
-      width: 500px;
       background-color: var(--white);
       padding: 22px 28px;
       padding-bottom: 16px;
@@ -248,21 +247,34 @@
 @media (max-width: 600px) {
   .filter {
     &-inner {
+      &-beltOptions {
+        // width: 600px;
+        left: -20%;
+        &-beltTriangle {
+          top: -19%;
+        }
+      }
       &-options {
+        width: 600px;
         left: -36px;
-        width: 348px;
         &-triangle {
           left: 40%;
+          top: -15%;
         }
         &-types {
           flex-wrap: wrap;
         }
       }
       &-selection {
+        width: 100%;
         &-options {
           &-option {
             width: 265px;
           }
+        }
+        &-select {
+          width: 100%;
+          padding: 0;
         }
       }
     }
@@ -273,8 +285,8 @@
   .filter {
     &-inner {
       &-beltOptions {
-        width: 400px;
-        left: -45%;
+        width: 450px;
+        left: -30%;
         &-beltTriangle {
           top: -22%;
         }

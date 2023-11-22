@@ -5,6 +5,16 @@ import { BaseSingleContext } from "../BaseSingle";
 import BaseSingleFeatures from "../base-single-desc/base-single-features/BaseSingleFeatures";
 
 import noImage from "../../../../images/no-image.jpg";
+import { SwiperSlide, Swiper } from "swiper/react";
+import {
+  Navigation,
+  Pagination,
+  Scrollbar,
+  A11y,
+  Thumbs,
+} from "swiper/modules";
+import BaseSingleDescInfoForMobile from "../base-single-desc/base-single-desc-info/BaseSingleDescInfoForMobile";
+import BaseSingleDescraption from "../base-single-desc/base-single-descraption/BaseSingleDescraption";
 
 const BaseSingleImage = ({ images, video }) => {
   const [mainImg, setMainImg] = useState(
@@ -34,6 +44,7 @@ const BaseSingleImage = ({ images, video }) => {
     type,
     material,
     sizes,
+    description,
   } = useContext(BaseSingleContext);
 
   return (
@@ -42,7 +53,41 @@ const BaseSingleImage = ({ images, video }) => {
         <img src={mainImg} alt="img" />
       </div>
 
-      <div className="base-single-image-imgs">
+      <Swiper
+        modules={[Navigation, Pagination, Scrollbar, A11y, Thumbs]}
+        spaceBetween={20}
+        slidesPerView={3}
+        className="base-single-image-imgs"
+      >
+        {images &&
+          images.length !== 0 &&
+          images.map(({ id, url }) => {
+            return (
+              <SwiperSlide className="base-single-image-imgs-item">
+                <img
+                  style={
+                    mainImg === generateImage(url)
+                      ? { filter: "blur(2px)" }
+                      : {}
+                  }
+                  src={generateImage(url)}
+                  alt="watch-or-belt"
+                  onClick={chooseMainImg}
+                />
+              </SwiperSlide>
+            );
+          })}
+        {video &&
+          video.lentgh !== 0 &&
+          video.map(({ id, url }) => {
+            return (
+              <SwiperSlide className="base-single-image-videos-video" key={id}>
+                <video src={generateImage(url)} controls muted></video>
+              </SwiperSlide>
+            );
+          })}
+      </Swiper>
+      {/* <div className="base-single-image-imgs">
         {images &&
           images.length !== 0 &&
           images.map(({ id, url }) => {
@@ -61,8 +106,8 @@ const BaseSingleImage = ({ images, video }) => {
               </div>
             );
           })}
-      </div>
-      <div className="base-single-image-videos">
+      </div> */}
+      {/* <div className="base-single-image-videos">
         {video &&
           video.lentgh !== 0 &&
           video.map(({ id, url }) => {
@@ -72,22 +117,25 @@ const BaseSingleImage = ({ images, video }) => {
               </div>
             );
           })}
+      </div> */}
+      <BaseSingleDescInfoForMobile />
+      <div className="base-single-image-feat">
+        <BaseSingleFeatures
+          featuresData={{
+            type,
+            sex,
+            case_material,
+            case_size,
+            case_thickness,
+            band_material,
+            water_resistant,
+            weight,
+            material,
+            sizes,
+          }}
+        />
+        <BaseSingleDescraption description={description} />
       </div>
-
-      <BaseSingleFeatures
-        featuresData={{
-          type,
-          sex,
-          case_material,
-          case_size,
-          case_thickness,
-          band_material,
-          water_resistant,
-          weight,
-          material,
-          sizes,
-        }}
-      />
     </div>
   );
 };

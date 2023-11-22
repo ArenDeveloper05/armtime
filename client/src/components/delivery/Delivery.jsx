@@ -1,26 +1,14 @@
 import PageBanner from "../common/page-banner/PageBanner";
 import "./Delivery.scss";
-import deliveryBg from "../../images/banner/delivery-bg.jpg";
-import Container from "../container/Container";
 import { useTranslation } from "react-i18next";
 import { useEffect, useState } from "react";
 
 const Delivery = () => {
   const { t } = useTranslation();
 
-  const [links, setLinks] = useState([]);
-
-  useEffect(() => {
-    setLinks([t("header.home"), t("main.main_deliveryTerms.delivery")]);
-  }, [t]);
-
   return (
     <div className="delivery">
-      <PageBanner
-        mainTitle={t("main.main_deliveryTerms.title")}
-        BannerImage={deliveryBg}
-        links={links}
-      />
+      <PageBanner mainTitle={t("main.main_deliveryTerms.title")} />
 
       <div className="delivery-inner">
         <div className="delivery-inner-item">

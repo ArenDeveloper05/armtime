@@ -59,42 +59,39 @@ const WatchesListItem = ({ item, lang }) => {
           {item[`name_${lang}`]}
         </p>
 
-        <p className="watches-list-item-description-color">{item.color}</p>
+        {/* <p className="watches-list-item-description-color">{item.color}</p> */}
 
         <p className="watches-list-item-description-type">{item.type}</p>
+      </div>
+      <div className="watches-list-item-description-buy">
+        <p className="watches-list-item-description-buy-price">
+          <del>
+            {item.price !== 0 && item.price}
+            {item.price !== 0 && <TbCurrencyDram />}
+          </del>
+          {item.discounted_price}
+          <TbCurrencyDram />
+        </p>
 
-        <div className="watches-list-item-description-buy">
-          <p className="watches-list-item-description-buy-price">
-            <del>
-              {item.price !== 0 && item.price}
-              {item.price !== 0 && (
-                <TbCurrencyDram style={{ width: "17px", height: "17px" }} />
-              )}
-            </del>
-            {item.discounted_price}
-            <TbCurrencyDram style={{ width: "17px", height: "17px" }} />
-          </p>
-
-          {itemInBasket() ? (
-            <button
-              className="watches-list-item-description-buy-btn"
-              onClick={(e) => {
-                e.stopPropagation();
-                dispatch(onAddWatch(item));
-              }}
-            >
-              {t("buy")}
-            </button>
-          ) : (
-            <Link
-              className="watches-list-item-description-buy-btn"
-              to={ROUTER.CHECKOUT_PAGE_ROUTE}
-              onClick={(e) => e.stopPropagation()}
-            >
-              {t("main.main_putOrder.Put_Order")}
-            </Link>
-          )}
-        </div>
+        {itemInBasket() ? (
+          <button
+            className="watches-list-item-description-buy-btn"
+            onClick={(e) => {
+              e.stopPropagation();
+              dispatch(onAddWatch(item));
+            }}
+          >
+            {t("buy")}
+          </button>
+        ) : (
+          <Link
+            className="watches-list-item-description-buy-btn"
+            to={ROUTER.CHECKOUT_PAGE_ROUTE}
+            onClick={(e) => e.stopPropagation()}
+          >
+            {t("main.main_putOrder.Put_Order")}
+          </Link>
+        )}
       </div>
     </div>
   );

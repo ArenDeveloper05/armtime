@@ -8,7 +8,7 @@ import BaseSingleDescInfo from "./base-single-desc-info/BaseSingleDescInfo";
 import BaseSingleDescType from "./base-single-desc-type/BaseSingleDescType";
 import Identical from "../../../identical/Identical";
 
-const BaseSingleDesc = ({ type }) => {
+const BaseSingleDesc = ({ type, watchData }) => {
   const moreItems = useSelector((state) => {
     if (window.location.href.includes("watches")) {
       return state.watches.watchList;
@@ -26,6 +26,12 @@ const BaseSingleDesc = ({ type }) => {
     }
   }, [dispatch]);
 
+  const onFilterWatchData = (moreItems) => {
+    return moreItems.filter(
+      (item) => item.model_name_en === watchData.model_name_en
+    );
+  };
+
   return (
     <div className="base-single-desc">
       <BaseSingleDescInfo />
@@ -33,7 +39,11 @@ const BaseSingleDesc = ({ type }) => {
       <BaseSingleDescBuy />
       {moreItems && (
         <Identical
-          data={moreItems.slice(0, 5)}
+          data={
+            window.location.href.includes("watches")
+              ? onFilterWatchData(moreItems)
+              : moreItems.slice(0, 5)
+          }
           pageType={
             window.location.href.includes("watches")
               ? "watches"

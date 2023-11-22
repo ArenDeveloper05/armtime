@@ -185,7 +185,7 @@ export const contactConfig = {
   contactOfficeConfig: [
     {
       id: 1,
-      title: "09:00 - 18:00",
+      title: "09:00 - 22:00",
       icon: IoTime,
     },
     {

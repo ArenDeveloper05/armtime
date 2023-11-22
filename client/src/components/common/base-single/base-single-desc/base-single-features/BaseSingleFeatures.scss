@@ -56,3 +56,43 @@
     }
   }
 }
+
+.descraption {
+  margin-top: 24px;
+  height: auto;
+  &-select {
+    width: 100%;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #e0e0e0;
+    cursor: pointer;
+
+    padding: 0 12px;
+    &-text {
+      font-size: 15px;
+      font-weight: 400;
+      color: #090606;
+    }
+    &-icon {
+      width: 18px;
+      height: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      &-icn {
+        width: 18px;
+        height: 18px;
+      }
+    }
+  }
+
+  &-text {
+    width: 100%;
+    height: auto;
+    padding-left: 8px;
+    padding-top: 6px;
+    font-size: 15px;
+  }
+}
