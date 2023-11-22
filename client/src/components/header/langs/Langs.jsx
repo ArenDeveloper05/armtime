@@ -25,6 +25,7 @@ const Langs = () => {
     langs.map((lang) => {
       if (lang.type === language) {
         setActiveLang(lang);
+        return "";
       }
     });
   }, [setActiveLang, language]);

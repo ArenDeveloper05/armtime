@@ -1,6 +1,4 @@
-import { Link } from "react-router-dom";
 import "./PageBanner.scss";
-import { ROUTER } from "../../../router/router";
 
 const PageBanner = ({ mainTitle, BannerImage }) => {
   return (
