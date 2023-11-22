@@ -63,7 +63,7 @@ const BaseSingleImage = ({ images, video }) => {
           images.length !== 0 &&
           images.map(({ id, url }) => {
             return (
-              <SwiperSlide className="base-single-image-imgs-item">
+              <SwiperSlide className="base-single-image-imgs-item" key={id}>
                 <img
                   style={
                     mainImg === generateImage(url)
