@@ -162,6 +162,8 @@ const CheckoutItems = () => {
                 } else if (checkoutData.shipping === "regions") {
                   delete res.yerevan;
                 }
+                delete res.notes;
+                console.log(res);
                 if (JSON.stringify(res).includes("false")) {
                   window.scrollTo({ top: 0, behavior: "smooth" });
                 } else {

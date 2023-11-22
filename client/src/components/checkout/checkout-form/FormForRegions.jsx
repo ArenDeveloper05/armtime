@@ -46,7 +46,11 @@ const FormForRegions = () => {
           {t("main.main_putOrder.Zip/Postal_Code")}
         </label>
         <input
-          style={checkoutValidations.regions["postal_code"] ? {} : errorStyles}
+          style={
+            checkoutValidations.regions["postal_code"] || true
+              ? {}
+              : errorStyles
+          }
           type="text"
           id="zip"
           value={checkoutData.regions.postal_code}
