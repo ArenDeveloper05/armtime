@@ -18,7 +18,7 @@ const Watches = () => {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getWatchesThunk());
-  }, []);
+  }, [dispatch]);
   const { t } = useTranslation();
 
   const watchesData = useSelector((state) => state.watches.filterList);

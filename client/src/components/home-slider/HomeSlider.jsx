@@ -35,7 +35,7 @@ const HomeSlider = () => {
 
   useEffect(() => {
     dispatch(getSliderThunk());
-  }, []);
+  }, [dispatch]);
 
   return (
     <Swiper

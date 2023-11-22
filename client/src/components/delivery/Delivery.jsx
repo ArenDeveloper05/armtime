@@ -1,7 +1,6 @@
 import PageBanner from "../common/page-banner/PageBanner";
 import "./Delivery.scss";
 import { useTranslation } from "react-i18next";
-import { useEffect, useState } from "react";
 
 const Delivery = () => {
   const { t } = useTranslation();

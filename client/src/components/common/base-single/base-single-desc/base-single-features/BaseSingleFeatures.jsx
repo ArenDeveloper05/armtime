@@ -120,7 +120,7 @@ const BaseSingleFeatures = ({ featuresData }) => {
                     <div className="features-info-block-name">
                       {featuresData &&
                         checkValidations(
-                          featuresData[validation_key] == "male"
+                          featuresData[validation_key] === "male"
                             ? "man"
                             : "woman"
                         )}

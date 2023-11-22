@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import "./ContactUs.scss";
 
 import ContactUsDesc from "./contact-us-desc/ContactUsDesc";
