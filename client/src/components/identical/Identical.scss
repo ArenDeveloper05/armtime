@@ -45,3 +45,11 @@
     height: 90px;
   }
 }
+
+@media only screen and (max-width: 450px) {
+  .identical-slider-item {
+    > a {
+      height: 69px;
+    }
+  }
+}

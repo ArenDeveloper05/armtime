@@ -148,6 +148,36 @@
     }
   }
 
+  @media (max-width: 1231px) {
+    .header-inner {
+      &-nav {
+        &-link {
+          font-size: 13px;
+        }
+      }
+
+      &-logo {
+        width: 140px;
+        height: 90px;
+        &-img {
+        }
+      }
+
+      &-language {
+        &-lang {
+          font-size: 15px;
+          &-icon {
+          }
+        }
+
+        &-dialog {
+          &-item {
+          }
+        }
+      }
+    }
+  }
+
   @media only screen and (max-width: 1000px) {
     &-menu-icon {
       display: block;
@@ -163,8 +193,6 @@
   }
 
   @media only screen and (max-width: 530px) {
-    padding: 0;
-
     &-logo {
       display: none;
     }
@@ -175,47 +203,14 @@
 
     &-language {
       width: 60px;
-      border: solid 1px green;
 
       &-lang {
         font-size: 13px;
-        background-color: pink;
       }
 
       &-dialog {
-        border: solid blue;
         right: 10px;
         top: 34px;
-      }
-    }
-  }
-}
-
-@media (max-width: 1231px) {
-  .header-inner {
-    &-nav {
-      &-link {
-        font-size: 13px;
-      }
-    }
-
-    &-logo {
-      width: 140px;
-      height: 90px;
-      &-img {
-      }
-    }
-
-    &-language {
-      &-lang {
-        font-size: 15px;
-        &-icon {
-        }
-      }
-
-      &-dialog {
-        &-item {
-        }
       }
     }
   }

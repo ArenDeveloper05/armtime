@@ -49,6 +49,11 @@ const BaseSingleImage = ({ images, video }) => {
             return (
               <div key={id} className="base-single-image-imgs-item">
                 <img
+                  style={
+                    mainImg === generateImage(url)
+                      ? { filter: "blur(2px)" }
+                      : {}
+                  }
                   src={generateImage(url)}
                   alt="watch-or-belt"
                   onClick={chooseMainImg}

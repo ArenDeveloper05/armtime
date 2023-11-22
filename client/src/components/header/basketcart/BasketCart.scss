@@ -223,16 +223,9 @@
   }
   @media only screen and (max-width: 540px) {
     &-dialog {
-      width: 480px;
+      width: 280px;
       top: 102px;
-      left: -250px;
-    }
-  }
-
-  @media only screen and (max-width: 500px) {
-    &-dialog {
-      max-width: 300px;
-      left: -150px;
+      // left: -250px;
     }
   }
 
@@ -242,11 +235,8 @@
       height: 100%;
       flex-direction: column;
       justify-content: space-evenly;
-      // border: solid purple;
 
       &-icon {
-        // border: solid cyan;
-
         &-counter {
           width: 16px;
           height: 16px;
@@ -265,7 +255,6 @@
         margin: 0;
         padding: 0;
         text-align: center;
-        // border: solid blue;
         font-size: 13px;
         border-right: 0px solid var(--black);
         border-bottom: 2px solid var(--black);
@@ -282,23 +271,28 @@
     }
 
     &-dialog {
+      left: -76px;
       &-inner {
         &-triIcon {
-          left: 78%;
         }
       }
     }
   }
 
+  @media only screen and (max-width: 500px) {
+    &-dialog {
+      max-width: 300px;
+      left: -20px;
+    }
+  }
+
   @media only screen and (max-width: 350px) {
     &-dialog {
-      width: 250px;
+      width: 300px;
       left: -40px;
-
       &-inner {
         &-triIcon {
           bottom: -4px;
-          left: 78%;
         }
       }
     }
