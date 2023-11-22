@@ -69,8 +69,10 @@ const WatchesListItem = ({ item, lang }) => {
             {item.price !== 0 && item.price}
             {item.price !== 0 && <TbCurrencyDram />}
           </del>
-          {item.discounted_price}
-          <TbCurrencyDram />
+          <span>
+            {item.discounted_price}
+            <TbCurrencyDram />
+          </span>
         </p>
 
         {itemInBasket() ? (
