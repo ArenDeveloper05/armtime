@@ -194,15 +194,9 @@ const Filter = ({ filterName }) => {
               <TbCurrencyDram />
             </div>
             <RangeSlider
-<<<<<<< HEAD
-              min={value.min}
-              max={value.max}
-              step={1000}
-=======
               min={filterName === "watches" ? 16000 : 3000}
               max={filterName === "watches" ? 120000 : 15000}
               step={filterName === "watches" ? 4000 : 1000}
->>>>>>> 874c552e0a9ee7aff2208963da67f8b3b8878911
               value={value}
               onChange={setValue}
             />
