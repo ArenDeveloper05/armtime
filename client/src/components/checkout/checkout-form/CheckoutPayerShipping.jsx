@@ -114,7 +114,7 @@ const CheckoutPayerShipping = () => {
         <div className="information-shipping-notes">
           <label htmlFor="notes">{t("main.main_putOrder.Notes_Field")}</label>
           <input
-            style={checkoutValidations["notes"] ? {} : errorStyles}
+            style={checkoutValidations["notes"] || true ? {} : errorStyles}
             type="text"
             name="notes"
             id="notes"
