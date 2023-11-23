@@ -5,7 +5,6 @@ import { getBeltsThunk } from "../../../../redux/slices/beltsSlice";
 
 import BaseSingleDescBuy from "./base-single-desc-buy/BaseSingleDescBuy";
 import BaseSingleDescInfo from "./base-single-desc-info/BaseSingleDescInfo";
-import BaseSingleDescType from "./base-single-desc-type/BaseSingleDescType";
 import Identical from "../../../identical/Identical";
 import BaseSingleFeatures from "./base-single-features/BaseSingleFeatures";
 import BaseSingleDescraption from "./base-single-descraption/BaseSingleDescraption";
