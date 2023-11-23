@@ -57,6 +57,7 @@ const BaseSingleImage = ({ images, video }) => {
         modules={[Navigation, Pagination, Scrollbar, A11y, Thumbs]}
         spaceBetween={20}
         slidesPerView={3}
+        navigation
         className="base-single-image-imgs"
       >
         {images &&
