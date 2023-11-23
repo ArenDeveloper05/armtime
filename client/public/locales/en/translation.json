@@ -74,7 +74,7 @@
     "case_size": "Case Size",
     "case_thickness": "Case Thickness",
     "band_material": "Band Material",
-    "water_resistance": "Water Resistance",
+    "water_resistance": "Water Resistance (atm)",
     "watch_weight": "Weight(g)",
     "material": "Material",
     "sizes": "Size"

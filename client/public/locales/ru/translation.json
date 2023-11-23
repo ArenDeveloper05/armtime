@@ -74,7 +74,7 @@
     "case_size": "Размеры корпуса (мм)",
     "case_thickness": "Толщина корпуса (мм)",
     "band_material": "Материал ремешка",
-    "water_resistance": "Водонепроницаемость",
+    "water_resistance": "Водонепроницаемость (атм)",
     "watch_weight": "Вес (г)",
     "material": "Материал",
     "sizes": "Размер"
