@@ -22,7 +22,11 @@ const CheckoutPayerShipping = () => {
   return (
     <div className="information">
       <div className="information-title">
-        <Link to={"/delivery_terms"}>{t("main.main_putOrder.Put_Order")}</Link>
+        {t("main.main_putOrder.Put_Order")}
+      </div>
+      <div className="information-shipping-delText">
+        {t("checkout.info")}{" "}
+        <Link to={"/delivery_terms"}>{t("checkout.here")}</Link>
       </div>
       <div className="information-payer">
         <div className="information-payer-name">
@@ -122,11 +126,6 @@ const CheckoutPayerShipping = () => {
             value={checkoutData.notes}
             onChange={inputOnChange}
           />
-        </div>
-
-        <div className="information-shipping-delText">
-          {t("checkout.info")}{" "}
-          <Link to={"/delivery_terms"}>{t("checkout.here")}</Link>
         </div>
       </div>
     </div>

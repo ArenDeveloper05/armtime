@@ -3,8 +3,6 @@ import BaseSingleDesc from "./base-single-desc/BaseSingleDesc";
 import BaseSingleImage from "./base-single-image/BaseSingleImage";
 
 import "./BaseSingle.scss";
-import BaseSingleFeatures from "./base-single-desc/base-single-features/BaseSingleFeatures";
-import BaseSingleDescraption from "./base-single-desc/base-single-descraption/BaseSingleDescraption";
 
 export const BaseSingleContext = createContext(null);
 const BaseSingle = ({
@@ -54,24 +52,20 @@ const BaseSingle = ({
         }}
       >
         <BaseSingleImage images={images} video={video} />
-        <BaseSingleDesc type={type} watchData={item} />
-        <div className="base-single-image-featMob">
-          <BaseSingleFeatures
-            featuresData={{
-              type,
-              sex,
-              case_material,
-              case_size,
-              case_thickness,
-              band_material,
-              water_resistant,
-              weight,
-              material,
-              sizes,
-            }}
-          />
-          <BaseSingleDescraption description={description} />
-        </div>
+        <BaseSingleDesc
+          type={type}
+          case_material={case_material}
+          sex={sex}
+          case_size={case_size}
+          case_thickness={case_thickness}
+          band_material={band_material}
+          water_resistant={water_resistant}
+          weight={weight}
+          material={material}
+          sizes={sizes}
+          description={description}
+          watchData={item}
+        />
       </BaseSingleContext.Provider>
     </div>
   );

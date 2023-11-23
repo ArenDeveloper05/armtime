@@ -10,9 +10,11 @@ const PageBanner = ({ mainTitle, BannerImage }) => {
     >
       <div
         className="page-banner-background"
-        style={{
-          filter: BannerImage ? "brightness(0.5) blur(3px)" : "",
-        }}
+        style={
+          {
+            // filter: BannerImage ? "brightness(0.5) blur(3px)" : "",
+          }
+        }
       >
         {BannerImage && <img src={BannerImage} alt="" />}
       </div>

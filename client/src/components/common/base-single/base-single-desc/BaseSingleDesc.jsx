@@ -7,8 +7,23 @@ import BaseSingleDescBuy from "./base-single-desc-buy/BaseSingleDescBuy";
 import BaseSingleDescInfo from "./base-single-desc-info/BaseSingleDescInfo";
 import BaseSingleDescType from "./base-single-desc-type/BaseSingleDescType";
 import Identical from "../../../identical/Identical";
+import BaseSingleFeatures from "./base-single-features/BaseSingleFeatures";
+import BaseSingleDescraption from "./base-single-descraption/BaseSingleDescraption";
 
-const BaseSingleDesc = ({ type, watchData }) => {
+const BaseSingleDesc = ({
+  type,
+  sex,
+  case_material,
+  case_size,
+  case_thickness,
+  band_material,
+  water_resistant,
+  weight,
+  material,
+  sizes,
+  description,
+  watchData,
+}) => {
   const moreItems = useSelector((state) => {
     if (window.location.href.includes("watches")) {
       return state.watches.watchList;
@@ -35,7 +50,24 @@ const BaseSingleDesc = ({ type, watchData }) => {
   return (
     <div className="base-single-desc">
       <BaseSingleDescInfo />
-      {type && <BaseSingleDescType type={type} />}
+      {/* {type && <BaseSingleDescType type={type} />} */}
+      <div className="base-single-image-featMob">
+        <BaseSingleFeatures
+          featuresData={{
+            type,
+            sex,
+            case_material,
+            case_size,
+            case_thickness,
+            band_material,
+            water_resistant,
+            weight,
+            material,
+            sizes,
+          }}
+        />
+        <BaseSingleDescraption description={description} />
+      </div>
       <BaseSingleDescBuy />
       {moreItems && (
         <Identical

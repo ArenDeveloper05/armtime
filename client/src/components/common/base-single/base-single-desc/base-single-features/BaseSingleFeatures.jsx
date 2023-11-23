@@ -111,35 +111,17 @@ const BaseSingleFeatures = ({ featuresData }) => {
                 item.feature_type === wichPage
             )
             .map(({ id, translation_key, validation_key }) => {
-              if (id === 1) {
-                return (
-                  <div className="features-info-block" key={id}>
-                    <div className="features-info-block-type">
-                      {t(translation_key)}
-                    </div>
-                    <div className="features-info-block-name">
-                      {featuresData &&
-                        checkValidations(
-                          featuresData[validation_key] === "male"
-                            ? "man"
-                            : "woman"
-                        )}
-                    </div>
+              return (
+                <div className="features-info-block" key={id}>
+                  <div className="features-info-block-type">
+                    {t(translation_key)}
                   </div>
-                );
-              } else {
-                return (
-                  <div className="features-info-block" key={id}>
-                    <div className="features-info-block-type">
-                      {t(translation_key)}
-                    </div>
-                    <div className="features-info-block-name">
-                      {featuresData &&
-                        checkValidations(featuresData[validation_key])}
-                    </div>
+                  <div className="features-info-block-name">
+                    {featuresData &&
+                      checkValidations(featuresData[validation_key])}
                   </div>
-                );
-              }
+                </div>
+              );
             })}
       </div>
     </div>

@@ -8,11 +8,8 @@
     margin-bottom: 20px;
     text-align: center;
     color: var(--black);
-    > a {
-      font-size: 20px;
-      text-decoration: none;
-      color: var(--black);
-    }
+    font-size: 20px;
+    color: var(--black);
   }
   &-payer {
     display: flex;
@@ -54,10 +51,12 @@
   &-shipping {
     margin-top: 15px;
     &-delText {
+      font-size: 13px;
       width: 100%;
       text-align: center;
-      padding-top: 22px;
-      padding-bottom: 10px;
+      // padding-top: 22px;
+      // padding-bottom: 10px;
+      margin-bottom: 20px;
       > a {
         color: var(--black);
         font-weight: 700;
@@ -319,10 +318,6 @@ input {
         &-item {
           flex-direction: row;
         }
-      }
-    }
-    &-formForErevan {
-      &-address {
       }
     }
   }
