@@ -26,10 +26,12 @@ const BeltsItemDescription = ({ item }) => {
 
   return (
     <div className="belts-list-item-description">
-      <p className="belts-list-item-description-title">
-        {item[`name_${language}`]}
-      </p>
-      <p className="belts-list-item-description-color">{item.color}</p>
+      <div className="belts-list-item-description-title">
+        <p className="belts-list-item-description-title-name">
+          {item[`name_${language}`]}
+        </p>
+        <p className="belts-list-item-description-title-color">{item.color}</p>
+      </div>
 
       <div className="belts-list-item-description-buy">
         <p className="belts-list-item-description-buy-price">
@@ -39,8 +41,10 @@ const BeltsItemDescription = ({ item }) => {
               <TbCurrencyDram style={{ width: "17px", height: "17px" }} />
             )}
           </del>
-          {item.discounted_price}
-          <TbCurrencyDram style={{ width: "17px", height: "17px" }} />
+          <span>
+            {item.discounted_price}
+            <TbCurrencyDram style={{ width: "17px", height: "17px" }} />
+          </span>
         </p>
 
         {itemInBasket() ? (

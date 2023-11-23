@@ -36,32 +36,48 @@
       }
 
       &-description {
-        padding: 16px;
+        width: 100%;
+        padding-top: 8px;
+        padding-left: 8px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        text-transform: capitalize;
+        gap: 13px;
+        color: black;
         &-title {
-          font-size: 22px;
-          font-weight: 600;
-          white-space: nowrap;
-          overflow: hidden;
-          text-overflow: ellipsis;
-          margin-bottom: 8px;
-        }
-        &-color {
-          color: grey;
+          display: flex;
+          align-items: center;
+
+          &-name {
+            font-size: 15px;
+            font-weight: 500;
+          }
+
+          &-color {
+            color: grey;
+            font-size: 13px;
+            margin-left: 10px;
+          }
         }
 
         &-buy {
+          width: 100%;
           display: flex;
           margin-top: 10px;
-          padding: 16px 0px;
+          padding: 10px 10px 5px 10px;
           align-items: center;
           justify-content: space-between;
           border-top: 1px solid rgb(206, 206, 206);
 
           &-btn {
+            width: 80px;
+            font-size: 13px;
             border: 1px solid var(--black);
             outline: none;
             color: var(--black);
-            padding: 8px 20px;
+            padding: 8px 5px;
             cursor: pointer;
             background-color: var(--white);
             border-radius: 10px;
@@ -80,6 +96,18 @@
             font-size: 18px;
             font-weight: 500;
             color: var(--black);
+
+            > del {
+              font-size: 12px;
+              > svg {
+                width: 13px;
+                height: 13px;
+              }
+            }
+            > span {
+              display: flex;
+              align-items: center;
+            }
           }
         }
       }
@@ -110,6 +138,79 @@
 
             &-btn {
               margin-top: 10px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @media only screen and (max-width: 560px) {
+    &-list {
+      &-item {
+        &-description {
+          &-title {
+            padding: 1px;
+            &-name {
+              font-size: 11px;
+            }
+
+            &-color {
+              font-size: 10px;
+            }
+          }
+
+          &-buy {
+            gap: 10px;
+            flex-wrap: wrap;
+            justify-content: center;
+            &-price {
+              font-size: 13px;
+              flex-wrap: wrap;
+              > del {
+                font-size: 10px;
+                display: flex;
+                > svg {
+                  width: 11px;
+                  height: 11px;
+                }
+              }
+              > svg {
+                width: 15px;
+                height: 15px;
+              }
+            }
+            &-btn {
+              width: 65px;
+              padding: 8px 0;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              font-size: 12px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @media only screen and (max-width: 300px) {
+    &-list {
+      &-item {
+        &-description {
+          &-title {
+            padding: 0;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+
+            &-name {
+              text-align: center;
+            }
+
+            &-color {
+              margin-top: 4px;
+              text-align: center;
             }
           }
         }
