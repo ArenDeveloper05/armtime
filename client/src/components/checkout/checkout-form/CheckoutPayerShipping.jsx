@@ -7,6 +7,7 @@ import FormForRegions from "./FormForRegions";
 import "./CheckoutPayerShipping.scss";
 import { useTranslation } from "react-i18next";
 import { errorStyles } from "../../../utils/constants";
+import { Link } from "react-router-dom";
 
 const CheckoutPayerShipping = () => {
   const {
@@ -21,7 +22,7 @@ const CheckoutPayerShipping = () => {
   return (
     <div className="information">
       <div className="information-title">
-        {t("main.main_putOrder.Put_Order")}
+        <Link to={"/delivery_terms"}>{t("main.main_putOrder.Put_Order")}</Link>
       </div>
       <div className="information-payer">
         <div className="information-payer-name">
@@ -121,6 +122,11 @@ const CheckoutPayerShipping = () => {
             value={checkoutData.notes}
             onChange={inputOnChange}
           />
+        </div>
+
+        <div className="information-shipping-delText">
+          {t("checkout.info")}{" "}
+          <Link to={"/delivery_terms"}>{t("checkout.here")}</Link>
         </div>
       </div>
     </div>

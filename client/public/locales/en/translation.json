@@ -85,7 +85,9 @@
   },
   "checkout": {
     "title": "Order here",
-    "other": "Choose other items to add to this order"
+    "other": "Choose other items to add to this order",
+    "info": "You can view the delivery terms",
+    "here": "here"
   },
   "available": {
     "yes": "available",

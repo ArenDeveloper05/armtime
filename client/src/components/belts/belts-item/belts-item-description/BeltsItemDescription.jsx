@@ -26,10 +26,11 @@ const BeltsItemDescription = ({ item }) => {
 
   return (
     <div className="belts-list-item-description">
-      <p className="belts-list-item-description-title">
-        {item[`name_${language}`]}
-      </p>
-
+      <div className="belts-list-item-description-title">
+        <div>{item[`name_${language}`]}</div>
+        <p>{item.material}</p>
+      </div>
+      {console.log(item)}
       <div className="belts-list-item-description-buy">
         <p className="belts-list-item-description-buy-price">
           <del>
