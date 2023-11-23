@@ -5,7 +5,7 @@ const PageBanner = ({ mainTitle, BannerImage }) => {
     <div
       className="page-banner"
       style={{
-        height: BannerImage ? "400px" : "220px",
+        height: BannerImage ? "" : "150px",
       }}
     >
       <div

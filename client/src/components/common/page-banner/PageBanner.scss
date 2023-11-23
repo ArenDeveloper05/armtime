@@ -1,6 +1,7 @@
 .page-banner {
   width: 100%;
   position: relative;
+  height: 400px;
   &-background {
     width: 100%;
     height: 100%;
@@ -45,6 +46,10 @@
 
 @media (max-width: 850px) {
   .page-banner {
+    height: auto;
+    &-background {
+      height: auto;
+    }
     &-inner {
       > h1 {
         font-size: 45px;
