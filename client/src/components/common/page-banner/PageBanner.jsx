@@ -17,7 +17,13 @@ const PageBanner = ({ mainTitle, BannerImage }) => {
         {BannerImage && <img src={BannerImage} alt="" />}
       </div>
       <div className="page-banner-inner">
-        <h1>{mainTitle}</h1>
+        <h1
+          style={{
+            display: mainTitle ? "block" : "none",
+          }}
+        >
+          {mainTitle}
+        </h1>
       </div>
     </div>
   );

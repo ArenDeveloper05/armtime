@@ -66,8 +66,8 @@ const WatchesListItem = ({ item, lang }) => {
       <div className="watches-list-item-description-buy">
         <p className="watches-list-item-description-buy-price">
           <del>
-            {item.price !== 0 && item.price}
-            {item.price !== 0 && <TbCurrencyDram />}
+            {item.price != 0 && item.price}
+            {item.price != 0 && <TbCurrencyDram />}
           </del>
           <span>
             {item.discounted_price}

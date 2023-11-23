@@ -29,18 +29,17 @@ const BeltsItemDescription = ({ item }) => {
       <p className="belts-list-item-description-title">
         {item[`name_${language}`]}
       </p>
-      <p className="belts-list-item-description-color">{item.color}</p>
 
       <div className="belts-list-item-description-buy">
         <p className="belts-list-item-description-buy-price">
           <del>
             {item.price !== 0 && item.price}{" "}
-            {item.price !== 0 && (
-              <TbCurrencyDram style={{ width: "17px", height: "17px" }} />
-            )}
+            {item.price !== 0 && <TbCurrencyDram />}
           </del>
-          {item.discounted_price}
-          <TbCurrencyDram style={{ width: "17px", height: "17px" }} />
+          <span>
+            {item.discounted_price}
+            <TbCurrencyDram />
+          </span>
         </p>
 
         {itemInBasket() ? (

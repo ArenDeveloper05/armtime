@@ -256,7 +256,8 @@
       }
       &-options {
         width: 600px;
-        left: -36px;
+        left: -55px;
+        padding: 20px;
         &-triangle {
           left: 40%;
           top: -15%;
@@ -284,6 +285,11 @@
 @media (max-width: 470px) {
   .filter {
     &-inner {
+      &-options {
+        > button {
+          font-size: 13px;
+        }
+      }
       &-beltOptions {
         width: 450px;
         left: -30%;
@@ -303,37 +309,10 @@
 
 @media (max-width: 380px) {
   .filter {
-    height: 180px;
     &-inner {
-      height: 170px;
-      flex-direction: column;
-      gap: 15px;
-      padding: 20px 5px;
       &-options {
-        width: 361px;
-        top: 100%;
-        left: -20%;
-        &-triangle {
-          left: 40%;
-        }
-      }
-      &-rangeSlider {
-        width: 90%;
-      }
-
-      &-selection {
-        width: 100%;
-        &-select {
-          gap: 3px;
-          &-icn {
-            width: 18px;
-            height: 18px;
-          }
-        }
-        &-options {
-          width: 200px;
-          left: 75px;
-        }
+        padding: 15px;
+        left: -42px;
       }
     }
   }
