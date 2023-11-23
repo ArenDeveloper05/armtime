@@ -12,7 +12,7 @@ const BaseSingleDescraption = ({ description }) => {
         className="descraption-select"
         onClick={() => setDescraptionOpen((prev) => !prev)}
       >
-        <div className="descraption-select-text">{t("descraption.title")}</div>
+        <div className="descraption-select-text">{t("description.title")}</div>
         <div className="descraption-select-icon">
           <IoIosArrowDown
             className="descraption-select-icon-icn"
