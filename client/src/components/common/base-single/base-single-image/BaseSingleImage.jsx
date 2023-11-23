@@ -88,37 +88,6 @@ const BaseSingleImage = ({ images, video }) => {
             );
           })}
       </Swiper>
-      {/* <div className="base-single-image-imgs">
-        {images &&
-          images.length !== 0 &&
-          images.map(({ id, url }) => {
-            return (
-              <div key={id} className="base-single-image-imgs-item">
-                <img
-                  style={
-                    mainImg === generateImage(url)
-                      ? { filter: "blur(2px)" }
-                      : {}
-                  }
-                  src={generateImage(url)}
-                  alt="watch-or-belt"
-                  onClick={chooseMainImg}
-                />
-              </div>
-            );
-          })}
-      </div> */}
-      {/* <div className="base-single-image-videos">
-        {video &&
-          video.lentgh !== 0 &&
-          video.map(({ id, url }) => {
-            return (
-              <div className="base-single-image-videos-video" key={id}>
-                <video src={generateImage(url)} controls muted></video>
-              </div>
-            );
-          })}
-      </div> */}
       <BaseSingleDescInfoForMobile />
       <div className="base-single-image-feat">
         <BaseSingleFeatures

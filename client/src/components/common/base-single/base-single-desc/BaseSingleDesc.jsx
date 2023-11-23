@@ -49,7 +49,6 @@ const BaseSingleDesc = ({
   return (
     <div className="base-single-desc">
       <BaseSingleDescInfo />
-      {/* {type && <BaseSingleDescType type={type} />} */}
       <div className="base-single-image-featMob">
         <BaseSingleFeatures
           featuresData={{
