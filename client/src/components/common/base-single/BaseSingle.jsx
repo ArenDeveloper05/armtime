@@ -51,7 +51,11 @@ const BaseSingle = ({
           sizes,
         }}
       >
-        <BaseSingleImage images={images} video={video} />
+        <BaseSingleImage
+          images={images}
+          video={video}
+          discounted_price={item.price}
+        />
         <BaseSingleDesc
           type={type}
           case_material={case_material}
@@ -65,6 +69,7 @@ const BaseSingle = ({
           sizes={sizes}
           description={description}
           watchData={item}
+          discounted_price={item.price}
         />
       </BaseSingleContext.Provider>
     </div>

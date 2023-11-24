@@ -1,5 +1,5 @@
 import { t } from "i18next";
-import { useContext, useEffect, useState } from "react";
+import { useContext } from "react";
 import { FaShoppingBag } from "react-icons/fa";
 import { useDispatch, useSelector } from "react-redux";
 import { BaseSingleContext } from "../../BaseSingle";

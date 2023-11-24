@@ -14,7 +14,7 @@ const FormForRegions = () => {
 
   useEffect(() => {
     clearShippingInfo("yerevan");
-  }, []);
+  }, [clearShippingInfo]);
 
   return (
     <form className="information-formForRegions">

@@ -2,7 +2,7 @@ import { TbCurrencyDram } from "react-icons/tb";
 import { useContext } from "react";
 import { BaseSingleContext } from "../../BaseSingle";
 
-const BaseSingleDescInfo = () => {
+const BaseSingleDescInfo = ({ discounted_price }) => {
   const { title, code, price } = useContext(BaseSingleContext);
   return (
     <div className="base-single-desc-info">
@@ -10,10 +10,21 @@ const BaseSingleDescInfo = () => {
 
       <p className="base-single-desc-info-code">{code ? code : code}</p>
 
-      <p className="base-single-desc-info-price">
-        {price ? price : ""}
-        <TbCurrencyDram style={{ width: "20px", height: "20px" }} />
-      </p>
+      <div className="base-single-desc-info-price">
+        <div
+          className="base-single-desc-info-price-dis"
+          style={{
+            display: discounted_price !== "0" ? "block" : "none",
+          }}
+        >
+          {discounted_price ? discounted_price : ""}
+          <TbCurrencyDram />
+        </div>
+        <div className="base-single-desc-info-price-nat">
+          {price ? price : ""}
+          <TbCurrencyDram />
+        </div>
+      </div>
     </div>
   );
 };

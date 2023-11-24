@@ -273,10 +273,6 @@
     &-dialog {
       left: -12px;
       top: 90px;
-      &-inner {
-        &-triIcon {
-        }
-      }
     }
   }
 
@@ -297,6 +293,29 @@
     &-dialog {
       max-width: 300px;
       left: -20px;
+      &-inner-watchList-info-view {
+        font-size: 11px;
+      }
+      &-inner-watchList-info-title > p {
+        font-size: 13px;
+      }
+      &-inner {
+        &-foot {
+          &-text {
+            font-size: 12px;
+          }
+          &-price {
+            font-size: 13px;
+            > svg {
+              width: 12px;
+              height: 12px;
+            }
+          }
+          &-button {
+            font-size: 11px;
+          }
+        }
+      }
     }
   }
 

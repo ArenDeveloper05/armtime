@@ -16,7 +16,7 @@ import {
 import BaseSingleDescInfoForMobile from "../base-single-desc/base-single-desc-info/BaseSingleDescInfoForMobile";
 import BaseSingleDescraption from "../base-single-desc/base-single-descraption/BaseSingleDescraption";
 
-const BaseSingleImage = ({ images, video }) => {
+const BaseSingleImage = ({ images, video, discounted_price }) => {
   const [mainImg, setMainImg] = useState(
     images && images.length !== 0 ? generateImage(images[0].url) : noImage
   );
@@ -88,7 +88,7 @@ const BaseSingleImage = ({ images, video }) => {
             );
           })}
       </Swiper>
-      <BaseSingleDescInfoForMobile />
+      <BaseSingleDescInfoForMobile discounted_price={discounted_price} />
       <div className="base-single-image-feat">
         <BaseSingleFeatures
           featuresData={{

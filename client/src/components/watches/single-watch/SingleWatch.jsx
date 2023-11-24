@@ -44,12 +44,13 @@ const SingleWatch = () => {
           description={watchData[`desc_${language}`]}
           type={watchData.type}
           sex={watchData.sex}
-          case_material={watchData.case_material}
+          case_material={watchData[`case_material_${language}`]}
           case_size={watchData.case_size}
           case_thickness={watchData.case_thickness}
-          band_material={watchData.band_material}
+          band_material={watchData[`band_material_${language}`]}
           water_resistant={watchData.water_resistant}
           weight={watchData.weight}
+          model={watchData[`model_name_${language}`]}
           id={id}
           item={watchData}
         />

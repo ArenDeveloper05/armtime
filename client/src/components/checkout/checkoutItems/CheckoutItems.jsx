@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { onRemoveWatch } from "../../../redux/slices/basketWatchesSlice";
 import { GrFormClose } from "react-icons/gr";
 import { TbCurrencyDram } from "react-icons/tb";
@@ -22,7 +22,6 @@ const CheckoutItems = () => {
     (state) => state.basketWatches.basketWatches
   );
   const dispatch = useDispatch();
-  const navigate = useNavigate();
   const {
     t,
     i18n: { language },
@@ -118,15 +117,11 @@ const CheckoutItems = () => {
                     </div>
                     <Link
                       className="checkoutItems-items-item-info-view"
-                      onClick={() => {
-                        navigate(
-                          `${
-                            "band_material" in item
-                              ? ROUTER.WATCHES_PAGE_ROUTE
-                              : ROUTER.BELTS_PAGE_ROUTE
-                          }/${item.id}`
-                        );
-                      }}
+                      to={`${
+                        "band_material_en" in item
+                          ? ROUTER.WATCHES_PAGE_ROUTE
+                          : ROUTER.BELTS_PAGE_ROUTE
+                      }/${item.id}`}
                     >
                       {t("header.header_basket.view_product")}
                     </Link>

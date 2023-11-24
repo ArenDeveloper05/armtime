@@ -2,7 +2,6 @@ import { TbCurrencyDram } from "react-icons/tb";
 import { onAddWatch } from "../../../../redux/slices/basketWatchesSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { useTranslation } from "react-i18next";
-import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { ROUTER } from "../../../../router/router";
 
@@ -34,8 +33,8 @@ const BeltsItemDescription = ({ item }) => {
       <div className="belts-list-item-description-buy">
         <p className="belts-list-item-description-buy-price">
           <del>
-            {item.price !== 0 && item.price}{" "}
-            {item.price !== 0 && <TbCurrencyDram />}
+            {item.price !== "0" && item.price}{" "}
+            {item.price !== "0" && <TbCurrencyDram />}
           </del>
           <span>
             {item.discounted_price}

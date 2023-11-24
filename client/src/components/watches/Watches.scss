@@ -1,14 +1,14 @@
 .watches {
   min-height: 400px;
   &-list {
-    min-height: 600px;
+    height: auto;
+
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     gap: 40px;
-    padding: 20px 10px;
-    padding: 0 10px 20px 10px;
+    padding: 25px 10px;
 
     &-item {
       cursor: pointer;
@@ -140,7 +140,7 @@
 
     @media only screen and (max-width: 690px) {
       gap: 0;
-      padding: 0 20px;
+      padding: 0 15px;
       justify-content: space-between;
       &-item {
         width: 221px;
@@ -204,7 +204,7 @@
               display: flex;
               justify-content: center;
               align-items: center;
-              font-size: 12px;
+              font-size: 10px;
             }
           }
         }

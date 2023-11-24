@@ -97,6 +97,10 @@
   "filter": "Filter",
   "not-found": "Not Found",
   "more": "Other offers",
+  "male": "Woman",
+  "female": "Man",
+  "quartz": "Quartz",
+  "automatic": "Automatic",
   "footer": {
     "contact": "Contact",
     "follow_us": "Follow Us"

@@ -44,7 +44,7 @@ const BeltsSingle = () => {
           type={beltData.type}
           sex={beltData.sex}
           sizes={beltData.sizes}
-          material={beltData.material}
+          material={beltData[`material_${language}`]}
           item={beltData}
           id={id}
         />

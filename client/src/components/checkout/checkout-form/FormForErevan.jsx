@@ -19,7 +19,7 @@ const FormForErevan = () => {
 
   useEffect(() => {
     clearShippingInfo("regions");
-  }, []);
+  }, [clearShippingInfo]);
 
   return (
     <form className="information-formForErevan">

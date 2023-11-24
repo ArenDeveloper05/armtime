@@ -1,4 +1,4 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { GrFormClose } from "react-icons/gr";
 import { TbCurrencyDram } from "react-icons/tb";
 import { useDispatch } from "react-redux";
@@ -10,13 +10,13 @@ import { useTranslation } from "react-i18next";
 import { ROUTER } from "../../../../router/router";
 
 const BasketWatchesList = ({ watch }) => {
-  const navigate = useNavigate();
   const dispatch = useDispatch();
 
   const {
     t,
     i18n: { language },
   } = useTranslation();
+  console.log(watch);
 
   return (
     <div className="buy-dialog-inner-watchList">
@@ -40,15 +40,11 @@ const BasketWatchesList = ({ watch }) => {
         </div>
         <Link
           className="buy-dialog-inner-watchList-info-view"
-          onClick={() => {
-            navigate(
-              `${
-                "band_material" in watch
-                  ? ROUTER.WATCHES_PAGE_ROUTE
-                  : ROUTER.BELTS_PAGE_ROUTE
-              }/${watch.id}`
-            );
-          }}
+          to={`${
+            "band_material_en" in watch
+              ? ROUTER.WATCHES_PAGE_ROUTE
+              : ROUTER.BELTS_PAGE_ROUTE
+          }/${watch.id}`}
         >
           {t("header.header_basket.view_product")}
         </Link>

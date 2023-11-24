@@ -22,6 +22,7 @@ const BaseSingleDesc = ({
   sizes,
   description,
   watchData,
+  discounted_price,
 }) => {
   const moreItems = useSelector((state) => {
     if (window.location.href.includes("watches")) {
@@ -42,13 +43,15 @@ const BaseSingleDesc = ({
 
   const onFilterWatchData = (moreItems) => {
     return moreItems.filter(
-      (item) => item.model_name_en === watchData.model_name_en
+      (item) =>
+        item.model_name_en === watchData.model_name_en &&
+        item.id !== watchData.id
     );
   };
 
   return (
     <div className="base-single-desc">
-      <BaseSingleDescInfo />
+      <BaseSingleDescInfo discounted_price={discounted_price} />
       <div className="base-single-image-featMob">
         <BaseSingleFeatures
           featuresData={{
@@ -67,7 +70,7 @@ const BaseSingleDesc = ({
         <BaseSingleDescraption description={description} />
       </div>
       <BaseSingleDescBuy />
-      {moreItems && (
+      {onFilterWatchData(moreItems).length !== 0 && (
         <Identical
           data={
             window.location.href.includes("watches")

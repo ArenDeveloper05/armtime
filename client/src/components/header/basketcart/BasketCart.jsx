@@ -80,7 +80,7 @@ const BasketCart = () => {
               </div>
               <div className="buy-dialog-inner-foot-price">
                 {onCalcPrice()}
-                <TbCurrencyDram style={{ width: "15px", height: "15px" }} />
+                <TbCurrencyDram />
               </div>
               <Link
                 className="buy-dialog-inner-foot-button"

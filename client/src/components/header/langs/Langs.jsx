@@ -22,10 +22,9 @@ const Langs = () => {
   });
 
   useEffect(() => {
-    langs.map((lang) => {
+    langs.forEach((lang) => {
       if (lang.type === language) {
         setActiveLang(lang);
-        return "";
       }
     });
   }, [setActiveLang, language]);

@@ -1,8 +1,9 @@
 import { useState } from "react";
 import { IoIosArrowDown } from "react-icons/io";
 
-import "./BaseSingleFeatures.scss";
 import { useTranslation } from "react-i18next";
+
+import "./BaseSingleFeatures.scss";
 
 const BaseSingleFeatures = ({ featuresData }) => {
   const [featuresOpen, setFeaturesOpen] = useState(false);
@@ -11,7 +12,7 @@ const BaseSingleFeatures = ({ featuresData }) => {
       id: 1,
       translation_key: "features.gender",
       validation_key: "sex",
-      feature_type: "universal",
+      feature_type: "watch",
     },
     {
       id: 2,
@@ -111,14 +112,23 @@ const BaseSingleFeatures = ({ featuresData }) => {
                 item.feature_type === wichPage
             )
             .map(({ id, translation_key, validation_key }) => {
+              const text =
+                featuresData && checkValidations(featuresData[validation_key]);
               return (
                 <div className="features-info-block" key={id}>
                   <div className="features-info-block-type">
                     {t(translation_key)}
                   </div>
                   <div className="features-info-block-name">
-                    {featuresData &&
-                      checkValidations(featuresData[validation_key])}
+                    {text === "male"
+                      ? t("male")
+                      : text === "female"
+                      ? t("female")
+                      : text === "quartz"
+                      ? t("quartz")
+                      : text === "automatic"
+                      ? t("automatic")
+                      : text}
                   </div>
                 </div>
               );
