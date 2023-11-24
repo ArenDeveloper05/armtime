@@ -3,7 +3,7 @@ import "./Filter.scss";
 //Container
 import Container from "../container/Container";
 //React
-import { useRef, useState } from "react";
+import { useCallback, useRef, useState } from "react";
 import { useEffect } from "react";
 //Redux
 import { useDispatch } from "react-redux";
@@ -83,13 +83,13 @@ const Filter = ({ filterName }) => {
   });
 
   //watch filter function
-  const implementWatchFilter = () => {
+  const implementWatchFilter = useCallback(() => {
     dispatch(filterWatches(filterWatchData));
-  };
+  }, [dispatch, filterWatchData]);
   //belt filter function
-  const implementBeltFilter = () => {
+  const implementBeltFilter = useCallback(() => {
     dispatch(filterBelts(filterBeltData));
-  };
+  }, [dispatch, filterBeltData]);
 
   useEffect(() => {
     if (filterName === "watches") {
@@ -118,10 +118,17 @@ const Filter = ({ filterName }) => {
       window.location.pathname === "/"
     ) {
       implementWatchFilter();
+      console.log(filterWatchData);
     } else if (window.location.href.includes("belts")) {
       implementBeltFilter();
+      console.log(filterBeltData);
     }
-  }, [filterSortActive]);
+  }, [
+    filterSortActive,
+    implementWatchFilter,
+    implementBeltFilter,
+    filterWatchData,
+  ]);
 
   //ref
   const refWatch = useRef(null);

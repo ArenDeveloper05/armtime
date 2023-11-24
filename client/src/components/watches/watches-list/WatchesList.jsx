@@ -6,7 +6,6 @@ const WatchesList = ({ data }) => {
   const {
     i18n: { language },
   } = useTranslation();
-
   return (
     <div className="watches-list">
       {data &&

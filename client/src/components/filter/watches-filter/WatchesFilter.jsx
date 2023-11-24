@@ -6,6 +6,7 @@ import {
 } from "../../../config";
 import { VscTriangleUp } from "react-icons/vsc";
 import { useTranslation } from "react-i18next";
+import { useEffect } from "react";
 
 const activeOptionStyles = {
   backgroundColor: "#e0e0e0",
